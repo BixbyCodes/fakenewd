@@ -1,0 +1,1123 @@
+[
+  {
+    "claim_id": 219028,
+    "claim": "Savages was exclusively a German film.",
+    "gold_pages": [
+      "Savages_-LRB-2012_film-RRB-"
+    ],
+    "baseline_results": [
+      "Savages",
+      "Complete_Savages",
+      "Hopeless_Savages",
+      "Voyeurs_&_Savages",
+      "Savages_-LRB-1972_film-RRB-",
+      "Savages_-LRB-1974_film-RRB-",
+      "Savages_-LRB-2012_film-RRB-",
+      "The_Savages_-LRB-film-RRB-",
+      "Exclusively_for_My_Friends",
+      "Pearls_and_Savages"
+    ],
+    "v2_results": [
+      "German_Film_Awards_2015",
+      "German_Film_Award_for_Best_Documentary_Film",
+      "German_Film_Award_for_Best_Feature_Film",
+      "Boy_7_-LRB-German_film-RRB-",
+      "German_Film_Award_for_Best_Direction",
+      "Honeymoon_-LRB-1928_German_film-RRB-",
+      "Inquest_-LRB-1931_German_film-RRB-",
+      "Love_-LRB-1927_German_film-RRB-",
+      "Savages",
+      "Savages_-LRB-1972_film-RRB-"
+    ]
+  },
+  {
+    "claim_id": 134710,
+    "claim": "Starrcade was an annual professional wrestling event that began in 1988.",
+    "gold_pages": [
+      "Starrcade"
+    ],
+    "baseline_results": [
+      "Professional_wrestling",
+      "Starrcade_-LRB-1988-RRB-",
+      "Starrcade",
+      "Midget_professional_wrestling",
+      "Professional_wrestling_attacks",
+      "Professional_wrestling_championship",
+      "Professional_wrestling_holds",
+      "Professional_wrestling_moves",
+      "Professional_wrestling_promotion",
+      "Professional_wrestling_throws"
+    ],
+    "v2_results": [
+      "Professional_wrestling",
+      "Starrcade_-LRB-1988-RRB-",
+      "Midget_professional_wrestling",
+      "Professional_wrestling_attacks",
+      "Professional_wrestling_championship",
+      "Professional_wrestling_holds",
+      "Professional_wrestling_moves",
+      "Professional_wrestling_promotion",
+      "Professional_wrestling_throws",
+      "Professional_wrestling_tournament"
+    ]
+  },
+  {
+    "claim_id": 163980,
+    "claim": "Veeram is something other than an Indian Tamil film.",
+    "gold_pages": [
+      "Veeram_-LRB-2014_film-RRB-"
+    ],
+    "baseline_results": [
+      "Veeram",
+      "Something_More_Than_Free",
+      "Anything_Other_Than_Naked",
+      "Languages_Other_Than_English",
+      "Other_Worlds_Than_Ours",
+      "Veeram_-LRB-2014_film-RRB-",
+      "Veeram_-LRB-2016_film-RRB-",
+      "Something_Something_-LRB-film-RRB-",
+      "Veeram_Vilanja_Mannu",
+      "The_Other_Side_of_Something"
+    ],
+    "v2_results": [
+      "Veeram",
+      "Anything_Other_Than_Naked",
+      "Something_More_Than_Free",
+      "Languages_Other_Than_English",
+      "Military_operations_other_than_war",
+      "Somewhere_Other_Than_the_Night",
+      "Haiku_in_languages_other_than_Japanese",
+      "International_Tamil_Film_Awards",
+      "Tamil_Film_Producers_Council",
+      "Prose_Works_Other_than_Science_and_Health"
+    ]
+  },
+  {
+    "claim_id": 186590,
+    "claim": "In 1971 Asylum Records the American record label was founded by David Geffen and his partner Elliot Roberts.",
+    "gold_pages": [
+      "Asylum_Records"
+    ],
+    "baseline_results": [
+      "Geffen_Records",
+      "David_Geffen",
+      "Record_label",
+      "Elliot_Roberts",
+      "Asylum_Records",
+      "Upsetter_Records_-LRB-American_record_label-RRB-",
+      "Geffen_Records_discography",
+      "David_Partner",
+      "Big_Beat_Records_-LRB-American_record_label-RRB-",
+      "David_Geffen_Hall"
+    ],
+    "v2_results": [
+      "Geffen_Records",
+      "Upsetter_Records_-LRB-American_record_label-RRB-",
+      "Big_Beat_Records_-LRB-American_record_label-RRB-",
+      "David_Geffen",
+      "American_Recordings_-LRB-record_label-RRB-",
+      "Record_label",
+      "Battle_Records_-LRB-record_label-RRB-",
+      "Broken_Records_-LRB-record_label-RRB-",
+      "Prelude_Records_-LRB-record_label-RRB-",
+      "Tower_Records_-LRB-record_label-RRB-"
+    ]
+  },
+  {
+    "claim_id": 204033,
+    "claim": "Down With Love is a 2003 comedy film.",
+    "gold_pages": [
+      "Down_with_Love"
+    ],
+    "baseline_results": [
+      "Comedy_film",
+      "Love's_Comedy",
+      "Down_by_Love",
+      "Down_on_Love",
+      "Down_with_Love",
+      "Love_Come_Down",
+      "Love_Goes_Down",
+      "Love_Me_Down",
+      "Love_You_Down",
+      "Rain_Down_Love"
+    ],
+    "v2_results": [
+      "Comedy_film",
+      "Love_Come_Down_-LRB-film-RRB-",
+      "One_Love_-LRB-2003_film-RRB-",
+      "Falling_in_Love_Again_-LRB-2003_film-RRB-",
+      "Love's_Comedy",
+      "Rain_Down_Love",
+      "Comedy_Film_Nerds",
+      "Romantic_comedy_film",
+      "Screwball_comedy_film",
+      "World_of_Comedy_Film_Festival"
+    ]
+  },
+  {
+    "claim_id": 7876,
+    "claim": "The ruins of the ancient Roman town of Herculaneum lie near Naples.",
+    "gold_pages": [
+      "Herculaneum",
+      "Naples"
+    ],
+    "baseline_results": [
+      "Ancient_Near_East",
+      "An_Ancient_Lie",
+      "Herculaneum",
+      "Ancient_Ruins_and_Archaeology",
+      "Ancient_Near_East_Monographs",
+      "Ancient_Near_East_studies",
+      "Yangmei_Ancient_Town",
+      "Ancient_Roman_architecture",
+      "Ancient_Roman_bathing",
+      "Ancient_Roman_cuisine"
+    ],
+    "v2_results": [
+      "Ancient_Near_East",
+      "An_Ancient_Lie",
+      "Ancient_Roman_architecture",
+      "Ancient_Roman_bathing",
+      "Ancient_Roman_cuisine",
+      "Ancient_Roman_pottery",
+      "Ancient_Roman_sarcophagi",
+      "Ancient_Ruins_and_Archaeology",
+      "Alchester_Roman_Town",
+      "Ancaster_Roman_Town"
+    ]
+  },
+  {
+    "claim_id": 58341,
+    "claim": "Nuuk is the largest military center of Greenland.",
+    "gold_pages": [
+      "Nuuk"
+    ],
+    "baseline_results": [
+      "Nuuk_Center",
+      "Military_of_Greenland",
+      "Nuuk",
+      "Dalian_Greenland_Center",
+      "Greenland_Puli_Center",
+      "Wuhan_Greenland_Center",
+      "Greenland_Group_Suzhou_Center",
+      "Nuuk_Airport",
+      "Nuuk_Cathedral",
+      "Nuuk_Centrum"
+    ],
+    "v2_results": [
+      "Nuuk_Center",
+      "Military_of_Greenland",
+      "Malek_Military_Center",
+      "Dalian_Greenland_Center",
+      "Greenland_Puli_Center",
+      "Wuhan_Greenland_Center",
+      "Greenland_Group_Suzhou_Center",
+      "Center_for_Military_Readiness",
+      "Center_of_Military_Chaplaincy",
+      "Civil-military_operations_center"
+    ]
+  },
+  {
+    "claim_id": 124723,
+    "claim": "International students come to the University of Mississippi from 90 cities.",
+    "gold_pages": [
+      "University_of_Mississippi"
+    ],
+    "baseline_results": [
+      "University,_Mississippi",
+      "International_Students'_Day",
+      "International_Students_Association",
+      "University_Students'_Council",
+      "International_Mathematics_Competition_for_University_Students",
+      "Sister_Cities_International",
+      "Mississippi_State_University",
+      "University_of_Mississippi",
+      "International_University",
+      "International_university"
+    ],
+    "v2_results": [
+      "University,_Mississippi",
+      "International_Students'_Day",
+      "International_Mathematics_Competition_for_University_Students",
+      "International_Students_Association",
+      "Greifswald_International_Students'_Festival",
+      "International_Students_House,_London",
+      "University_Students'_Council",
+      "Council_of_International_Students_Australia",
+      "Sister_Cities_International",
+      "Mississippi_State_University"
+    ]
+  },
+  {
+    "claim_id": 128538,
+    "claim": "Starrcade was never broadcast via pay-per-view television.",
+    "gold_pages": [
+      "Starrcade"
+    ],
+    "baseline_results": [
+      "Pay-per-view",
+      "Pay_television",
+      "Pay-per-call",
+      "Pay-per-click",
+      "Pay_per_play",
+      "Pay_per_sale",
+      "List_of_WCW_pay-per-view_events",
+      "List_of_WWA_pay-per-view_events",
+      "List_of_WWE_pay-per-view_events",
+      "Starrcade"
+    ],
+    "v2_results": [
+      "Pay-per-view",
+      "List_of_WCW_pay-per-view_events",
+      "List_of_WWA_pay-per-view_events",
+      "List_of_WWE_pay-per-view_events",
+      "List_of_Impact_Wrestling_pay-per-view_events",
+      "Bound_for_Glory_-LRB-wrestling_pay-per-view-RRB-",
+      "List_of_ECW_supercards_and_pay-per-view_events",
+      "List_of_Ring_of_Honor_pay-per-view_events",
+      "Pay-per-call",
+      "Pay_television"
+    ]
+  },
+  {
+    "claim_id": 94522,
+    "claim": "Star Trek: Discovery is the first series since Star Trek: The Next Generation.",
+    "gold_pages": [
+      "Star_Trek-COLON-_Discovery"
+    ],
+    "baseline_results": [
+      "Star_Trek-COLON-_The_Next_Generation",
+      "Star_Trek-COLON-_Discovery",
+      "First_Contact_-LRB-Star_Trek-COLON-_The_Next_Generation-RRB-",
+      "Star_Trek-COLON-_The_Next_Generation_Technical_Manual",
+      "Generation_Next",
+      "Next_Generation",
+      "Allegiance_-LRB-Star_Trek-COLON-_The_Next_Generation-RRB-",
+      "Birthright_-LRB-Star_Trek-COLON-_The_Next_Generation-RRB-",
+      "Bloodlines_-LRB-Star_Trek-COLON-_The_Next_Generation-RRB-",
+      "Brothers_-LRB-Star_Trek-COLON-_The_Next_Generation-RRB-"
+    ],
+    "v2_results": [
+      "Star_Trek-COLON-_The_Next_Generation",
+      "First_Contact_-LRB-Star_Trek-COLON-_The_Next_Generation-RRB-",
+      "Star_Trek-COLON-_The_Next_Generation_Technical_Manual",
+      "Allegiance_-LRB-Star_Trek-COLON-_The_Next_Generation-RRB-",
+      "Birthright_-LRB-Star_Trek-COLON-_The_Next_Generation-RRB-",
+      "Bloodlines_-LRB-Star_Trek-COLON-_The_Next_Generation-RRB-",
+      "Brothers_-LRB-Star_Trek-COLON-_The_Next_Generation-RRB-",
+      "Clues_-LRB-Star_Trek-COLON-_The_Next_Generation-RRB-",
+      "Conspiracy_-LRB-Star_Trek-COLON-_The_Next_Generation-RRB-",
+      "Contagion_-LRB-Star_Trek-COLON-_The_Next_Generation-RRB-"
+    ]
+  },
+  {
+    "claim_id": 174580,
+    "claim": "Artpop only sold about 100,000 copies.",
+    "gold_pages": [
+      "Artpop"
+    ],
+    "baseline_results": [
+      "100,000,000",
+      "Artpop",
+      "100,000",
+      "Leica_copies",
+      "$100,000_infield",
+      "100,000_Cobbers",
+      "100,000_Fireflies",
+      "100,000_Pounds",
+      "100,000_Whys",
+      "Project_100,000"
+    ],
+    "v2_results": [
+      "100,000,000",
+      "100,000",
+      "$100,000_infield",
+      "100,000_Cobbers",
+      "100,000_Fireflies",
+      "100,000_Pounds",
+      "100,000_Whys",
+      "Project_100,000",
+      "100,000,000_Guinea_Pigs",
+      "$100,000_Fortune_Hunt"
+    ]
+  },
+  {
+    "claim_id": 219126,
+    "claim": "Valencia has about 800,000 inhabitants, making it the third largest city in Spain.",
+    "gold_pages": [
+      "Valencia"
+    ],
+    "baseline_results": [
+      "Valencia_City_Council_elections",
+      "Oddworld_Inhabitants",
+      "1,000,000,000",
+      "HAS",
+      "Making",
+      "Valencia",
+      "800",
+      "1,000,000",
+      "10,000,000",
+      "100,000,000"
+    ],
+    "v2_results": [
+      "Valencia_City_Council_elections",
+      "Oddworld_Inhabitants",
+      "1,000,000,000",
+      "Valencia_City_Council_election,_2011",
+      "Valencia_City_Council_election,_2015",
+      "Roman_Catholic_Archdiocese_of_Valencia_in_Spain",
+      "14,000_Things_to_be_Happy_About",
+      "Books_about_New_York_City",
+      "HAS",
+      "Making"
+    ]
+  },
+  {
+    "claim_id": 75599,
+    "claim": "This is an ethnic group called Lithuanians.",
+    "gold_pages": [
+      "Lithuanians"
+    ],
+    "baseline_results": [
+      "Ethnic_group",
+      "Lithuanians",
+      "Ethnic_Channels_Group",
+      "Ethnic_interest_group",
+      "Prussian_Lithuanians",
+      "A_Group_Called_Smith",
+      "List_of_Lithuanians",
+      "Lithuanians_in_Ireland",
+      "Lithuanians_in_Uruguay",
+      "Baharlu_-LRB-ethnic_group-RRB-"
+    ],
+    "v2_results": [
+      "Ethnic_group",
+      "A_Group_Called_Smith",
+      "Baharlu_-LRB-ethnic_group-RRB-",
+      "Hola_-LRB-ethnic_group-RRB-",
+      "Macedonians_-LRB-ethnic_group-RRB-",
+      "Malays_-LRB-ethnic_group-RRB-",
+      "Meo_-LRB-ethnic_group-RRB-",
+      "Norwegian_statistics_by_ethnic_group",
+      "Sarki_-LRB-ethnic_group-RRB-",
+      "Y-DNA_haplogroups_by_ethnic_group"
+    ]
+  },
+  {
+    "claim_id": 129650,
+    "claim": "Rhythm Nation was incapable of being performed on Britain's Got Talent.",
+    "gold_pages": [
+      "Rhythm_Nation"
+    ],
+    "baseline_results": [
+      "Britain's_Got_Talent",
+      "Got_Talent",
+      "Rhythm_Nation",
+      "Albanians_Got_Talent",
+      "Arabs_Got_Talent",
+      "Got_Talent_España",
+      "Got_Talent_Portugal",
+      "Pilipinas_Got_Talent",
+      "Girls_Got_Rhythm",
+      "Girls_Got_Rhythm!"
+    ],
+    "v2_results": [
+      "Britain's_Got_Talent",
+      "Got_Talent",
+      "List_of_Britain's_Got_Talent_episodes",
+      "List_of_Britain's_Got_Talent_finalists",
+      "Britain's_Got_Talent_-LRB-series_1-RRB-",
+      "Britain's_Got_Talent_-LRB-series_10-RRB-",
+      "Britain's_Got_Talent_-LRB-series_11-RRB-",
+      "Britain's_Got_Talent_-LRB-series_2-RRB-",
+      "Britain's_Got_Talent_-LRB-series_3-RRB-",
+      "Britain's_Got_Talent_-LRB-series_4-RRB-"
+    ]
+  },
+  {
+    "claim_id": 142130,
+    "claim": "Moonlight premiered at the Telluride Film Festival in 2016.",
+    "gold_pages": [
+      "Moonlight_-LRB-2016_film-RRB-"
+    ],
+    "baseline_results": [
+      "Telluride_Film_Festival",
+      "Telluride_Bluegrass_Festival",
+      "Telluride_Film_Festival_Silver_Medallion",
+      "Telluride_film_festival_guest_directors",
+      "Moonlight_-LRB-2016_film-RRB-",
+      "Telluride_Blues_&_Brews_Festival",
+      "Telluride",
+      "2016_Cannes_Film_Festival",
+      "2016_Sundance_Film_Festival",
+      "2016_Sydney_Film_Festival"
+    ],
+    "v2_results": [
+      "Telluride_Film_Festival",
+      "Telluride_Film_Festival_Silver_Medallion",
+      "Telluride_film_festival_guest_directors",
+      "2016_Cannes_Film_Festival",
+      "2016_Sundance_Film_Festival",
+      "2016_Sydney_Film_Festival",
+      "2016_Metro_Manila_Film_Festival",
+      "2016_New_York_Film_Festival",
+      "2016_Shanghai_International_Film_Festival",
+      "2016_Toronto_International_Film_Festival"
+    ]
+  },
+  {
+    "claim_id": 222026,
+    "claim": "Brubaker is a solely Australian film.",
+    "gold_pages": [
+      "Brubaker"
+    ],
+    "baseline_results": [
+      "Brubaker",
+      "Bill_Brubaker",
+      "Brubaker_Box",
+      "Bruce_Brubaker",
+      "Christine_Brubaker",
+      "Dick_Brubaker",
+      "Ed_Brubaker",
+      "Howard_Brubaker",
+      "Jeff_Brubaker",
+      "Jerry_Brubaker"
+    ],
+    "v2_results": [
+      "Australian_Film_Commission",
+      "Australian_Film_Festival",
+      "Australian_Film_Institute",
+      "Australian_Film_Syndicate",
+      "Australian_Film_Critics_Association",
+      "Australian_Film_Development_Corporation",
+      "South_Australian_Film_Corporation",
+      "1969_Australian_Film_Institute_Awards",
+      "1977_Australian_Film_Institute_Awards",
+      "1980_Australian_Film_Institute_Awards"
+    ]
+  },
+  {
+    "claim_id": 21899,
+    "claim": "Morse Code is used in air traffic control.",
+    "gold_pages": [
+      "Morse_code"
+    ],
+    "baseline_results": [
+      "Air_traffic_control",
+      "Australian_air_traffic_control",
+      "Morse_code",
+      "Traffic_code",
+      "241st_Air_Traffic_Control_Squadron",
+      "Bodø_Air_Traffic_Control_Center",
+      "Central_Air_Traffic_Control_School",
+      "Norwegian_Air_Traffic_Control_System",
+      "Oslo_Air_Traffic_Control_Center",
+      "Stavanger_Air_Traffic_Control_Center"
+    ],
+    "v2_results": [
+      "Air_traffic_control",
+      "Australian_air_traffic_control",
+      "241st_Air_Traffic_Control_Squadron",
+      "Bodø_Air_Traffic_Control_Center",
+      "Central_Air_Traffic_Control_School",
+      "Norwegian_Air_Traffic_Control_System",
+      "Oslo_Air_Traffic_Control_Center",
+      "Stavanger_Air_Traffic_Control_Center",
+      "Air_Traffic_Control_-LRB-band-RRB-",
+      "Air_Traffic_Control_System_Command_Center"
+    ]
+  },
+  {
+    "claim_id": 138758,
+    "claim": "I Kissed a Girl was only recorded by Donald Trump.",
+    "gold_pages": [
+      "I_Kissed_a_Girl"
+    ],
+    "baseline_results": [
+      "Donald_Trump",
+      "Donald_L._Trump",
+      "Donald_Trump_Jr.",
+      "Donald_Trump_pseudonyms",
+      "I_Kissed_a_Girl",
+      "Kissed",
+      "The_Only_Girl",
+      "Bibliography_of_Donald_Trump",
+      "Cabinet_of_Donald_Trump",
+      "Donald_J._Trump_Foundation"
+    ],
+    "v2_results": [
+      "Donald_Trump",
+      "Donald_Trump_Jr.",
+      "Donald_L._Trump",
+      "Donald_Trump_pseudonyms",
+      "Bibliography_of_Donald_Trump",
+      "Cabinet_of_Donald_Trump",
+      "Donald_Trump_in_music",
+      "Donald_Trump_presidential_campaign",
+      "Donald_Trump–Russia_dossier",
+      "Family_of_Donald_Trump"
+    ]
+  },
+  {
+    "claim_id": 69641,
+    "claim": "Youtube is ranked as one of the top three most popular sites in the world.",
+    "gold_pages": [
+      "YouTube"
+    ],
+    "baseline_results": [
+      "One/Three",
+      "YouTube",
+      "Most_Popular_Nordic_DJ",
+      "The_Most_Popular_Guitar",
+      "List_of_most_disliked_YouTube_videos",
+      "List_of_most_liked_YouTube_videos",
+      "List_of_most_viewed_YouTube_videos",
+      "The_Very_One_Stakes_top_three_finishers",
+      "Star_Awards_for_Top_10_Most_Popular_Female_Artistes",
+      "Star_Awards_for_Top_10_Most_Popular_Male_Artistes"
+    ],
+    "v2_results": [
+      "One/Three",
+      "The_Very_One_Stakes_top_three_finishers",
+      "Star_Awards_for_Top_10_Most_Popular_Female_Artistes",
+      "Star_Awards_for_Top_10_Most_Popular_Male_Artistes",
+      "Most_Popular_Nordic_DJ",
+      "The_Most_Popular_Guitar",
+      "One_World_Trade_Center_in_popular_culture",
+      "List_of_most_popular_websites",
+      "Sarasaviya_Most_Popular_Actor_Award",
+      "Sarasaviya_Most_Popular_Actress_Award"
+    ]
+  },
+  {
+    "claim_id": 154542,
+    "claim": "AMGTV is a television network that is family-oriented.",
+    "gold_pages": [
+      "AMGTV"
+    ],
+    "baseline_results": [
+      "Family_Television_Network",
+      "AMGTV",
+      "Television_network",
+      "Connection-Oriented_Network_Service",
+      "Access_Television_Network",
+      "Aotearoa_Television_Network",
+      "Arabian_Television_Network",
+      "Asian_Television_Network",
+      "Awaz_Television_Network",
+      "Badger_Television_Network"
+    ],
+    "v2_results": [
+      "Family_Television_Network",
+      "Television_network",
+      "Access_Television_Network",
+      "Aotearoa_Television_Network",
+      "Arabian_Television_Network",
+      "Asian_Television_Network",
+      "Awaz_Television_Network",
+      "Badger_Television_Network",
+      "CTV_Television_Network",
+      "Cambodian_Television_Network"
+    ]
+  },
+  {
+    "claim_id": 119047,
+    "claim": "Microbiologist research promotes information found in pathology and molecular biology",
+    "gold_pages": [
+      "Microbiologist"
+    ],
+    "baseline_results": [
+      "Molecular_pathology",
+      "Research_Institute_of_Molecular_Pathology",
+      "Molecular_biology",
+      "Molecular_Plant_Pathology",
+      "Research_in_Computational_Molecular_Biology",
+      "Molecular_Biology_Reports",
+      "Molecular_Membrane_Biology",
+      "Molecular_Systems_Biology",
+      "Popworld_Promotes",
+      "Microbiologist"
+    ],
+    "v2_results": [
+      "Molecular_pathology",
+      "Research_Institute_of_Molecular_Pathology",
+      "Research_in_Computational_Molecular_Biology",
+      "International_Max_Planck_Research_School_for_Molecular_Biology",
+      "Molecular_biology",
+      "Molecular_Biology_Reports",
+      "Molecular_Plant_Pathology",
+      "Cell_and_molecular_biology",
+      "European_Molecular_Biology_Laboratory",
+      "European_Molecular_Biology_Organization"
+    ]
+  },
+  {
+    "claim_id": 18523,
+    "claim": "Trollhunters is a television series.",
+    "gold_pages": [
+      "Trollhunters"
+    ],
+    "baseline_results": [
+      "Trollhunters",
+      "Fishing_television_series",
+      "Disney_television_series_on_Russian_television",
+      "Children's_television_series",
+      "Makeover_reality_television_series",
+      "World_Series_television_ratings",
+      "List_of_American_television_series_based_on_British_television_series",
+      "List_of_British_television_series_based_on_American_television_series",
+      "List_of_American_television_series",
+      "List_of_Asia_Television_series"
+    ],
+    "v2_results": [
+      "Fishing_television_series",
+      "Disney_television_series_on_Russian_television",
+      "Children's_television_series",
+      "Makeover_reality_television_series",
+      "List_of_American_television_series_based_on_British_television_series",
+      "List_of_British_television_series_based_on_American_television_series",
+      "List_of_American_television_series",
+      "List_of_Asia_Television_series",
+      "List_of_Australian_television_series",
+      "List_of_Austrian_television_series"
+    ]
+  },
+  {
+    "claim_id": 23741,
+    "claim": "I Kissed a Girl is part of Katy Perry's second studio album.",
+    "gold_pages": [
+      "I_Kissed_a_Girl"
+    ],
+    "baseline_results": [
+      "Katy_Perry",
+      "Katy_Perry-COLON-_Part_of_Me",
+      "Katy_Perry_discography",
+      "Katy_Perry_videography",
+      "I_Kissed_a_Girl",
+      "Kissed",
+      "Prism_-LRB-Katy_Perry_album-RRB-",
+      "Witness_-LRB-Katy_Perry_album-RRB-",
+      "Part_the_Second",
+      "Part_of_Me_-LRB-Katy_Perry_song-RRB-"
+    ],
+    "v2_results": [
+      "Katy_Perry",
+      "Katy_Perry-COLON-_Part_of_Me",
+      "Prism_-LRB-Katy_Perry_album-RRB-",
+      "Witness_-LRB-Katy_Perry_album-RRB-",
+      "Part_of_Me_-LRB-Katy_Perry_song-RRB-",
+      "MTV_Unplugged_-LRB-Katy_Perry_album-RRB-",
+      "Teenage_Dream_-LRB-Katy_Perry_album-RRB-",
+      "One_of_the_Boys_-LRB-Katy_Perry_album-RRB-",
+      "Katy_Perry_discography",
+      "Katy_Perry_videography"
+    ]
+  },
+  {
+    "claim_id": 117409,
+    "claim": "Starrcade was eventually broadcast via pay-per-view umbrella.",
+    "gold_pages": [
+      "Starrcade"
+    ],
+    "baseline_results": [
+      "Pay-per-view",
+      "Pay-per-call",
+      "Pay-per-click",
+      "Pay_per_play",
+      "Pay_per_sale",
+      "Eventually",
+      "List_of_WCW_pay-per-view_events",
+      "List_of_WWA_pay-per-view_events",
+      "List_of_WWE_pay-per-view_events",
+      "Starrcade"
+    ],
+    "v2_results": [
+      "Pay-per-view",
+      "List_of_WCW_pay-per-view_events",
+      "List_of_WWA_pay-per-view_events",
+      "List_of_WWE_pay-per-view_events",
+      "List_of_Impact_Wrestling_pay-per-view_events",
+      "Bound_for_Glory_-LRB-wrestling_pay-per-view-RRB-",
+      "List_of_ECW_supercards_and_pay-per-view_events",
+      "List_of_Ring_of_Honor_pay-per-view_events",
+      "Pay-per-call",
+      "Pay-per-click"
+    ]
+  },
+  {
+    "claim_id": 38944,
+    "claim": "Starrcade was originally broadcast via closed-circuit television.",
+    "gold_pages": [
+      "Starrcade"
+    ],
+    "baseline_results": [
+      "Closed-circuit_television",
+      "Closed-circuit_television_camera",
+      "Closed-circuit",
+      "Originally",
+      "Closed-circuit_radio",
+      "The_Closed_Circuit",
+      "Starrcade",
+      "Washington_County_Closed-Circuit_Educational_Television_Project",
+      "Broadcast_television_systems",
+      "Lost_television_broadcast"
+    ],
+    "v2_results": [
+      "Closed-circuit_television",
+      "Closed-circuit_television_camera",
+      "Washington_County_Closed-Circuit_Educational_Television_Project",
+      "Closed-circuit",
+      "Closed-circuit_radio",
+      "The_Closed_Circuit",
+      "Closed_Circuit_-LRB-album-RRB-",
+      "Closed_Circuit_-LRB-1978_film-RRB-",
+      "Closed_Circuit_-LRB-2013_film-RRB-",
+      "Broadcast_television_systems"
+    ]
+  },
+  {
+    "claim_id": 103745,
+    "claim": "Michelin Guides are published by a German company.",
+    "gold_pages": [
+      "Michelin_Guide"
+    ],
+    "baseline_results": [
+      "Michelin",
+      "André_Michelin",
+      "Clément_Michelin",
+      "François_Michelin",
+      "Jean_Michelin",
+      "Michelin_Cup",
+      "Michelin_Ground",
+      "Michelin_Guide",
+      "Michelin_House",
+      "Michelin_Man"
+    ],
+    "v2_results": [
+      "Michelin",
+      "German_company_law",
+      "German_Motorized_Company",
+      "Egyptian_German_Automotive_Company",
+      "German_East_Africa_Company",
+      "German_New_Guinea_Company",
+      "German_Railway_Operating_Company",
+      "German_West_African_Company",
+      "South_German_Railway_Company",
+      "André_Michelin"
+    ]
+  },
+  {
+    "claim_id": 74795,
+    "claim": "Starrcade was originally broadcast via television.",
+    "gold_pages": [
+      "Closed-circuit_television",
+      "Pay-per-view",
+      "Starrcade",
+      "Turner_Broadcasting_System"
+    ],
+    "baseline_results": [
+      "Originally",
+      "Starrcade",
+      "Broadcast_television_systems",
+      "Lost_television_broadcast",
+      "Mr._Music_Originally",
+      "Broadcast_Television_Systems_Inc.",
+      "Certified_Broadcast_Television_Engineer",
+      "Nanjing_Television_Broadcast_Group",
+      "Southern_Television_broadcast_interruption",
+      "Via"
+    ],
+    "v2_results": [
+      "Originally",
+      "Broadcast_television_systems",
+      "Lost_television_broadcast",
+      "Broadcast_Television_Systems_Inc.",
+      "Certified_Broadcast_Television_Engineer",
+      "Nanjing_Television_Broadcast_Group",
+      "Southern_Television_broadcast_interruption",
+      "Certified_Senior_Broadcast_Television_Engineer",
+      "Emotional_Consequences_of_Broadcast_Television",
+      "Jiangsu_Nanjing_Broadcast_Television_Tower"
+    ]
+  },
+  {
+    "claim_id": 107667,
+    "claim": "Ingushetia was named after Chechen-Ingush ASSR split into two.",
+    "gold_pages": [
+      "Ingushetia"
+    ],
+    "baseline_results": [
+      "Chechen-Ingush_Autonomous_Oblast",
+      "Ingush–Chechen_fratricide_incident",
+      "ASSR",
+      "Ingush",
+      "Chechen-Ingush_Autonomous_Soviet_Socialist_Republic",
+      "Ingushetia",
+      "Two_into_One",
+      "Stars_named_after_people",
+      "Chechen",
+      "Ingush_language"
+    ],
+    "v2_results": [
+      "Chechen-Ingush_Autonomous_Oblast",
+      "Ingush–Chechen_fratricide_incident",
+      "Chechen-Ingush_Autonomous_Soviet_Socialist_Republic",
+      "Stars_named_after_people",
+      "First_Secretary_of_the_Chechen-Ingush_Communist_Party",
+      "One_Divides_Into_Two",
+      "Districts_named_after_Taras_Shevchenko",
+      "Scientific_phenomena_named_after_people",
+      "Shipyard_named_after_61_Communards",
+      "List_of_companies_named_after_people"
+    ]
+  },
+  {
+    "claim_id": 37112,
+    "claim": "TakePart is the digital division of Participant Media.",
+    "gold_pages": [
+      "TakePart"
+    ],
+    "baseline_results": [
+      "Participant_Media",
+      "TakePart",
+      "Digital_media",
+      "Deseret_Digital_Media",
+      "Digital_Cinema_Media",
+      "Digital_First_Media",
+      "Digital_Media_Academy",
+      "Digital_Media_City",
+      "Digital_Media_Factory",
+      "Digital_Media_Initiative"
+    ],
+    "v2_results": [
+      "Participant_Media",
+      "Digital_media",
+      "Deseret_Digital_Media",
+      "Digital_Cinema_Media",
+      "Digital_First_Media",
+      "Digital_Media_Academy",
+      "Digital_Media_City",
+      "Digital_Media_Factory",
+      "Digital_Media_Initiative",
+      "Digital_Media_Port"
+    ]
+  },
+  {
+    "claim_id": 186600,
+    "claim": "Asylum Records is an English record label.",
+    "gold_pages": [
+      "Asylum_Records"
+    ],
+    "baseline_results": [
+      "Record_label",
+      "Asylum_Records",
+      "Independent_record_label",
+      "Lupine_Record_label",
+      "Orange_Record_Label",
+      "Battle_Records_-LRB-record_label-RRB-",
+      "Broken_Records_-LRB-record_label-RRB-",
+      "Prelude_Records_-LRB-record_label-RRB-",
+      "Tower_Records_-LRB-record_label-RRB-",
+      "Our_Label_Records"
+    ],
+    "v2_results": [
+      "Record_label",
+      "Battle_Records_-LRB-record_label-RRB-",
+      "Broken_Records_-LRB-record_label-RRB-",
+      "Prelude_Records_-LRB-record_label-RRB-",
+      "Tower_Records_-LRB-record_label-RRB-",
+      "Capri_Records_-LRB-Jazz_record_label-RRB-",
+      "Department_of_Records_-LRB-record_label-RRB-",
+      "Jewel_Records_-LRB-Cincinnati_record_label-RRB-",
+      "Jewel_Records_-LRB-Shreveport_record_label-RRB-",
+      "Universal_Records_-LRB-defunct_record_label-RRB-"
+    ]
+  },
+  {
+    "claim_id": 102393,
+    "claim": "AMGTV is not a family-oriented television network.",
+    "gold_pages": [
+      "AMGTV"
+    ],
+    "baseline_results": [
+      "Family_Television_Network",
+      "AMGTV",
+      "Television_network",
+      "Connection-Oriented_Network_Service",
+      "Access_Television_Network",
+      "Aotearoa_Television_Network",
+      "Arabian_Television_Network",
+      "Asian_Television_Network",
+      "Awaz_Television_Network",
+      "Badger_Television_Network"
+    ],
+    "v2_results": [
+      "Family_Television_Network",
+      "Television_network",
+      "Access_Television_Network",
+      "Aotearoa_Television_Network",
+      "Arabian_Television_Network",
+      "Asian_Television_Network",
+      "Awaz_Television_Network",
+      "Badger_Television_Network",
+      "CTV_Television_Network",
+      "Cambodian_Television_Network"
+    ]
+  },
+  {
+    "claim_id": 98475,
+    "claim": "The Quran is a text central to a religion's belief system.",
+    "gold_pages": [
+      "Quran"
+    ],
+    "baseline_results": [
+      "Cocoa_text_system",
+      "Belief",
+      "Quran",
+      "Central_Monitoring_System",
+      "Central_melanocortin_system",
+      "Central_nervous_system",
+      "Central_reservation_system",
+      "TEXT",
+      "Text",
+      "Basic_belief"
+    ],
+    "v2_results": [
+      "Cocoa_text_system",
+      "Central_Monitoring_System",
+      "Central_melanocortin_system",
+      "Central_nervous_system",
+      "Central_reservation_system",
+      "Belief",
+      "Beyond_Belief-COLON-_Science,_Religion,_Reason_and_Survival",
+      "Central_American_Integration_System",
+      "Central_Area_Transmission_System",
+      "Central_Arkansas_Library_System"
+    ]
+  },
+  {
+    "claim_id": 105933,
+    "claim": "The Bloods are a primarily, though not exclusively, White street gang.",
+    "gold_pages": [
+      "Bloods"
+    ],
+    "baseline_results": [
+      "Street_Gang",
+      "Bloods",
+      "Primarily_Jazz",
+      "Primarily_Primates",
+      "White_Hand_Gang",
+      "18th_Street_gang",
+      "19th_Street_Gang",
+      "38th_Street_gang",
+      "Batavia_Street_Gang",
+      "Charlton_Street_Gang"
+    ],
+    "v2_results": [
+      "Street_Gang",
+      "18th_Street_gang",
+      "19th_Street_Gang",
+      "38th_Street_gang",
+      "Batavia_Street_Gang",
+      "Charlton_Street_Gang",
+      "Henry_Street_Gang",
+      "Quality_Street_Gang",
+      "Yancy_Street_Gang",
+      "The_Fenn_Street_Gang"
+    ]
+  },
+  {
+    "claim_id": 60720,
+    "claim": "Sleipnir appears in the mythology of the Northern Germanic people.",
+    "gold_pages": [
+      "Norse_mythology",
+      "Sleipnir"
+    ],
+    "baseline_results": [
+      "Germanic_mythology",
+      "Continental_Germanic_mythology",
+      "Appears",
+      "Sleipnir",
+      "Investigations_into_Germanic_Mythology",
+      "Sleipnir_Glacier",
+      "Germanic",
+      "A_Stone_Appears",
+      "Northern_Khmer_people",
+      "Northern_Ndebele_people"
+    ],
+    "v2_results": [
+      "Germanic_mythology",
+      "Continental_Germanic_mythology",
+      "Investigations_into_Germanic_Mythology",
+      "Northern_Khmer_people",
+      "Northern_Ndebele_people",
+      "Northern_Thai_people",
+      "Northern_People's_Congress",
+      "Northern_People's_Party",
+      "People_of_Northern_Ireland",
+      "Little_people_-LRB-mythology-RRB-"
+    ]
+  },
+  {
+    "claim_id": 20279,
+    "claim": "Chile is in South America.",
+    "gold_pages": [
+      "Chile"
+    ],
+    "baseline_results": [
+      "South_America",
+      "America_–_South_Africa",
+      "Aperam_South_America",
+      "Caribbean_South_America",
+      "Conquering_South_America",
+      "Hits_South_America",
+      "South_America_Glacier",
+      "Presbyterian_Church_in_America,_Chile",
+      "Chile",
+      "America!_America!_America!"
+    ],
+    "v2_results": [
+      "South_America",
+      "Aperam_South_America",
+      "Caribbean_South_America",
+      "Conquering_South_America",
+      "Hits_South_America",
+      "South_America_Glacier",
+      "Africa-South_America_Summit",
+      "Bibliography_of_South_America",
+      "Bulgarians_in_South_America",
+      "Culture_of_South_America"
+    ]
+  },
+  {
+    "claim_id": 111408,
+    "claim": "Yale University's alumni includes zero U.S. Supreme Court Justices.",
+    "gold_pages": [
+      "Yale_University"
+    ],
+    "baseline_results": [
+      "Lists_of_Supreme_Court_Justices",
+      "Yale_Alumni_Magazine",
+      "List_of_Minnesota_Supreme_Court_Justices",
+      "List_of_Wisconsin_Supreme_Court_Justices",
+      "Supreme_court",
+      "Yale_University",
+      "Justices_of_the_Supreme_Court_of_Nigeria",
+      "List_of_LGBT_state_supreme_court_justices",
+      "List_of_North_Dakota_Supreme_Court_Justices",
+      "List_of_female_state_supreme_court_justices"
+    ],
+    "v2_results": [
+      "Lists_of_Supreme_Court_Justices",
+      "List_of_Minnesota_Supreme_Court_Justices",
+      "List_of_Wisconsin_Supreme_Court_Justices",
+      "List_of_LGBT_state_supreme_court_justices",
+      "List_of_North_Dakota_Supreme_Court_Justices",
+      "List_of_female_state_supreme_court_justices",
+      "Ideological_leanings_of_U.S._Supreme_Court_justices",
+      "Justices_of_the_Supreme_Court_of_Nigeria",
+      "List_of_Justices_of_the_Alabama_Supreme_Court",
+      "List_of_Justices_of_the_Alaska_Supreme_Court"
+    ]
+  }
+]

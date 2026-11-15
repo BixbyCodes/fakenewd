@@ -1,0 +1,4440 @@
+{
+  "dataset": "FEVER dev",
+  "claims_evaluated": 100,
+  "event_parse_successes": 100,
+  "event_parse_failures": 0,
+  "metrics": {
+    "baseline_original_claim": {
+      "recall@1": 0.61,
+      "recall@5": 0.75,
+      "recall@10": 0.81
+    },
+    "event_normalized_claim": {
+      "recall@1": 0.6,
+      "recall@5": 0.75,
+      "recall@10": 0.8
+    },
+    "combined_retrieval": {
+      "recall@1": 0.59,
+      "recall@5": 0.77,
+      "recall@10": 0.81
+    }
+  },
+  "claim_details": [
+    {
+      "claim_id": 137334,
+      "claim": "Fox 2000 Pictures released the film Soul Food.",
+      "normalized_claim": "Fox 2000 Pictures released the film Soul Food.",
+      "gold_pages": [
+        "Soul_Food_-LRB-film-RRB-"
+      ],
+      "baseline_top10": [
+        "Soul_Food",
+        "Soul_food",
+        "Soul_Food_-LRB-film-RRB-",
+        "Fox_Searchlight_Pictures",
+        "Soul_Food_Café",
+        "Soul_Food_Junkies",
+        "Soul_Food_Taqueria",
+        "Fox_Film",
+        "Rejoice!_Musical_Soul_Food",
+        "List_of_Soul_Food_episodes"
+      ],
+      "event_top10": [
+        "Soul_Food",
+        "Soul_food",
+        "Soul_Food_-LRB-film-RRB-",
+        "Fox_Searchlight_Pictures",
+        "Soul_Food_Café",
+        "Soul_Food_Junkies",
+        "Soul_Food_Taqueria",
+        "Fox_Film",
+        "Rejoice!_Musical_Soul_Food",
+        "List_of_Soul_Food_episodes"
+      ],
+      "combined_top10": [
+        "Soul_Food",
+        "Soul_food",
+        "Soul_Food_-LRB-film-RRB-",
+        "Fox_Searchlight_Pictures",
+        "Soul_Food_Café",
+        "Soul_Food_Junkies",
+        "Soul_Food_Taqueria",
+        "Fox_Film",
+        "Rejoice!_Musical_Soul_Food",
+        "List_of_Soul_Food_episodes"
+      ]
+    },
+    {
+      "claim_id": 111897,
+      "claim": "Telemundo is a English-language television network.",
+      "normalized_claim": "Telemundo is an English-language television network.",
+      "gold_pages": [
+        "Hispanic_and_Latino_Americans",
+        "Telemundo"
+      ],
+      "baseline_top10": [
+        "Telemundo",
+        "English_language",
+        "Television_network",
+        "Noticias_Telemundo",
+        "Noticiero_Telemundo",
+        "Telemundo_51",
+        "Access_Television_Network",
+        "Telemundo_Deportes",
+        "Aotearoa_Television_Network",
+        "Arabian_Television_Network"
+      ],
+      "event_top10": [
+        "Telemundo",
+        "English_language",
+        "Television_network",
+        "Noticias_Telemundo",
+        "Noticiero_Telemundo",
+        "Telemundo_51",
+        "Access_Television_Network",
+        "Telemundo_Deportes",
+        "Aotearoa_Television_Network",
+        "Arabian_Television_Network"
+      ],
+      "combined_top10": [
+        "Telemundo",
+        "English_language",
+        "Television_network",
+        "Noticias_Telemundo",
+        "Noticiero_Telemundo",
+        "Telemundo_51",
+        "Access_Television_Network",
+        "Telemundo_Deportes",
+        "Aotearoa_Television_Network",
+        "Arabian_Television_Network"
+      ]
+    },
+    {
+      "claim_id": 89891,
+      "claim": "Damon Albarn's debut album was released in 2011.",
+      "normalized_claim": "Damon Albarn released his debut album in 2011.",
+      "gold_pages": [
+        "Damon_Albarn"
+      ],
+      "baseline_top10": [
+        "Damon_Albarn",
+        "Damon_Albarn_discography",
+        "Keith_Albarn",
+        "You_and_Me_-LRB-Damon_Albarn_song-RRB-",
+        "Debut",
+        "The_Multi-Platinum_Debut_Album",
+        "Debut_Album_-LRB-Sayuri_Ishikawa_album-RRB-",
+        "Damon",
+        "'F'_Debut",
+        "Debut_-LRB-Björk_album-RRB-"
+      ],
+      "event_top10": [
+        "Damon_Albarn",
+        "Damon_Albarn_discography",
+        "Keith_Albarn",
+        "You_and_Me_-LRB-Damon_Albarn_song-RRB-",
+        "Debut",
+        "The_Multi-Platinum_Debut_Album",
+        "Damon",
+        "Debut_Album_-LRB-Sayuri_Ishikawa_album-RRB-",
+        "'F'_Debut",
+        "2nd_Debut"
+      ],
+      "combined_top10": [
+        "Damon_Albarn",
+        "Damon_Albarn_discography",
+        "Keith_Albarn",
+        "You_and_Me_-LRB-Damon_Albarn_song-RRB-",
+        "Debut",
+        "The_Multi-Platinum_Debut_Album",
+        "Debut_Album_-LRB-Sayuri_Ishikawa_album-RRB-",
+        "Damon",
+        "'F'_Debut",
+        "Debut_-LRB-Björk_album-RRB-"
+      ]
+    },
+    {
+      "claim_id": 181634,
+      "claim": "There is a capital called Mogadishu.",
+      "normalized_claim": "Mogadishu is a capital.",
+      "gold_pages": [
+        "Mogadishu"
+      ],
+      "baseline_top10": [
+        "Mogadishu",
+        "Africa/Mogadishu",
+        "Mogadishu_Avenue",
+        "Mogadishu_Cathedral",
+        "Mogadishu_Line",
+        "Mogadishu_Mile",
+        "There,_there",
+        "Mogadishu_Municipality",
+        "There_There",
+        "Capital"
+      ],
+      "event_top10": [
+        "Mogadishu",
+        "Africa/Mogadishu",
+        "Mogadishu_Avenue",
+        "Mogadishu_Cathedral",
+        "Mogadishu_Line",
+        "Mogadishu_Mile",
+        "Mogadishu_Municipality",
+        "Mogadishu_Stadium",
+        "Mogadishu_University",
+        "Capital"
+      ],
+      "combined_top10": [
+        "Mogadishu",
+        "Africa/Mogadishu",
+        "Mogadishu_Avenue",
+        "Mogadishu_Cathedral",
+        "Mogadishu_Line",
+        "Mogadishu_Mile",
+        "Mogadishu_Municipality",
+        "Capital",
+        "There,_there",
+        "Mogadishu_Stadium"
+      ]
+    },
+    {
+      "claim_id": 219028,
+      "claim": "Savages was exclusively a German film.",
+      "normalized_claim": "Savages was exclusively a German film.",
+      "gold_pages": [
+        "Savages_-LRB-2012_film-RRB-"
+      ],
+      "baseline_top10": [
+        "Savages",
+        "Complete_Savages",
+        "Hopeless_Savages",
+        "Savages_-LRB-1972_film-RRB-",
+        "Savages_-LRB-1974_film-RRB-",
+        "Voyeurs_&_Savages",
+        "German_Film_Awards_2015",
+        "Savages_-LRB-2012_film-RRB-",
+        "German_Film_Award_for_Best_Documentary_Film",
+        "German_Film_Award_for_Best_Feature_Film"
+      ],
+      "event_top10": [
+        "Savages",
+        "Complete_Savages",
+        "Hopeless_Savages",
+        "Savages_-LRB-1972_film-RRB-",
+        "Savages_-LRB-1974_film-RRB-",
+        "Voyeurs_&_Savages",
+        "German_Film_Awards_2015",
+        "Savages_-LRB-2012_film-RRB-",
+        "German_Film_Award_for_Best_Documentary_Film",
+        "German_Film_Award_for_Best_Feature_Film"
+      ],
+      "combined_top10": [
+        "Savages",
+        "Complete_Savages",
+        "Hopeless_Savages",
+        "Savages_-LRB-1972_film-RRB-",
+        "Savages_-LRB-1974_film-RRB-",
+        "Voyeurs_&_Savages",
+        "German_Film_Awards_2015",
+        "Savages_-LRB-2012_film-RRB-",
+        "German_Film_Award_for_Best_Documentary_Film",
+        "German_Film_Award_for_Best_Feature_Film"
+      ]
+    },
+    {
+      "claim_id": 108281,
+      "claim": "Andrew Kevin Walker is only Chinese.",
+      "normalized_claim": "Andrew Kevin Walker is only Chinese.",
+      "gold_pages": [
+        "Andrew_Kevin_Walker"
+      ],
+      "baseline_top10": [
+        "Andrew_Kevin_Walker",
+        "Kevin_Walker",
+        "Andrew_Walker",
+        "Andrew_Barclay_Walker",
+        "Kevin_Andrew_Collins",
+        "Kevin_Walker_-LRB-baseball-RRB-",
+        "Kevin_Walker_-LRB-cornerback-RRB-",
+        "Kevin_Andrew_Murphy",
+        "Kevin_Walker_-LRB-linebacker-RRB-",
+        "Kevin_Walker_-LRB-Brothers_&_Sisters-RRB-"
+      ],
+      "event_top10": [
+        "Andrew_Kevin_Walker",
+        "Kevin_Walker",
+        "Andrew_Walker",
+        "Andrew_Barclay_Walker",
+        "Kevin_Andrew_Collins",
+        "Kevin_Walker_-LRB-baseball-RRB-",
+        "Kevin_Walker_-LRB-cornerback-RRB-",
+        "Kevin_Andrew_Murphy",
+        "Kevin_Walker_-LRB-linebacker-RRB-",
+        "Kevin_Walker_-LRB-Brothers_&_Sisters-RRB-"
+      ],
+      "combined_top10": [
+        "Andrew_Kevin_Walker",
+        "Kevin_Walker",
+        "Andrew_Walker",
+        "Andrew_Barclay_Walker",
+        "Kevin_Andrew_Collins",
+        "Kevin_Walker_-LRB-baseball-RRB-",
+        "Kevin_Walker_-LRB-cornerback-RRB-",
+        "Kevin_Andrew_Murphy",
+        "Kevin_Walker_-LRB-linebacker-RRB-",
+        "Kevin_Walker_-LRB-Brothers_&_Sisters-RRB-"
+      ]
+    },
+    {
+      "claim_id": 204361,
+      "claim": "The Cretaceous ended.",
+      "normalized_claim": "The Cretaceous period ended.",
+      "gold_pages": [
+        "Cretaceous"
+      ],
+      "baseline_top10": [
+        "Cretaceous",
+        "Cretaceous_Dawn",
+        "Cretaceous_Mongolia",
+        "Cretaceous_Research",
+        "Early_Cretaceous",
+        "Late_Cretaceous",
+        "Cretaceous_Terrestrial_Revolution",
+        "Cretaceous_Thermal_Maximum",
+        "Cretaceous–Paleogene_boundary",
+        "Closed-ended"
+      ],
+      "event_top10": [
+        "Cretaceous",
+        "Cretaceous_Dawn",
+        "Cretaceous_Mongolia",
+        "Cretaceous_Research",
+        "Early_Cretaceous",
+        "Late_Cretaceous",
+        "Closed-ended",
+        "Open-ended",
+        "Single-ended",
+        "Cretaceous_Terrestrial_Revolution"
+      ],
+      "combined_top10": [
+        "Cretaceous",
+        "Cretaceous_Dawn",
+        "Cretaceous_Mongolia",
+        "Cretaceous_Research",
+        "Early_Cretaceous",
+        "Late_Cretaceous",
+        "Cretaceous_Terrestrial_Revolution",
+        "Closed-ended",
+        "Cretaceous_Thermal_Maximum",
+        "Open-ended"
+      ]
+    },
+    {
+      "claim_id": 54168,
+      "claim": "Murda Beatz's real name is Marshall Mathers.",
+      "normalized_claim": "Murda Beatz's real name is Marshall Mathers.",
+      "gold_pages": [
+        "Murda_Beatz"
+      ],
+      "baseline_top10": [
+        "Murda_Beatz",
+        "The_Marshall_Mathers_LP",
+        "Marshall_Mathers_-LRB-disambiguation-RRB-",
+        "Mathers",
+        "The_Marshall_Mathers_LP_2",
+        "Real-name_system",
+        "Khooni_Murda",
+        "Facebook_real-name_policy_controversy",
+        "Murda_Muzik",
+        "Uncle_Murda"
+      ],
+      "event_top10": [
+        "Murda_Beatz",
+        "The_Marshall_Mathers_LP",
+        "Marshall_Mathers_-LRB-disambiguation-RRB-",
+        "Mathers",
+        "The_Marshall_Mathers_LP_2",
+        "Real-name_system",
+        "Khooni_Murda",
+        "Facebook_real-name_policy_controversy",
+        "Murda_Muzik",
+        "Uncle_Murda"
+      ],
+      "combined_top10": [
+        "Murda_Beatz",
+        "The_Marshall_Mathers_LP",
+        "Marshall_Mathers_-LRB-disambiguation-RRB-",
+        "Mathers",
+        "The_Marshall_Mathers_LP_2",
+        "Real-name_system",
+        "Khooni_Murda",
+        "Facebook_real-name_policy_controversy",
+        "Murda_Muzik",
+        "Uncle_Murda"
+      ]
+    },
+    {
+      "claim_id": 105095,
+      "claim": "Nicholas Brody is a character on Homeland.",
+      "normalized_claim": "Nicholas Brody is a character on Homeland.",
+      "gold_pages": [
+        "Carrie_Mathison",
+        "Nicholas_Brody"
+      ],
+      "baseline_top10": [
+        "Nicholas_Brody",
+        "Brody",
+        "Homeland",
+        "Character",
+        "Abraham_Brody",
+        "Adam_Brody",
+        "Adrien_Brody",
+        "Alan_Brody",
+        "Alexander_Brody",
+        "Andrew_Brody"
+      ],
+      "event_top10": [
+        "Nicholas_Brody",
+        "Brody",
+        "Homeland",
+        "Character",
+        "Abraham_Brody",
+        "Adam_Brody",
+        "Adrien_Brody",
+        "Alan_Brody",
+        "Alexander_Brody",
+        "Andrew_Brody"
+      ],
+      "combined_top10": [
+        "Nicholas_Brody",
+        "Brody",
+        "Homeland",
+        "Character",
+        "Abraham_Brody",
+        "Adam_Brody",
+        "Adrien_Brody",
+        "Alan_Brody",
+        "Alexander_Brody",
+        "Andrew_Brody"
+      ]
+    },
+    {
+      "claim_id": 18708,
+      "claim": "Charles Manson has been proven innocent of all crimes.",
+      "normalized_claim": "Charles Manson was proven innocent of all crimes.",
+      "gold_pages": [
+        "Charles_Manson"
+      ],
+      "baseline_top10": [
+        "Guilty_'til_Proven_Innocent",
+        "Guilty_Until_Proven_Innocent",
+        "Charles_Manson",
+        "Charles_Manson_Superstar",
+        "Proven",
+        "Charles_Manson_discography",
+        "Charles_L._Manson_House",
+        "All_That_Falls_Has_Wings",
+        "All_That_Was_Has_Gone",
+        "Not_proven"
+      ],
+      "event_top10": [
+        "Guilty_'til_Proven_Innocent",
+        "Guilty_Until_Proven_Innocent",
+        "Charles_Manson",
+        "Charles_Manson_Superstar",
+        "Proven",
+        "Charles_Manson_discography",
+        "Charles_L._Manson_House",
+        "Not_proven",
+        "Proven_reserves",
+        "Manson"
+      ],
+      "combined_top10": [
+        "Guilty_'til_Proven_Innocent",
+        "Guilty_Until_Proven_Innocent",
+        "Charles_Manson",
+        "Charles_Manson_Superstar",
+        "Proven",
+        "Charles_Manson_discography",
+        "Charles_L._Manson_House",
+        "Not_proven",
+        "All_That_Falls_Has_Wings",
+        "All_That_Was_Has_Gone"
+      ]
+    },
+    {
+      "claim_id": 90809,
+      "claim": "Sean Penn is only ever a stage actor.",
+      "normalized_claim": "Sean Penn is only ever a stage actor.",
+      "gold_pages": [
+        "Sean_Penn"
+      ],
+      "baseline_top10": [
+        "Sean_Penn",
+        "Sean_Penn_filmography",
+        "The_Only_Thing_I_Ever_Wanted",
+        "Ever_Ever_After",
+        "Richard_Penn_-LRB-actor-RRB-",
+        "EveR",
+        "Ever",
+        "Penn",
+        "Arthur_Hill_-LRB-stage_actor-RRB-",
+        "Barry_Sullivan_-LRB-stage_actor-RRB-"
+      ],
+      "event_top10": [
+        "Sean_Penn",
+        "Sean_Penn_filmography",
+        "The_Only_Thing_I_Ever_Wanted",
+        "Ever_Ever_After",
+        "Richard_Penn_-LRB-actor-RRB-",
+        "EveR",
+        "Ever",
+        "Penn",
+        "Arthur_Hill_-LRB-stage_actor-RRB-",
+        "Barry_Sullivan_-LRB-stage_actor-RRB-"
+      ],
+      "combined_top10": [
+        "Sean_Penn",
+        "Sean_Penn_filmography",
+        "The_Only_Thing_I_Ever_Wanted",
+        "Ever_Ever_After",
+        "Richard_Penn_-LRB-actor-RRB-",
+        "EveR",
+        "Ever",
+        "Penn",
+        "Arthur_Hill_-LRB-stage_actor-RRB-",
+        "Barry_Sullivan_-LRB-stage_actor-RRB-"
+      ]
+    },
+    {
+      "claim_id": 204443,
+      "claim": "Brad Wilk helped co-found Rage in 1962.",
+      "normalized_claim": "Brad Wilk co-founded Rage in 1962.",
+      "gold_pages": [
+        "Brad_Wilk"
+      ],
+      "baseline_top10": [
+        "Brad_Wilk",
+        "Wilk",
+        "Adam_Wilk",
+        "Cezary_Wilk",
+        "Herbert_Wilk",
+        "Jacek_Wilk",
+        "Jakub_Wilk",
+        "Kasia_Wilk",
+        "Katarzyna_Wilk",
+        "Martin_Wilk"
+      ],
+      "event_top10": [
+        "Brad_Wilk",
+        "Wilk",
+        "Adam_Wilk",
+        "Cezary_Wilk",
+        "Herbert_Wilk",
+        "Jacek_Wilk",
+        "Jakub_Wilk",
+        "Kasia_Wilk",
+        "Katarzyna_Wilk",
+        "Martin_Wilk"
+      ],
+      "combined_top10": [
+        "Brad_Wilk",
+        "Wilk",
+        "Adam_Wilk",
+        "Cezary_Wilk",
+        "Herbert_Wilk",
+        "Jacek_Wilk",
+        "Jakub_Wilk",
+        "Kasia_Wilk",
+        "Katarzyna_Wilk",
+        "Martin_Wilk"
+      ]
+    },
+    {
+      "claim_id": 192714,
+      "claim": "CBS is the network that aired The Millers.",
+      "normalized_claim": "CBS aired The Millers.",
+      "gold_pages": [
+        "The_Millers"
+      ],
+      "baseline_top10": [
+        "CBS_Sports_Network",
+        "Millers",
+        "CBS_Paramount_Network_Television",
+        "CBS",
+        "List_of_GMA_Network_specials_aired",
+        "List_of_programs_aired_by_GMA_Network",
+        "Ben_Millers",
+        "Brewton_Millers",
+        "Crowley_Millers",
+        "Eufaula_Millers"
+      ],
+      "event_top10": [
+        "Millers",
+        "CBS",
+        "Ben_Millers",
+        "Brewton_Millers",
+        "Crowley_Millers",
+        "Eufaula_Millers",
+        "Áed_Aired",
+        "Holyoke_Millers",
+        "Mayodan_Millers",
+        "Millers,_Maryland"
+      ],
+      "combined_top10": [
+        "Millers",
+        "CBS",
+        "Ben_Millers",
+        "Brewton_Millers",
+        "Crowley_Millers",
+        "Eufaula_Millers",
+        "CBS_Sports_Network",
+        "CBS_Paramount_Network_Television",
+        "List_of_GMA_Network_specials_aired",
+        "List_of_programs_aired_by_GMA_Network"
+      ]
+    },
+    {
+      "claim_id": 159706,
+      "claim": "Edgar Wright is a person.",
+      "normalized_claim": "Edgar Wright is a person.",
+      "gold_pages": [
+        "Edgar_Wright"
+      ],
+      "baseline_top10": [
+        "Edgar_Wright",
+        "Person-to-person",
+        "Person_to_Person",
+        "Wright_&_Wright",
+        "Person_to_Person!",
+        "Edgar_Edgar_Musikahan",
+        "EDGAR",
+        "Edgar",
+        "Person",
+        "Persön"
+      ],
+      "event_top10": [
+        "Edgar_Wright",
+        "Person-to-person",
+        "Person_to_Person",
+        "Wright_&_Wright",
+        "Person_to_Person!",
+        "Edgar_Edgar_Musikahan",
+        "EDGAR",
+        "Edgar",
+        "Person",
+        "Persön"
+      ],
+      "combined_top10": [
+        "Edgar_Wright",
+        "Person-to-person",
+        "Person_to_Person",
+        "Wright_&_Wright",
+        "Person_to_Person!",
+        "Edgar_Edgar_Musikahan",
+        "EDGAR",
+        "Edgar",
+        "Person",
+        "Persön"
+      ]
+    },
+    {
+      "claim_id": 107786,
+      "claim": "Ann Richards was professionally involved in politics.",
+      "normalized_claim": "Ann Richards was professionally involved in politics.",
+      "gold_pages": [
+        "Ann_Richards"
+      ],
+      "baseline_top10": [
+        "Ann_Richards",
+        "Kerry-Ann_Richards",
+        "Professionally_Damaged",
+        "Ann_Richards_-LRB-actress-RRB-",
+        "Get_Involved",
+        "Ann_Richards_-LRB-disambiguation-RRB-",
+        "Ann_Richards_-LRB-singer-RRB-",
+        "Ann_W._Richards_Congress_Avenue_Bridge",
+        "Ann_Richards_School_for_Young_Women_Leaders",
+        "Are_You_Involved?"
+      ],
+      "event_top10": [
+        "Ann_Richards",
+        "Kerry-Ann_Richards",
+        "Professionally_Damaged",
+        "Ann_Richards_-LRB-actress-RRB-",
+        "Get_Involved",
+        "Ann_Richards_-LRB-disambiguation-RRB-",
+        "Ann_Richards_-LRB-singer-RRB-",
+        "Ann_W._Richards_Congress_Avenue_Bridge",
+        "Ann_Richards_School_for_Young_Women_Leaders",
+        "Are_You_Involved?"
+      ],
+      "combined_top10": [
+        "Ann_Richards",
+        "Kerry-Ann_Richards",
+        "Professionally_Damaged",
+        "Ann_Richards_-LRB-actress-RRB-",
+        "Get_Involved",
+        "Ann_Richards_-LRB-disambiguation-RRB-",
+        "Ann_Richards_-LRB-singer-RRB-",
+        "Ann_W._Richards_Congress_Avenue_Bridge",
+        "Ann_Richards_School_for_Young_Women_Leaders",
+        "Are_You_Involved?"
+      ]
+    },
+    {
+      "claim_id": 166846,
+      "claim": "Drake Bell put out an EP.",
+      "normalized_claim": "Drake Bell released an EP.",
+      "gold_pages": [
+        "Drake_Bell"
+      ],
+      "baseline_top10": [
+        "Drake_Bell",
+        "Drake_Bell_discography",
+        "Put_Him_Out",
+        "Drake_Bell_In_Concert",
+        "Put_Out_More_Flags",
+        "Put_Out_the_Light",
+        "We_Put_Out_Records",
+        "Put_That_Light_Out!",
+        "A_Fire_I_Can't_Put_Out",
+        "The_Bell_Witch_-LRB-EP-RRB-"
+      ],
+      "event_top10": [
+        "Drake_Bell",
+        "Drake_Bell_discography",
+        "Drake_Bell_In_Concert",
+        "The_Bell_Witch_-LRB-EP-RRB-",
+        "I_Know_-LRB-Drake_Bell_song-RRB-",
+        "List_of_songs_recorded_by_Drake_Bell",
+        "Drake",
+        "Jeannie_Drake,_Baroness_Drake",
+        "Thomas_Drake_Tyrwhitt-Drake",
+        "47_Drake"
+      ],
+      "combined_top10": [
+        "Drake_Bell",
+        "Drake_Bell_discography",
+        "Drake_Bell_In_Concert",
+        "The_Bell_Witch_-LRB-EP-RRB-",
+        "Put_Him_Out",
+        "Put_Out_More_Flags",
+        "I_Know_-LRB-Drake_Bell_song-RRB-",
+        "Put_Out_the_Light",
+        "List_of_songs_recorded_by_Drake_Bell",
+        "We_Put_Out_Records"
+      ]
+    },
+    {
+      "claim_id": 140764,
+      "claim": "Janet Leigh was incapable of writing.",
+      "normalized_claim": "Janet Leigh was incapable of writing.",
+      "gold_pages": [
+        "Janet_Leigh"
+      ],
+      "baseline_top10": [
+        "Janet_Leigh",
+        "Drunk_and_Incapable",
+        "Writing_about_Writing",
+        "Leigh",
+        "Writing",
+        "JANET",
+        "Janet",
+        "Murder_of_Leigh_Leigh",
+        "Academic_writing",
+        "Archi-writing"
+      ],
+      "event_top10": [
+        "Janet_Leigh",
+        "Drunk_and_Incapable",
+        "Writing_about_Writing",
+        "Leigh",
+        "Writing",
+        "JANET",
+        "Janet",
+        "Murder_of_Leigh_Leigh",
+        "Academic_writing",
+        "Archi-writing"
+      ],
+      "combined_top10": [
+        "Janet_Leigh",
+        "Drunk_and_Incapable",
+        "Writing_about_Writing",
+        "Leigh",
+        "Writing",
+        "JANET",
+        "Janet",
+        "Murder_of_Leigh_Leigh",
+        "Academic_writing",
+        "Archi-writing"
+      ]
+    },
+    {
+      "claim_id": 197381,
+      "claim": "Simón Bolívar is only known as Simón Bolívar.",
+      "normalized_claim": "Simón Bolívar is only known as Simón Bolívar.",
+      "gold_pages": [
+        "Simón_Bolívar"
+      ],
+      "baseline_top10": [
+        "Simón_Bolívar",
+        "Colegio_Simón_Bolívar",
+        "Copa_Simón_Bolívar",
+        "Ensanche_Simón_Bolívar",
+        "General_Simón_Bolívar",
+        "Instituto_Simón_Bolívar",
+        "Simón_Bolívar,_Anzoátegui",
+        "Simón_Bolívar,_Miranda",
+        "Simón_Bolívar_Canton",
+        "Simón_Bolívar_Park"
+      ],
+      "event_top10": [
+        "Simón_Bolívar",
+        "Colegio_Simón_Bolívar",
+        "Copa_Simón_Bolívar",
+        "Ensanche_Simón_Bolívar",
+        "General_Simón_Bolívar",
+        "Instituto_Simón_Bolívar",
+        "Simón_Bolívar,_Anzoátegui",
+        "Simón_Bolívar,_Miranda",
+        "Simón_Bolívar_Canton",
+        "Simón_Bolívar_Park"
+      ],
+      "combined_top10": [
+        "Simón_Bolívar",
+        "Colegio_Simón_Bolívar",
+        "Copa_Simón_Bolívar",
+        "Ensanche_Simón_Bolívar",
+        "General_Simón_Bolívar",
+        "Instituto_Simón_Bolívar",
+        "Simón_Bolívar,_Anzoátegui",
+        "Simón_Bolívar,_Miranda",
+        "Simón_Bolívar_Canton",
+        "Simón_Bolívar_Park"
+      ]
+    },
+    {
+      "claim_id": 187000,
+      "claim": "Bermuda Triangle is in the western part of the Himalayas.",
+      "normalized_claim": "Bermuda Triangle is located in the western part of the Himalayas.",
+      "gold_pages": [
+        "Bermuda_Triangle"
+      ],
+      "baseline_top10": [
+        "Bermuda_Triangle",
+        "Bermuda_Triangle_Band",
+        "Himalayas",
+        "Bermuda_Triangle_-LRB-disambiguation-RRB-",
+        "Great_Himalayas",
+        "Bermuda_Triangle_-LRB-song-RRB-",
+        "List_of_Bermuda_Triangle_incidents",
+        "Bermuda_Triangle_-LRB-Buckethead_album-RRB-",
+        "Bermuda_Triangle_-LRB-Sea_World-RRB-",
+        "Bermuda_Triangle_-LRB-video_game-RRB-"
+      ],
+      "event_top10": [
+        "Bermuda_Triangle",
+        "Bermuda_Triangle_Band",
+        "Himalayas",
+        "Bermuda_Triangle_-LRB-disambiguation-RRB-",
+        "Great_Himalayas",
+        "Bermuda_Triangle_-LRB-song-RRB-",
+        "List_of_Bermuda_Triangle_incidents",
+        "Bermuda_Triangle_-LRB-Buckethead_album-RRB-",
+        "Bermuda_Triangle_-LRB-Sea_World-RRB-",
+        "Bermuda_Triangle_-LRB-video_game-RRB-"
+      ],
+      "combined_top10": [
+        "Bermuda_Triangle",
+        "Bermuda_Triangle_Band",
+        "Himalayas",
+        "Bermuda_Triangle_-LRB-disambiguation-RRB-",
+        "Great_Himalayas",
+        "Bermuda_Triangle_-LRB-song-RRB-",
+        "List_of_Bermuda_Triangle_incidents",
+        "Bermuda_Triangle_-LRB-Buckethead_album-RRB-",
+        "Bermuda_Triangle_-LRB-Sea_World-RRB-",
+        "Bermuda_Triangle_-LRB-video_game-RRB-"
+      ]
+    },
+    {
+      "claim_id": 142454,
+      "claim": "Advertising is a personal message.",
+      "normalized_claim": "Advertising is a personal message.",
+      "gold_pages": [
+        "Advertising"
+      ],
+      "baseline_top10": [
+        "Message/Personal",
+        "Personal_message",
+        "Message",
+        "Advertising",
+        "Personal",
+        "Advertising.com",
+        "Advertising_Age",
+        "Advertising_Association",
+        "Advertising_Space",
+        "Advertising_World"
+      ],
+      "event_top10": [
+        "Message/Personal",
+        "Personal_message",
+        "Message",
+        "Advertising",
+        "Personal",
+        "Advertising.com",
+        "Advertising_Age",
+        "Advertising_Association",
+        "Advertising_Space",
+        "Advertising_World"
+      ],
+      "combined_top10": [
+        "Message/Personal",
+        "Personal_message",
+        "Message",
+        "Advertising",
+        "Personal",
+        "Advertising.com",
+        "Advertising_Age",
+        "Advertising_Association",
+        "Advertising_Space",
+        "Advertising_World"
+      ]
+    },
+    {
+      "claim_id": 147411,
+      "claim": "Hot Right Now is mistakenly attributed to DJ Fresh.",
+      "normalized_claim": "Hot Right Now is mistakenly attributed to DJ Fresh",
+      "gold_pages": [
+        "Hot_Right_Now"
+      ],
+      "baseline_top10": [
+        "Hot_Right_Now",
+        "So_Hot_Right_Now",
+        "DJ_Fresh",
+        "Right_Right_Now_Now",
+        "DJ_Fresh_discography",
+        "Right_Now",
+        "Right_Here,_Right_Now",
+        "So_Hot_Right_Now_-LRB-album-RRB-",
+        "All_Right_Now",
+        "So_Hot_Right_Now_-LRB-Jade_MacRae_song-RRB-"
+      ],
+      "event_top10": [
+        "Hot_Right_Now",
+        "So_Hot_Right_Now",
+        "DJ_Fresh",
+        "Right_Right_Now_Now",
+        "DJ_Fresh_discography",
+        "Right_Now",
+        "Right_Here,_Right_Now",
+        "So_Hot_Right_Now_-LRB-album-RRB-",
+        "All_Right_Now",
+        "So_Hot_Right_Now_-LRB-Jade_MacRae_song-RRB-"
+      ],
+      "combined_top10": [
+        "Hot_Right_Now",
+        "So_Hot_Right_Now",
+        "DJ_Fresh",
+        "Right_Right_Now_Now",
+        "DJ_Fresh_discography",
+        "Right_Now",
+        "Right_Here,_Right_Now",
+        "So_Hot_Right_Now_-LRB-album-RRB-",
+        "All_Right_Now",
+        "So_Hot_Right_Now_-LRB-Jade_MacRae_song-RRB-"
+      ]
+    },
+    {
+      "claim_id": 227362,
+      "claim": "Giada at Home was only available on DVD.",
+      "normalized_claim": "Giada at Home was only available on DVD.",
+      "gold_pages": [
+        "Food_Network",
+        "Giada_at_Home"
+      ],
+      "baseline_top10": [
+        "Giada_at_Home",
+        "Giada",
+        "Only_Road_Home",
+        "Giada_Ballan",
+        "Giada_Borgato",
+        "Giada_Colagrande",
+        "The_Only_Fools_and_Horses_DVD_Collection",
+        "Giada_Galizi",
+        "Giada_Gallina",
+        "Giada_Rossi"
+      ],
+      "event_top10": [
+        "Giada_at_Home",
+        "Giada",
+        "Only_Road_Home",
+        "Giada_Ballan",
+        "Giada_Borgato",
+        "Giada_Colagrande",
+        "The_Only_Fools_and_Horses_DVD_Collection",
+        "Giada_Galizi",
+        "Giada_Gallina",
+        "Giada_Rossi"
+      ],
+      "combined_top10": [
+        "Giada_at_Home",
+        "Giada",
+        "Only_Road_Home",
+        "Giada_Ballan",
+        "Giada_Borgato",
+        "Giada_Colagrande",
+        "The_Only_Fools_and_Horses_DVD_Collection",
+        "Giada_Galizi",
+        "Giada_Gallina",
+        "Giada_Rossi"
+      ]
+    },
+    {
+      "claim_id": 145512,
+      "claim": "Harold Macmillan was born on February 20, 1894.",
+      "normalized_claim": "Harold Macmillan was born on February 20, 1894.",
+      "gold_pages": [
+        "Harold_Macmillan"
+      ],
+      "baseline_top10": [
+        "Harold_Macmillan",
+        "February_20",
+        "Hugh_Macmillan,_Baron_Macmillan",
+        "1894",
+        "Secret_Meeting_of_20_February_1933",
+        "February",
+        "Alan_Macmillan",
+        "Alexander_Macmillan",
+        "Alison_MacMillan",
+        "Andy_MacMillan"
+      ],
+      "event_top10": [
+        "Harold_Macmillan",
+        "February_20",
+        "Hugh_Macmillan,_Baron_Macmillan",
+        "1894",
+        "Secret_Meeting_of_20_February_1933",
+        "February",
+        "Alan_Macmillan",
+        "Alexander_Macmillan",
+        "Alison_MacMillan",
+        "Andy_MacMillan"
+      ],
+      "combined_top10": [
+        "Harold_Macmillan",
+        "February_20",
+        "Hugh_Macmillan,_Baron_Macmillan",
+        "1894",
+        "Secret_Meeting_of_20_February_1933",
+        "February",
+        "Alan_Macmillan",
+        "Alexander_Macmillan",
+        "Alison_MacMillan",
+        "Andy_MacMillan"
+      ]
+    },
+    {
+      "claim_id": 64721,
+      "claim": "Aristotle spent time in Athens.",
+      "normalized_claim": "Aristotle spent time in Athens.",
+      "gold_pages": [
+        "Aristotle"
+      ],
+      "baseline_top10": [
+        "Time_Well_Spent",
+        "Time_spent_listening",
+        "Time_spent_reading",
+        "SPENT",
+        "Spent",
+        "Aristotle",
+        "Spent_Bullets",
+        "Spent_caustic",
+        "Spent_enactment",
+        "Spent_potlining"
+      ],
+      "event_top10": [
+        "Time_Well_Spent",
+        "Time_spent_listening",
+        "Time_spent_reading",
+        "SPENT",
+        "Spent",
+        "Aristotle",
+        "Spent_Bullets",
+        "Spent_caustic",
+        "Spent_enactment",
+        "Spent_potlining"
+      ],
+      "combined_top10": [
+        "Time_Well_Spent",
+        "Time_spent_listening",
+        "Time_spent_reading",
+        "SPENT",
+        "Spent",
+        "Aristotle",
+        "Spent_Bullets",
+        "Spent_caustic",
+        "Spent_enactment",
+        "Spent_potlining"
+      ]
+    },
+    {
+      "claim_id": 124667,
+      "claim": "David Packouz refused to be an entrepreneur.",
+      "normalized_claim": "David Packouz refused to be an entrepreneur.",
+      "gold_pages": [
+        "David_Packouz"
+      ],
+      "baseline_top10": [
+        "David_Packouz",
+        "Refused",
+        "Kalman_Packouz",
+        "Refused_ballot",
+        "Refused_discography",
+        "Refused_Reunion_Tour",
+        "David_Adler_-LRB-entrepreneur-RRB-",
+        "David_Brown_-LRB-entrepreneur-RRB-",
+        "David_Carnegie_-LRB-entrepreneur-RRB-",
+        "David_Cohen_-LRB-entrepreneur-RRB-"
+      ],
+      "event_top10": [
+        "David_Packouz",
+        "Refused",
+        "Kalman_Packouz",
+        "Refused_ballot",
+        "Refused_discography",
+        "Refused_Reunion_Tour",
+        "David_Adler_-LRB-entrepreneur-RRB-",
+        "David_Brown_-LRB-entrepreneur-RRB-",
+        "David_Carnegie_-LRB-entrepreneur-RRB-",
+        "David_Cohen_-LRB-entrepreneur-RRB-"
+      ],
+      "combined_top10": [
+        "David_Packouz",
+        "Refused",
+        "Kalman_Packouz",
+        "Refused_ballot",
+        "Refused_discography",
+        "Refused_Reunion_Tour",
+        "David_Adler_-LRB-entrepreneur-RRB-",
+        "David_Brown_-LRB-entrepreneur-RRB-",
+        "David_Carnegie_-LRB-entrepreneur-RRB-",
+        "David_Cohen_-LRB-entrepreneur-RRB-"
+      ]
+    },
+    {
+      "claim_id": 52175,
+      "claim": "Magic Johnson did not play for the Lakers.",
+      "normalized_claim": "Magic Johnson did not play for the Lakers.",
+      "gold_pages": [
+        "Magic_Johnson"
+      ],
+      "baseline_top10": [
+        "Did_Not_Finish",
+        "Magic_Johnson",
+        "Magic_Johnson_Award",
+        "Magic_Johnson_Enterprises",
+        "Magic_Johnson_Foundation",
+        "Magic_Johnson_Theatres",
+        "Sokol_Did_Not_Love_Him",
+        "Let's_Not_Play_the_Game",
+        "One_Does_Not_Play_with_Love",
+        "The_Gulf_War_Did_Not_Take_Place"
+      ],
+      "event_top10": [
+        "Did_Not_Finish",
+        "Magic_Johnson",
+        "Magic_Johnson_Award",
+        "Magic_Johnson_Enterprises",
+        "Magic_Johnson_Foundation",
+        "Magic_Johnson_Theatres",
+        "Sokol_Did_Not_Love_Him",
+        "Let's_Not_Play_the_Game",
+        "One_Does_Not_Play_with_Love",
+        "The_Gulf_War_Did_Not_Take_Place"
+      ],
+      "combined_top10": [
+        "Did_Not_Finish",
+        "Magic_Johnson",
+        "Magic_Johnson_Award",
+        "Magic_Johnson_Enterprises",
+        "Magic_Johnson_Foundation",
+        "Magic_Johnson_Theatres",
+        "Sokol_Did_Not_Love_Him",
+        "Let's_Not_Play_the_Game",
+        "One_Does_Not_Play_with_Love",
+        "The_Gulf_War_Did_Not_Take_Place"
+      ]
+    },
+    {
+      "claim_id": 104386,
+      "claim": "Tenacious D started in 1997.",
+      "normalized_claim": "Tenacious D started in 1997.",
+      "gold_pages": [
+        "Tenacious_D"
+      ],
+      "baseline_top10": [
+        "Tenacious",
+        "HMS_Tenacious",
+        "SV_Tenacious",
+        "Tenacious_D",
+        "Games_started",
+        "1997",
+        "Get_Started",
+        "Tenacious_D_Live",
+        "Tenacious_D_discography",
+        "Getting_Started"
+      ],
+      "event_top10": [
+        "Tenacious",
+        "HMS_Tenacious",
+        "SV_Tenacious",
+        "Tenacious_D",
+        "Games_started",
+        "1997",
+        "Get_Started",
+        "Tenacious_D_Live",
+        "Tenacious_D_discography",
+        "Getting_Started"
+      ],
+      "combined_top10": [
+        "Tenacious",
+        "HMS_Tenacious",
+        "SV_Tenacious",
+        "Tenacious_D",
+        "Games_started",
+        "1997",
+        "Get_Started",
+        "Tenacious_D_Live",
+        "Tenacious_D_discography",
+        "Getting_Started"
+      ]
+    },
+    {
+      "claim_id": 55658,
+      "claim": "James VI and I was a major advocate of a single parliament for Scotland and England.",
+      "normalized_claim": "James VI and I advocated for a single parliament for Scotland and England.",
+      "gold_pages": [
+        "James_VI_and_I"
+      ],
+      "baseline_top10": [
+        "Advocate_General_for_Scotland",
+        "James_Major",
+        "Parliament_of_Scotland",
+        "Parliament_of_England",
+        "Edward_VI_of_England",
+        "Henry_VI_of_England",
+        "James_VI_and_I_and_the_English_Parliament",
+        "England–Scotland_Professional_Match",
+        "England–Scotland_football_rivalry",
+        "James_Earl_Major"
+      ],
+      "event_top10": [
+        "Parliament_of_Scotland",
+        "Parliament_of_England",
+        "Edward_VI_of_England",
+        "Henry_VI_of_England",
+        "James_VI_and_I_and_the_English_Parliament",
+        "England–Scotland_Professional_Match",
+        "England–Scotland_football_rivalry",
+        "James_of_Scotland",
+        "James_VI_and_I",
+        "Single_&_Single"
+      ],
+      "combined_top10": [
+        "Parliament_of_Scotland",
+        "Parliament_of_England",
+        "Edward_VI_of_England",
+        "Henry_VI_of_England",
+        "James_VI_and_I_and_the_English_Parliament",
+        "England–Scotland_Professional_Match",
+        "England–Scotland_football_rivalry",
+        "Advocate_General_for_Scotland",
+        "James_Major",
+        "James_of_Scotland"
+      ]
+    },
+    {
+      "claim_id": 201090,
+      "claim": "Marcus Bentley is a broadcaster.",
+      "normalized_claim": "Marcus Bentley is a broadcaster.",
+      "gold_pages": [
+        "Marcus_Bentley"
+      ],
+      "baseline_top10": [
+        "Marcus_Bentley",
+        "Broadcaster",
+        "Marcus",
+        "Bentley",
+        "Burra_Broadcaster",
+        "Legislature_broadcaster",
+        "QuickTime_Broadcaster",
+        "SAM_Broadcaster",
+        "The_Broadcaster",
+        "Aaron_Bentley"
+      ],
+      "event_top10": [
+        "Marcus_Bentley",
+        "Broadcaster",
+        "Marcus",
+        "Bentley",
+        "Burra_Broadcaster",
+        "Legislature_broadcaster",
+        "QuickTime_Broadcaster",
+        "SAM_Broadcaster",
+        "The_Broadcaster",
+        "Aaron_Bentley"
+      ],
+      "combined_top10": [
+        "Marcus_Bentley",
+        "Broadcaster",
+        "Marcus",
+        "Bentley",
+        "Burra_Broadcaster",
+        "Legislature_broadcaster",
+        "QuickTime_Broadcaster",
+        "SAM_Broadcaster",
+        "The_Broadcaster",
+        "Aaron_Bentley"
+      ]
+    },
+    {
+      "claim_id": 129441,
+      "claim": "Saxony is in Ireland.",
+      "normalized_claim": "Saxony is in Ireland.",
+      "gold_pages": [
+        "Saxony"
+      ],
+      "baseline_top10": [
+        "Saxony",
+        "Altenberg,_Saxony",
+        "Amerika,_Saxony",
+        "Arzberg,_Saxony",
+        "Beiersdorf,_Saxony",
+        "Bergen,_Saxony",
+        "Boxberg,_Saxony",
+        "Breitenbrunn,_Saxony",
+        "Coswig,_Saxony",
+        "Dahlen,_Saxony"
+      ],
+      "event_top10": [
+        "Saxony",
+        "Altenberg,_Saxony",
+        "Amerika,_Saxony",
+        "Arzberg,_Saxony",
+        "Beiersdorf,_Saxony",
+        "Bergen,_Saxony",
+        "Boxberg,_Saxony",
+        "Breitenbrunn,_Saxony",
+        "Coswig,_Saxony",
+        "Dahlen,_Saxony"
+      ],
+      "combined_top10": [
+        "Saxony",
+        "Altenberg,_Saxony",
+        "Amerika,_Saxony",
+        "Arzberg,_Saxony",
+        "Beiersdorf,_Saxony",
+        "Bergen,_Saxony",
+        "Boxberg,_Saxony",
+        "Breitenbrunn,_Saxony",
+        "Coswig,_Saxony",
+        "Dahlen,_Saxony"
+      ]
+    },
+    {
+      "claim_id": 207543,
+      "claim": "Mel B released a song on Virgin Records in 2007.",
+      "normalized_claim": "Mel B released a song on Virgin Records in 2007.",
+      "gold_pages": [
+        "Mel_B"
+      ],
+      "baseline_top10": [
+        "Virgin_Records",
+        "Virgin_EMI_Records",
+        "Prawn_Song_Records",
+        "Mel",
+        "List_of_Virgin_Records_artists",
+        "Song_Bird_Records",
+        "Swan_Song_Records",
+        "British_Virgin_Islands_general_election,_2007",
+        "Song,_by_Toad_Records",
+        "Holy_Virgin_-LRB-song-RRB-"
+      ],
+      "event_top10": [
+        "Virgin_Records",
+        "Virgin_EMI_Records",
+        "Prawn_Song_Records",
+        "Mel",
+        "List_of_Virgin_Records_artists",
+        "Song_Bird_Records",
+        "Swan_Song_Records",
+        "British_Virgin_Islands_general_election,_2007",
+        "Song,_by_Toad_Records",
+        "Holy_Virgin_-LRB-song-RRB-"
+      ],
+      "combined_top10": [
+        "Virgin_Records",
+        "Virgin_EMI_Records",
+        "Prawn_Song_Records",
+        "Mel",
+        "List_of_Virgin_Records_artists",
+        "Song_Bird_Records",
+        "Swan_Song_Records",
+        "British_Virgin_Islands_general_election,_2007",
+        "Song,_by_Toad_Records",
+        "Holy_Virgin_-LRB-song-RRB-"
+      ]
+    },
+    {
+      "claim_id": 132134,
+      "claim": "Noah Cyrus is a younger sister of Macy Grey.",
+      "normalized_claim": "Noah Cyrus is the younger sister of Macy Grey.",
+      "gold_pages": [
+        "Noah_Cyrus"
+      ],
+      "baseline_top10": [
+        "Noah_Cyrus",
+        "Cyrus_the_Younger",
+        "Her_Younger_Sister",
+        "Chizuko's_Younger_Sister",
+        "Older_Brother,_Younger_Sister",
+        "Sister,_Sister",
+        "Macy",
+        "Stay_Together_-LRB-Noah_Cyrus_song-RRB-",
+        "Cyrus",
+        "Obed_Macy_and_Oscar_Macy"
+      ],
+      "event_top10": [
+        "Noah_Cyrus",
+        "Cyrus_the_Younger",
+        "Her_Younger_Sister",
+        "Chizuko's_Younger_Sister",
+        "Older_Brother,_Younger_Sister",
+        "Sister,_Sister",
+        "Macy",
+        "Stay_Together_-LRB-Noah_Cyrus_song-RRB-",
+        "Cyrus",
+        "Obed_Macy_and_Oscar_Macy"
+      ],
+      "combined_top10": [
+        "Noah_Cyrus",
+        "Cyrus_the_Younger",
+        "Her_Younger_Sister",
+        "Chizuko's_Younger_Sister",
+        "Older_Brother,_Younger_Sister",
+        "Sister,_Sister",
+        "Macy",
+        "Stay_Together_-LRB-Noah_Cyrus_song-RRB-",
+        "Cyrus",
+        "Obed_Macy_and_Oscar_Macy"
+      ]
+    },
+    {
+      "claim_id": 128123,
+      "claim": "Mohra is a truck.",
+      "normalized_claim": "Mohra is a truck.",
+      "gold_pages": [
+        "Mohra"
+      ],
+      "baseline_top10": [
+        "Mohra",
+        "Baggonal_Mohra",
+        "Baghwala_Mohra",
+        "Banniwala_Mohra",
+        "Canoiwala_Mohra",
+        "Dhakkiwala_Mohra",
+        "Kilawala_Mohra",
+        "Miana_Mohra",
+        "Truck",
+        "Mochianwala_Mohra"
+      ],
+      "event_top10": [
+        "Mohra",
+        "Baggonal_Mohra",
+        "Baghwala_Mohra",
+        "Banniwala_Mohra",
+        "Canoiwala_Mohra",
+        "Dhakkiwala_Mohra",
+        "Kilawala_Mohra",
+        "Miana_Mohra",
+        "Truck",
+        "Mochianwala_Mohra"
+      ],
+      "combined_top10": [
+        "Mohra",
+        "Baggonal_Mohra",
+        "Baghwala_Mohra",
+        "Banniwala_Mohra",
+        "Canoiwala_Mohra",
+        "Dhakkiwala_Mohra",
+        "Kilawala_Mohra",
+        "Miana_Mohra",
+        "Truck",
+        "Mochianwala_Mohra"
+      ]
+    },
+    {
+      "claim_id": 86175,
+      "claim": "Hourglass is performed by a Russian singer-songwriter.",
+      "normalized_claim": "The song \"Hourglass\" is performed by a Russian singer-songwriter.",
+      "gold_pages": [
+        "Hourglass_-LRB-James_Taylor_album-RRB-",
+        "James_Taylor"
+      ],
+      "baseline_top10": [
+        "Singer-songwriter",
+        "Hourglass",
+        "The_Russian_Singer",
+        "De_beste_singer-songwriter",
+        "Singer,_Songwriter_&_Legendary_Performer",
+        "Hourglass_Angel",
+        "Hourglass_Buttress",
+        "Ellis_-LRB-singer-songwriter-RRB-",
+        "Hourglass_Federalism",
+        "IJK_-LRB-singer_songwriter-RRB-"
+      ],
+      "event_top10": [
+        "Singer-songwriter",
+        "Hourglass",
+        "The_Russian_Singer",
+        "De_beste_singer-songwriter",
+        "Singer,_Songwriter_&_Legendary_Performer",
+        "Hourglass_Angel",
+        "Hourglass_Buttress",
+        "Hourglass_Federalism",
+        "Ellis_-LRB-singer-songwriter-RRB-",
+        "IJK_-LRB-singer_songwriter-RRB-"
+      ],
+      "combined_top10": [
+        "Singer-songwriter",
+        "Hourglass",
+        "The_Russian_Singer",
+        "De_beste_singer-songwriter",
+        "Singer,_Songwriter_&_Legendary_Performer",
+        "Hourglass_Angel",
+        "Hourglass_Buttress",
+        "Ellis_-LRB-singer-songwriter-RRB-",
+        "Hourglass_Federalism",
+        "IJK_-LRB-singer_songwriter-RRB-"
+      ]
+    },
+    {
+      "claim_id": 31963,
+      "claim": "Shane Black was born in 1961.",
+      "normalized_claim": "Shane Black was born in 1961.",
+      "gold_pages": [
+        "Shane_Black"
+      ],
+      "baseline_top10": [
+        "Shane_Black",
+        "Shane_&_Shane",
+        "Alemão_-LRB-footballer,_born_1961-RRB-",
+        "Bruno_Kernen_-LRB-born_1961-RRB-",
+        "1961–62_Chicago_Black_Hawks_season",
+        "Chano_-LRB-footballer,_born_1961-RRB-",
+        "Li_Jia_-LRB-born_1961-RRB-",
+        "Wendy_Holden_-LRB-born_1961-RRB-",
+        "Shane_&_Shane_discography",
+        "1961"
+      ],
+      "event_top10": [
+        "Shane_Black",
+        "Shane_&_Shane",
+        "Alemão_-LRB-footballer,_born_1961-RRB-",
+        "Bruno_Kernen_-LRB-born_1961-RRB-",
+        "1961–62_Chicago_Black_Hawks_season",
+        "Chano_-LRB-footballer,_born_1961-RRB-",
+        "Li_Jia_-LRB-born_1961-RRB-",
+        "Wendy_Holden_-LRB-born_1961-RRB-",
+        "Shane_&_Shane_discography",
+        "1961"
+      ],
+      "combined_top10": [
+        "Shane_Black",
+        "Shane_&_Shane",
+        "Alemão_-LRB-footballer,_born_1961-RRB-",
+        "Bruno_Kernen_-LRB-born_1961-RRB-",
+        "1961–62_Chicago_Black_Hawks_season",
+        "Chano_-LRB-footballer,_born_1961-RRB-",
+        "Li_Jia_-LRB-born_1961-RRB-",
+        "Wendy_Holden_-LRB-born_1961-RRB-",
+        "Shane_&_Shane_discography",
+        "1961"
+      ]
+    },
+    {
+      "claim_id": 41665,
+      "claim": "There are not rumors that Augustus' wife, Livia, poisoned him.",
+      "normalized_claim": "There are no rumors that Livia poisoned Augustus.",
+      "gold_pages": [
+        "Augustus"
+      ],
+      "baseline_top10": [
+        "Here_Not_There",
+        "Not_from_There",
+        "Kiss_Him,_Not_Me",
+        "I'm_Not_There",
+        "Livia",
+        "She's_Not_There",
+        "You're_Not_There",
+        "Sokol_Did_Not_Love_Him",
+        "Poisoned_Apple",
+        "Poisoned_Bait"
+      ],
+      "event_top10": [
+        "Livia",
+        "No_Longer_There",
+        "Poisoned_Apple",
+        "Poisoned_Bait",
+        "Poisoned_cup",
+        "Vicious_Rumors",
+        "Anna_Livia",
+        "There's_No_Limit",
+        "There's_No_Shoulder",
+        "There's_No_Tomorrow"
+      ],
+      "combined_top10": [
+        "Livia",
+        "Poisoned_Apple",
+        "Poisoned_Bait",
+        "Here_Not_There",
+        "Not_from_There",
+        "No_Longer_There",
+        "Kiss_Him,_Not_Me",
+        "I'm_Not_There",
+        "Poisoned_cup",
+        "She's_Not_There"
+      ]
+    },
+    {
+      "claim_id": 71959,
+      "claim": "Jennifer Lopez made a single.",
+      "normalized_claim": "Jennifer Lopez released a music single.",
+      "gold_pages": [
+        "Como_Ama_una_Mujer",
+        "J.Lo_-LRB-album-RRB-",
+        "Jennifer_Lopez"
+      ],
+      "baseline_top10": [
+        "Jennifer_Lopez",
+        "Jennifer_Lopez_Collection",
+        "Jennifer_Lopez_discography",
+        "Jennifer_Lopez_filmography",
+        "Jennifer_Lopez_videography",
+        "Still_Jennifer_Lopez",
+        "J.Lo_by_Jennifer_Lopez",
+        "Jennifer_Lopez_-LRB-meteorologist-RRB-",
+        "Alive_-LRB-Jennifer_Lopez_song-RRB-",
+        "Brave_-LRB-Jennifer_Lopez_album-RRB-"
+      ],
+      "event_top10": [
+        "Jennifer_Lopez",
+        "Jennifer_Lopez_Collection",
+        "Jennifer_Lopez_discography",
+        "Jennifer_Lopez_filmography",
+        "Jennifer_Lopez_videography",
+        "Still_Jennifer_Lopez",
+        "Single_-LRB-music-RRB-",
+        "J.Lo_by_Jennifer_Lopez",
+        "Jennifer_Lopez_-LRB-meteorologist-RRB-",
+        "Alive_-LRB-Jennifer_Lopez_song-RRB-"
+      ],
+      "combined_top10": [
+        "Jennifer_Lopez",
+        "Jennifer_Lopez_Collection",
+        "Jennifer_Lopez_discography",
+        "Jennifer_Lopez_filmography",
+        "Jennifer_Lopez_videography",
+        "Still_Jennifer_Lopez",
+        "J.Lo_by_Jennifer_Lopez",
+        "Jennifer_Lopez_-LRB-meteorologist-RRB-",
+        "Alive_-LRB-Jennifer_Lopez_song-RRB-",
+        "Single_-LRB-music-RRB-"
+      ]
+    },
+    {
+      "claim_id": 21775,
+      "claim": "Vedam was written and directed by Christopher Nolan.",
+      "normalized_claim": "Vedam was written and directed by Christopher Nolan.",
+      "gold_pages": [
+        "Vedam_-LRB-film-RRB-"
+      ],
+      "baseline_top10": [
+        "Christopher_Nolan",
+        "Vedam",
+        "Vedam_Hariharan",
+        "Christopher_Nolan_-LRB-author-RRB-",
+        "Christopher_Nolan_-LRB-disambiguation-RRB-",
+        "Vedam_Jaishankar",
+        "Vedam_Venkataraya_Sastry",
+        "Nolan",
+        "Directed_Edge",
+        "Directed_Electronics"
+      ],
+      "event_top10": [
+        "Christopher_Nolan",
+        "Vedam",
+        "Vedam_Hariharan",
+        "Christopher_Nolan_-LRB-author-RRB-",
+        "Christopher_Nolan_-LRB-disambiguation-RRB-",
+        "Vedam_Jaishankar",
+        "Vedam_Venkataraya_Sastry",
+        "Nolan",
+        "Directed_Edge",
+        "Directed_Electronics"
+      ],
+      "combined_top10": [
+        "Christopher_Nolan",
+        "Vedam",
+        "Vedam_Hariharan",
+        "Christopher_Nolan_-LRB-author-RRB-",
+        "Christopher_Nolan_-LRB-disambiguation-RRB-",
+        "Vedam_Jaishankar",
+        "Vedam_Venkataraya_Sastry",
+        "Nolan",
+        "Directed_Edge",
+        "Directed_Electronics"
+      ]
+    },
+    {
+      "claim_id": 173496,
+      "claim": "Sancho Panza is a character in Don Quixote.",
+      "normalized_claim": "Sancho Panza is a character in Don Quixote.",
+      "gold_pages": [
+        "Sancho_Panza"
+      ],
+      "baseline_top10": [
+        "Sancho_Panza",
+        "Don_Quixote",
+        "The_Musical_Sancho_Panza",
+        "3552_Don_Quixote",
+        "Sancho_Panza_-LRB-brand-RRB-",
+        "Don_Quixote_Pond",
+        "The_Truth_about_Sancho_Panza",
+        "I,_Don_Quixote",
+        "Children_of_Don_Quixote",
+        "Don_Quixote_-LRB-Picasso-RRB-"
+      ],
+      "event_top10": [
+        "Sancho_Panza",
+        "Don_Quixote",
+        "The_Musical_Sancho_Panza",
+        "3552_Don_Quixote",
+        "Sancho_Panza_-LRB-brand-RRB-",
+        "Don_Quixote_Pond",
+        "The_Truth_about_Sancho_Panza",
+        "I,_Don_Quixote",
+        "Children_of_Don_Quixote",
+        "Don_Quixote_-LRB-Picasso-RRB-"
+      ],
+      "combined_top10": [
+        "Sancho_Panza",
+        "Don_Quixote",
+        "The_Musical_Sancho_Panza",
+        "3552_Don_Quixote",
+        "Sancho_Panza_-LRB-brand-RRB-",
+        "Don_Quixote_Pond",
+        "The_Truth_about_Sancho_Panza",
+        "I,_Don_Quixote",
+        "Children_of_Don_Quixote",
+        "Don_Quixote_-LRB-Picasso-RRB-"
+      ]
+    },
+    {
+      "claim_id": 43608,
+      "claim": "Magic Johnson was a tap dancer.",
+      "normalized_claim": "Magic Johnson was a tap dancer.",
+      "gold_pages": [
+        "Magic_Johnson"
+      ],
+      "baseline_top10": [
+        "Magic_Johnson",
+        "Tap_Tap",
+        "Magic_Johnson_Award",
+        "Magic_Johnson_Enterprises",
+        "Magic_Johnson_Foundation",
+        "Magic_Johnson_Theatres",
+        "Tap_tap",
+        "David_Johnson_-LRB-dancer-RRB-",
+        "Jenna_Johnson_-LRB-dancer-RRB-",
+        "Tap_Tap_Revenge"
+      ],
+      "event_top10": [
+        "Magic_Johnson",
+        "Tap_Tap",
+        "Magic_Johnson_Award",
+        "Magic_Johnson_Enterprises",
+        "Magic_Johnson_Foundation",
+        "Magic_Johnson_Theatres",
+        "Tap_tap",
+        "David_Johnson_-LRB-dancer-RRB-",
+        "Jenna_Johnson_-LRB-dancer-RRB-",
+        "Tap_Tap_Revenge"
+      ],
+      "combined_top10": [
+        "Magic_Johnson",
+        "Tap_Tap",
+        "Magic_Johnson_Award",
+        "Magic_Johnson_Enterprises",
+        "Magic_Johnson_Foundation",
+        "Magic_Johnson_Theatres",
+        "Tap_tap",
+        "David_Johnson_-LRB-dancer-RRB-",
+        "Jenna_Johnson_-LRB-dancer-RRB-",
+        "Tap_Tap_Revenge"
+      ]
+    },
+    {
+      "claim_id": 66638,
+      "claim": "The Adventures of Pluto Nash was reviewed by Ron Underwood.",
+      "normalized_claim": "Ron Underwood reviewed The Adventures of Pluto Nash.",
+      "gold_pages": [
+        "The_Adventures_of_Pluto_Nash"
+      ],
+      "baseline_top10": [
+        "The_Adventures_of_Pluto_Nash",
+        "Ron_Underwood",
+        "Ron_Underwood_-LRB-musician-RRB-",
+        "Pluto",
+        "Underwood_&_Underwood",
+        "Underwood",
+        "Beau_Pluto",
+        "Conogethes_pluto",
+        "Crassispira_pluto",
+        "Dorcadion_pluto"
+      ],
+      "event_top10": [
+        "The_Adventures_of_Pluto_Nash",
+        "Ron_Underwood",
+        "Ron_Underwood_-LRB-musician-RRB-",
+        "Pluto",
+        "Underwood_&_Underwood",
+        "Underwood",
+        "Beau_Pluto",
+        "Conogethes_pluto",
+        "Crassispira_pluto",
+        "Dorcadion_pluto"
+      ],
+      "combined_top10": [
+        "The_Adventures_of_Pluto_Nash",
+        "Ron_Underwood",
+        "Ron_Underwood_-LRB-musician-RRB-",
+        "Pluto",
+        "Underwood_&_Underwood",
+        "Underwood",
+        "Beau_Pluto",
+        "Conogethes_pluto",
+        "Crassispira_pluto",
+        "Dorcadion_pluto"
+      ]
+    },
+    {
+      "claim_id": 26839,
+      "claim": "Hedda Gabler's world premiere took place at the Battle of Hastings.",
+      "normalized_claim": "Hedda Gabler had its world premiere at the Battle of Hastings.",
+      "gold_pages": [
+        "Hedda_Gabler"
+      ],
+      "baseline_top10": [
+        "Hedda_Gabler",
+        "Hedda_Gabler_filmography",
+        "World_Premiere",
+        "Hedda_Gabler_-LRB-1920_film-RRB-",
+        "Hedda_Gabler_-LRB-1925_film-RRB-",
+        "Hedda_Gabler_-LRB-1961_film-RRB-",
+        "Star_World_Premiere",
+        "Hedda_Gabler_-LRB-2015_film-RRB-",
+        "Battle_of_Hastings",
+        "Battle_of_Hastings_reenactment"
+      ],
+      "event_top10": [
+        "Hedda_Gabler",
+        "Hedda_Gabler_filmography",
+        "World_Premiere",
+        "Hedda_Gabler_-LRB-1920_film-RRB-",
+        "Hedda_Gabler_-LRB-1925_film-RRB-",
+        "Hedda_Gabler_-LRB-1961_film-RRB-",
+        "Battle_of_Hastings",
+        "Hedda_Gabler_-LRB-2015_film-RRB-",
+        "Star_World_Premiere",
+        "Battle_of_Hastings_reenactment"
+      ],
+      "combined_top10": [
+        "Hedda_Gabler",
+        "Hedda_Gabler_filmography",
+        "World_Premiere",
+        "Hedda_Gabler_-LRB-1920_film-RRB-",
+        "Hedda_Gabler_-LRB-1925_film-RRB-",
+        "Hedda_Gabler_-LRB-1961_film-RRB-",
+        "Star_World_Premiere",
+        "Battle_of_Hastings",
+        "Hedda_Gabler_-LRB-2015_film-RRB-",
+        "Battle_of_Hastings_reenactment"
+      ]
+    },
+    {
+      "claim_id": 40351,
+      "claim": "Brazzers is a company.",
+      "normalized_claim": "Brazzers is a company.",
+      "gold_pages": [
+        "Brazzers"
+      ],
+      "baseline_top10": [
+        "Brazzers",
+        "Company",
+        "Good_Company_-LRB-company-RRB-",
+        "1C_Company",
+        "APU_Company",
+        "Academy_company",
+        "Acushnet_Company",
+        "Aeolian_Company",
+        "African_Company",
+        "Allen_&_Company"
+      ],
+      "event_top10": [
+        "Brazzers",
+        "Company",
+        "Good_Company_-LRB-company-RRB-",
+        "1C_Company",
+        "APU_Company",
+        "Academy_company",
+        "Acushnet_Company",
+        "Aeolian_Company",
+        "African_Company",
+        "Allen_&_Company"
+      ],
+      "combined_top10": [
+        "Brazzers",
+        "Company",
+        "Good_Company_-LRB-company-RRB-",
+        "1C_Company",
+        "APU_Company",
+        "Academy_company",
+        "Acushnet_Company",
+        "Aeolian_Company",
+        "African_Company",
+        "Allen_&_Company"
+      ]
+    },
+    {
+      "claim_id": 15307,
+      "claim": "Tim Roth is an English actor.",
+      "normalized_claim": "Tim Roth is an English actor.",
+      "gold_pages": [
+        "Tim_Roth"
+      ],
+      "baseline_top10": [
+        "Tim_Roth",
+        "Tim_Roth_-LRB-musician-RRB-",
+        "Matt_Roth_-LRB-actor-RRB-",
+        "Tim_Barrett_-LRB-actor-RRB-",
+        "Tim_Campbell_-LRB-actor-RRB-",
+        "Tim_Donnelly_-LRB-actor-RRB-",
+        "Roth",
+        "Tim_Griffin_-LRB-actor-RRB-",
+        "Tim_Hamilton_-LRB-actor-RRB-",
+        "Bill_English_-LRB-actor-RRB-"
+      ],
+      "event_top10": [
+        "Tim_Roth",
+        "Tim_Roth_-LRB-musician-RRB-",
+        "Matt_Roth_-LRB-actor-RRB-",
+        "Tim_Barrett_-LRB-actor-RRB-",
+        "Tim_Campbell_-LRB-actor-RRB-",
+        "Tim_Donnelly_-LRB-actor-RRB-",
+        "Roth",
+        "Tim_Griffin_-LRB-actor-RRB-",
+        "Tim_Hamilton_-LRB-actor-RRB-",
+        "Bill_English_-LRB-actor-RRB-"
+      ],
+      "combined_top10": [
+        "Tim_Roth",
+        "Tim_Roth_-LRB-musician-RRB-",
+        "Matt_Roth_-LRB-actor-RRB-",
+        "Tim_Barrett_-LRB-actor-RRB-",
+        "Tim_Campbell_-LRB-actor-RRB-",
+        "Tim_Donnelly_-LRB-actor-RRB-",
+        "Roth",
+        "Tim_Griffin_-LRB-actor-RRB-",
+        "Tim_Hamilton_-LRB-actor-RRB-",
+        "Bill_English_-LRB-actor-RRB-"
+      ]
+    },
+    {
+      "claim_id": 146231,
+      "claim": "Juventus F.C. rejected their traditional black-and-white-striped home uniform in 1903.",
+      "normalized_claim": "Juventus F.C. rejected their traditional black-and-white-striped home uniform in 1903.",
+      "gold_pages": [
+        "Juventus_F.C."
+      ],
+      "baseline_top10": [
+        "Traditional_Home",
+        "Rejected",
+        "White-striped_dorcopsis",
+        "White-striped_warbler",
+        "White-striped_woodcreeper",
+        "Black-striped_capuchin",
+        "Black-striped_mussel",
+        "Black-striped_pipefish",
+        "Traditional_black_gospel",
+        "Black-striped_snake"
+      ],
+      "event_top10": [
+        "Traditional_Home",
+        "Rejected",
+        "White-striped_dorcopsis",
+        "White-striped_warbler",
+        "White-striped_woodcreeper",
+        "Black-striped_capuchin",
+        "Black-striped_mussel",
+        "Black-striped_pipefish",
+        "Traditional_black_gospel",
+        "Black-striped_snake"
+      ],
+      "combined_top10": [
+        "Traditional_Home",
+        "Rejected",
+        "White-striped_dorcopsis",
+        "White-striped_warbler",
+        "White-striped_woodcreeper",
+        "Black-striped_capuchin",
+        "Black-striped_mussel",
+        "Black-striped_pipefish",
+        "Traditional_black_gospel",
+        "Black-striped_snake"
+      ]
+    },
+    {
+      "claim_id": 184083,
+      "claim": "Ernest Medina participated in the My Lai Massacre.",
+      "normalized_claim": "Ernest Medina participated in the My Lai Massacre.",
+      "gold_pages": [
+        "Ernest_Medina"
+      ],
+      "baseline_top10": [
+        "My_Lai_Massacre",
+        "Ernest_Medina",
+        "Hà_My_massacre",
+        "Mỹ_Trạch_massacre",
+        "Four_Hours_in_My_Lai",
+        "Interviews_with_My_Lai_Veterans",
+        "My_Lai_-LRB-film-RRB-",
+        "Lai_Lai_Win",
+        "Lai",
+        "MEDINA"
+      ],
+      "event_top10": [
+        "My_Lai_Massacre",
+        "Ernest_Medina",
+        "Hà_My_massacre",
+        "Mỹ_Trạch_massacre",
+        "Four_Hours_in_My_Lai",
+        "Interviews_with_My_Lai_Veterans",
+        "My_Lai_-LRB-film-RRB-",
+        "Lai_Lai_Win",
+        "Lai",
+        "MEDINA"
+      ],
+      "combined_top10": [
+        "My_Lai_Massacre",
+        "Ernest_Medina",
+        "Hà_My_massacre",
+        "Mỹ_Trạch_massacre",
+        "Four_Hours_in_My_Lai",
+        "Interviews_with_My_Lai_Veterans",
+        "My_Lai_-LRB-film-RRB-",
+        "Lai_Lai_Win",
+        "Lai",
+        "MEDINA"
+      ]
+    },
+    {
+      "claim_id": 226877,
+      "claim": "Jenna Jameson worked as a glamor model and a stripper.",
+      "normalized_claim": "Jenna Jameson worked as a glamor model and a stripper.",
+      "gold_pages": [
+        "Jenna_Jameson"
+      ],
+      "baseline_top10": [
+        "Jenna_Jameson",
+        "Jenna_Jameson_filmography",
+        "Stripper",
+        "Jenna",
+        "Jameson",
+        "Feminist_stripper",
+        "Funeral_stripper",
+        "Paint_stripper",
+        "Stripper_Friends",
+        "Stripper_Vicar"
+      ],
+      "event_top10": [
+        "Jenna_Jameson",
+        "Jenna_Jameson_filmography",
+        "Stripper",
+        "Jenna",
+        "Jameson",
+        "Feminist_stripper",
+        "Funeral_stripper",
+        "Paint_stripper",
+        "Stripper_Friends",
+        "Stripper_Vicar"
+      ],
+      "combined_top10": [
+        "Jenna_Jameson",
+        "Jenna_Jameson_filmography",
+        "Stripper",
+        "Jenna",
+        "Jameson",
+        "Feminist_stripper",
+        "Funeral_stripper",
+        "Paint_stripper",
+        "Stripper_Friends",
+        "Stripper_Vicar"
+      ]
+    },
+    {
+      "claim_id": 227130,
+      "claim": "New Orleans Pelicans compete in the National Football Association.",
+      "normalized_claim": "New Orleans Pelicans compete in the National Football Association.",
+      "gold_pages": [
+        "New_Orleans_Pelicans"
+      ],
+      "baseline_top10": [
+        "New_Orleans_Pelicans",
+        "New_Orleans_Pelicans_draft_history",
+        "2013–14_New_Orleans_Pelicans_season",
+        "2014–15_New_Orleans_Pelicans_season",
+        "2015–16_New_Orleans_Pelicans_season",
+        "2016–17_New_Orleans_Pelicans_season",
+        "Sealand_National_Football_Association",
+        "Tibetan_National_Football_Association",
+        "Tuvalu_National_Football_Association",
+        "2017–18_New_Orleans_Pelicans_season"
+      ],
+      "event_top10": [
+        "New_Orleans_Pelicans",
+        "New_Orleans_Pelicans_draft_history",
+        "2013–14_New_Orleans_Pelicans_season",
+        "2014–15_New_Orleans_Pelicans_season",
+        "2015–16_New_Orleans_Pelicans_season",
+        "2016–17_New_Orleans_Pelicans_season",
+        "Sealand_National_Football_Association",
+        "Tibetan_National_Football_Association",
+        "Tuvalu_National_Football_Association",
+        "2017–18_New_Orleans_Pelicans_season"
+      ],
+      "combined_top10": [
+        "New_Orleans_Pelicans",
+        "New_Orleans_Pelicans_draft_history",
+        "2013–14_New_Orleans_Pelicans_season",
+        "2014–15_New_Orleans_Pelicans_season",
+        "2015–16_New_Orleans_Pelicans_season",
+        "2016–17_New_Orleans_Pelicans_season",
+        "Sealand_National_Football_Association",
+        "Tibetan_National_Football_Association",
+        "Tuvalu_National_Football_Association",
+        "2017–18_New_Orleans_Pelicans_season"
+      ]
+    },
+    {
+      "claim_id": 134710,
+      "claim": "Starrcade was an annual professional wrestling event that began in 1988.",
+      "normalized_claim": "Starrcade began in 1988 as an annual professional wrestling event.",
+      "gold_pages": [
+        "Starrcade"
+      ],
+      "baseline_top10": [
+        "Professional_wrestling",
+        "Starrcade_-LRB-1988-RRB-",
+        "Starrcade",
+        "Midget_professional_wrestling",
+        "Professional_wrestling_attacks",
+        "Professional_wrestling_championship",
+        "Professional_wrestling_holds",
+        "Annual_professional_performance_review",
+        "Professional_wrestling_moves",
+        "Professional_wrestling_promotion"
+      ],
+      "event_top10": [
+        "Professional_wrestling",
+        "Starrcade_-LRB-1988-RRB-",
+        "Starrcade",
+        "Midget_professional_wrestling",
+        "Professional_wrestling_attacks",
+        "Professional_wrestling_championship",
+        "Professional_wrestling_holds",
+        "Annual_professional_performance_review",
+        "Professional_wrestling_moves",
+        "Professional_wrestling_promotion"
+      ],
+      "combined_top10": [
+        "Professional_wrestling",
+        "Starrcade_-LRB-1988-RRB-",
+        "Starrcade",
+        "Midget_professional_wrestling",
+        "Professional_wrestling_attacks",
+        "Professional_wrestling_championship",
+        "Professional_wrestling_holds",
+        "Annual_professional_performance_review",
+        "Professional_wrestling_moves",
+        "Professional_wrestling_promotion"
+      ]
+    },
+    {
+      "claim_id": 105310,
+      "claim": "Jack Falahee is a person who acts.",
+      "normalized_claim": "Jack Falahee is a person who acts.",
+      "gold_pages": [
+        "Jack_Falahee"
+      ],
+      "baseline_top10": [
+        "Jack_Falahee",
+        "Person-to-person",
+        "Person_to_Person",
+        "Person_to_Person!",
+        "ACTS",
+        "Jack_Robinson_-LRB-mythical_person-RRB-",
+        "Person",
+        "Persön",
+        "Andrzej_Person",
+        "Assisted_person"
+      ],
+      "event_top10": [
+        "Jack_Falahee",
+        "Person-to-person",
+        "Person_to_Person",
+        "Person_to_Person!",
+        "ACTS",
+        "Jack_Robinson_-LRB-mythical_person-RRB-",
+        "Person",
+        "Persön",
+        "Andrzej_Person",
+        "Assisted_person"
+      ],
+      "combined_top10": [
+        "Jack_Falahee",
+        "Person-to-person",
+        "Person_to_Person",
+        "Person_to_Person!",
+        "ACTS",
+        "Jack_Robinson_-LRB-mythical_person-RRB-",
+        "Person",
+        "Persön",
+        "Andrzej_Person",
+        "Assisted_person"
+      ]
+    },
+    {
+      "claim_id": 114567,
+      "claim": "Seohyun is a dog.",
+      "normalized_claim": "Seohyun is a dog.",
+      "gold_pages": [
+        "Seohyun"
+      ],
+      "baseline_top10": [
+        "Seohyun",
+        "Seohyun_discography",
+        "Dog_Bite_Dog",
+        "Dog_Eat_Dog",
+        "Dog",
+        "Dog_Eat_Dog_Films",
+        "Good_Dog,_Bad_Dog",
+        "Good_Dog_Bad_Dog",
+        "40_Dog",
+        "Akbash_dog"
+      ],
+      "event_top10": [
+        "Seohyun",
+        "Seohyun_discography",
+        "Dog_Bite_Dog",
+        "Dog_Eat_Dog",
+        "Dog",
+        "Dog_Eat_Dog_Films",
+        "Good_Dog,_Bad_Dog",
+        "Good_Dog_Bad_Dog",
+        "40_Dog",
+        "Akbash_dog"
+      ],
+      "combined_top10": [
+        "Seohyun",
+        "Seohyun_discography",
+        "Dog_Bite_Dog",
+        "Dog_Eat_Dog",
+        "Dog",
+        "Dog_Eat_Dog_Films",
+        "Good_Dog,_Bad_Dog",
+        "Good_Dog_Bad_Dog",
+        "40_Dog",
+        "Akbash_dog"
+      ]
+    },
+    {
+      "claim_id": 71986,
+      "claim": "Steve Wozniak was born after the Apple II came out.",
+      "normalized_claim": "Steve Wozniak was born after the Apple II was released.",
+      "gold_pages": [
+        "Steve_Wozniak"
+      ],
+      "baseline_top10": [
+        "Steve_Wozniak",
+        "Apple_II",
+        "After_Apple-Picking",
+        "The_Sun_Came_Out",
+        "Apple_II_Plus",
+        "Woźniak",
+        "Apple_II_accelerators",
+        "Apple_II_graphics",
+        "Apple_II_series",
+        "After_Burner_II"
+      ],
+      "event_top10": [
+        "Steve_Wozniak",
+        "Apple_II",
+        "After_Apple-Picking",
+        "Apple_II_Plus",
+        "Apple_II_accelerators",
+        "Apple_II_graphics",
+        "Apple_II_series",
+        "Woźniak",
+        "After_Burner_II",
+        "Apple_Monitor_II"
+      ],
+      "combined_top10": [
+        "Steve_Wozniak",
+        "Apple_II",
+        "After_Apple-Picking",
+        "Apple_II_Plus",
+        "Apple_II_accelerators",
+        "Woźniak",
+        "Apple_II_graphics",
+        "Apple_II_series",
+        "After_Burner_II",
+        "The_Sun_Came_Out"
+      ]
+    },
+    {
+      "claim_id": 221085,
+      "claim": "A&E is a cable and satellite television network.",
+      "normalized_claim": "A&E is a cable and satellite television network.",
+      "gold_pages": [
+        "A&E_-LRB-TV_channel-RRB-"
+      ],
+      "baseline_top10": [
+        "Cable_television",
+        "Satellite_television",
+        "Television_network",
+        "Centaur_Cable_Network",
+        "Gay_Cable_Network",
+        "Interchange_Cable_Network",
+        "Pennsylvania_Cable_Network",
+        "PTL_Satellite_Network",
+        "Satellite_and_Cable_Directive",
+        "Satellite_Music_Network"
+      ],
+      "event_top10": [
+        "Cable_television",
+        "Satellite_television",
+        "Television_network",
+        "Centaur_Cable_Network",
+        "Gay_Cable_Network",
+        "Interchange_Cable_Network",
+        "Pennsylvania_Cable_Network",
+        "PTL_Satellite_Network",
+        "Satellite_and_Cable_Directive",
+        "Satellite_Music_Network"
+      ],
+      "combined_top10": [
+        "Cable_television",
+        "Satellite_television",
+        "Television_network",
+        "Centaur_Cable_Network",
+        "Gay_Cable_Network",
+        "Interchange_Cable_Network",
+        "Pennsylvania_Cable_Network",
+        "PTL_Satellite_Network",
+        "Satellite_and_Cable_Directive",
+        "Satellite_Music_Network"
+      ]
+    },
+    {
+      "claim_id": 71853,
+      "claim": "L.A. Reid has served as the president of a record label.",
+      "normalized_claim": "L.A. Reid served as president of a record label.",
+      "gold_pages": [
+        "Arista_Records",
+        "L.A._Reid"
+      ],
+      "baseline_top10": [
+        "Record_label",
+        "Independent_record_label",
+        "Lupine_Record_label",
+        "Orange_Record_Label",
+        "Content_Label_-LRB-record_label-RRB-",
+        "Antone's_Record_Label",
+        "Mountain_Landis_record_label",
+        "Open-source_record_label",
+        "The_Beechfields_Record_Label",
+        "1605_-LRB-record_label-RRB-"
+      ],
+      "event_top10": [
+        "Record_label",
+        "Independent_record_label",
+        "Lupine_Record_label",
+        "Orange_Record_Label",
+        "Content_Label_-LRB-record_label-RRB-",
+        "Antone's_Record_Label",
+        "Mountain_Landis_record_label",
+        "Open-source_record_label",
+        "The_Beechfields_Record_Label",
+        "1605_-LRB-record_label-RRB-"
+      ],
+      "combined_top10": [
+        "Record_label",
+        "Independent_record_label",
+        "Lupine_Record_label",
+        "Orange_Record_Label",
+        "Content_Label_-LRB-record_label-RRB-",
+        "Antone's_Record_Label",
+        "Mountain_Landis_record_label",
+        "Open-source_record_label",
+        "The_Beechfields_Record_Label",
+        "1605_-LRB-record_label-RRB-"
+      ]
+    },
+    {
+      "claim_id": 163980,
+      "claim": "Veeram is something other than an Indian Tamil film.",
+      "normalized_claim": "Veeram is not an Indian Tamil film.",
+      "gold_pages": [
+        "Veeram_-LRB-2014_film-RRB-"
+      ],
+      "baseline_top10": [
+        "Veeram",
+        "Something_More_Than_Free",
+        "Anything_Other_Than_Naked",
+        "Languages_Other_Than_English",
+        "Other_Worlds_Than_Ours",
+        "Veeram_-LRB-2014_film-RRB-",
+        "Veeram_-LRB-2016_film-RRB-",
+        "Military_operations_other_than_war",
+        "Somewhere_Other_Than_the_Night",
+        "Haiku_in_languages_other_than_Japanese"
+      ],
+      "event_top10": [
+        "Veeram",
+        "Veeram_-LRB-2014_film-RRB-",
+        "Veeram_-LRB-2016_film-RRB-",
+        "Veeram_Vilanja_Mannu",
+        "International_Tamil_Film_Awards",
+        "Tamil_Film_Producers_Council",
+        "List_of_Tamil_film_actors",
+        "Norway_Tamil_Film_Festival_Awards",
+        "Indian_independence_movement_in_Tamil_Nadu",
+        "Tamil"
+      ],
+      "combined_top10": [
+        "Veeram",
+        "Veeram_-LRB-2014_film-RRB-",
+        "Veeram_-LRB-2016_film-RRB-",
+        "Something_More_Than_Free",
+        "Anything_Other_Than_Naked",
+        "Languages_Other_Than_English",
+        "Veeram_Vilanja_Mannu",
+        "Other_Worlds_Than_Ours",
+        "International_Tamil_Film_Awards",
+        "Tamil_Film_Producers_Council"
+      ]
+    },
+    {
+      "claim_id": 185193,
+      "claim": "Home for the Holidays stars an American actress.",
+      "normalized_claim": "Home for the Holidays stars an American actress.",
+      "gold_pages": [
+        "Holly_Hunter",
+        "Home_for_the_Holidays_-LRB-1995_film-RRB-"
+      ],
+      "baseline_top10": [
+        "Holidays_at_Home",
+        "Home_for_the_Holidays",
+        "American_Home",
+        "Follow_the_Stars_Home",
+        "Minor_American_Revolution_holidays",
+        "American_Home_Mortgage",
+        "American_Stars_'n_Bars",
+        "Dagmar_-LRB-American_actress-RRB-",
+        "American_Home_Shield",
+        "The_American_Home"
+      ],
+      "event_top10": [
+        "Holidays_at_Home",
+        "Home_for_the_Holidays",
+        "American_Home",
+        "Follow_the_Stars_Home",
+        "Minor_American_Revolution_holidays",
+        "American_Home_Mortgage",
+        "American_Stars_'n_Bars",
+        "Dagmar_-LRB-American_actress-RRB-",
+        "American_Home_Shield",
+        "The_American_Home"
+      ],
+      "combined_top10": [
+        "Holidays_at_Home",
+        "Home_for_the_Holidays",
+        "American_Home",
+        "Follow_the_Stars_Home",
+        "Minor_American_Revolution_holidays",
+        "American_Home_Mortgage",
+        "American_Stars_'n_Bars",
+        "Dagmar_-LRB-American_actress-RRB-",
+        "American_Home_Shield",
+        "The_American_Home"
+      ]
+    },
+    {
+      "claim_id": 39437,
+      "claim": "Taran Killam is an American writer.",
+      "normalized_claim": "Taran Killam is an American writer.",
+      "gold_pages": [
+        "Taran_Killam"
+      ],
+      "baseline_top10": [
+        "Taran_Killam",
+        "Taran_Taran",
+        "Killam",
+        "Aliwal,_Taran_Taran",
+        "Taran_Taran,_Pakistan",
+        "Taran",
+        "Frank_Killam",
+        "Killam,_Alberta",
+        "Killam_Library",
+        "Radcliffe_Killam"
+      ],
+      "event_top10": [
+        "Taran_Killam",
+        "Taran_Taran",
+        "Killam",
+        "Aliwal,_Taran_Taran",
+        "Taran_Taran,_Pakistan",
+        "Taran",
+        "Frank_Killam",
+        "Killam,_Alberta",
+        "Killam_Library",
+        "Radcliffe_Killam"
+      ],
+      "combined_top10": [
+        "Taran_Killam",
+        "Taran_Taran",
+        "Killam",
+        "Aliwal,_Taran_Taran",
+        "Taran_Taran,_Pakistan",
+        "Taran",
+        "Frank_Killam",
+        "Killam,_Alberta",
+        "Killam_Library",
+        "Radcliffe_Killam"
+      ]
+    },
+    {
+      "claim_id": 34412,
+      "claim": "Jayasudha is an actor that stars in Daag.",
+      "normalized_claim": "Jayasudha stars in Daag",
+      "gold_pages": [
+        "Daag_-LRB-1973_film-RRB-"
+      ],
+      "baseline_top10": [
+        "Jayasudha",
+        "Daag",
+        "Gehra_Daag",
+        "Aag_Aur_Daag",
+        "Laaga_Chunari_Mein_Daag",
+        "Daag_-LRB-1952_film-RRB-",
+        "Actor",
+        "Daag_-LRB-1973_film-RRB-",
+        "Stars!",
+        "Daag_-LRB-1999_film-RRB-"
+      ],
+      "event_top10": [
+        "Jayasudha",
+        "Daag",
+        "Gehra_Daag",
+        "Aag_Aur_Daag",
+        "Laaga_Chunari_Mein_Daag",
+        "Daag_-LRB-1952_film-RRB-",
+        "Daag_-LRB-1973_film-RRB-",
+        "Daag_-LRB-1999_film-RRB-",
+        "Stars!",
+        "1000_Stars"
+      ],
+      "combined_top10": [
+        "Jayasudha",
+        "Daag",
+        "Gehra_Daag",
+        "Aag_Aur_Daag",
+        "Laaga_Chunari_Mein_Daag",
+        "Daag_-LRB-1952_film-RRB-",
+        "Daag_-LRB-1973_film-RRB-",
+        "Daag_-LRB-1999_film-RRB-",
+        "Stars!",
+        "Actor"
+      ]
+    },
+    {
+      "claim_id": 150217,
+      "claim": "John Dolmayan was born on July 15, 1873.",
+      "normalized_claim": "John Dolmayan was born on July 15, 1873.",
+      "gold_pages": [
+        "John_Dolmayan"
+      ],
+      "baseline_top10": [
+        "John_Dolmayan",
+        "July_15",
+        "July_15,_1972",
+        "John_15",
+        "John_Divers_-LRB-footballer,_born_1873-RRB-",
+        "John_Brown_-LRB-footballer,_born_July_1940-RRB-",
+        "John_Morris_-LRB-footballer,_born_1873-RRB-",
+        "July,_July",
+        "Solar_eclipse_of_July_15,_2083",
+        "Action_of_15_July_1798"
+      ],
+      "event_top10": [
+        "John_Dolmayan",
+        "July_15",
+        "July_15,_1972",
+        "John_15",
+        "John_Divers_-LRB-footballer,_born_1873-RRB-",
+        "John_Brown_-LRB-footballer,_born_July_1940-RRB-",
+        "John_Morris_-LRB-footballer,_born_1873-RRB-",
+        "July,_July",
+        "Solar_eclipse_of_July_15,_2083",
+        "Action_of_15_July_1798"
+      ],
+      "combined_top10": [
+        "John_Dolmayan",
+        "July_15",
+        "July_15,_1972",
+        "John_15",
+        "John_Divers_-LRB-footballer,_born_1873-RRB-",
+        "John_Brown_-LRB-footballer,_born_July_1940-RRB-",
+        "John_Morris_-LRB-footballer,_born_1873-RRB-",
+        "July,_July",
+        "Solar_eclipse_of_July_15,_2083",
+        "Action_of_15_July_1798"
+      ]
+    },
+    {
+      "claim_id": 202783,
+      "claim": "Despicable Me 2 was directed by a lake.",
+      "normalized_claim": "Despicable Me 2 was directed by a lake.",
+      "gold_pages": [
+        "Chris_Renaud_-LRB-animator-RRB-",
+        "Despicable_Me_2",
+        "Pierre_Coffin"
+      ],
+      "baseline_top10": [
+        "Despicable_Me",
+        "Despicable_Me_2",
+        "Despicable_Me_3",
+        "Despicable_Me-COLON-_Minion_Mayhem",
+        "Despicable_Me_-LRB-franchise-RRB-",
+        "Minions_-LRB-Despicable_Me-RRB-",
+        "Despicable_Me-COLON-_Original_Motion_Picture_Soundtrack",
+        "Directed_Edge",
+        "Directed_Electronics",
+        "Directed_differentiation"
+      ],
+      "event_top10": [
+        "Despicable_Me",
+        "Despicable_Me_2",
+        "Despicable_Me_3",
+        "Despicable_Me-COLON-_Minion_Mayhem",
+        "Despicable_Me_-LRB-franchise-RRB-",
+        "Minions_-LRB-Despicable_Me-RRB-",
+        "Despicable_Me-COLON-_Original_Motion_Picture_Soundtrack",
+        "Directed_Edge",
+        "Directed_Electronics",
+        "Directed_differentiation"
+      ],
+      "combined_top10": [
+        "Despicable_Me",
+        "Despicable_Me_2",
+        "Despicable_Me_3",
+        "Despicable_Me-COLON-_Minion_Mayhem",
+        "Despicable_Me_-LRB-franchise-RRB-",
+        "Minions_-LRB-Despicable_Me-RRB-",
+        "Despicable_Me-COLON-_Original_Motion_Picture_Soundtrack",
+        "Directed_Edge",
+        "Directed_Electronics",
+        "Directed_differentiation"
+      ]
+    },
+    {
+      "claim_id": 159944,
+      "claim": "Christa McAuliffe taught social studies at Concord High School.",
+      "normalized_claim": "Christa McAuliffe taught social studies at Concord High School.",
+      "gold_pages": [
+        "Christa_McAuliffe"
+      ],
+      "baseline_top10": [
+        "Christa_McAuliffe",
+        "Christa_McAuliffe_Fellowship_Program",
+        "The_Christa_McAuliffe_Prize",
+        "Concord_High_School",
+        "Christa_McAuliffe_Space_Education_Center",
+        "Concord-Carlisle_High_School",
+        "Social_studies",
+        "Concord_International_High_School",
+        "Social_Circle_High_School",
+        "Concord_High_School_-LRB-Arkansas-RRB-"
+      ],
+      "event_top10": [
+        "Christa_McAuliffe",
+        "Christa_McAuliffe_Fellowship_Program",
+        "The_Christa_McAuliffe_Prize",
+        "Concord_High_School",
+        "Christa_McAuliffe_Space_Education_Center",
+        "Concord-Carlisle_High_School",
+        "Social_studies",
+        "Concord_International_High_School",
+        "Social_Circle_High_School",
+        "Concord_High_School_-LRB-Arkansas-RRB-"
+      ],
+      "combined_top10": [
+        "Christa_McAuliffe",
+        "Christa_McAuliffe_Fellowship_Program",
+        "The_Christa_McAuliffe_Prize",
+        "Concord_High_School",
+        "Christa_McAuliffe_Space_Education_Center",
+        "Concord-Carlisle_High_School",
+        "Social_studies",
+        "Concord_International_High_School",
+        "Social_Circle_High_School",
+        "Concord_High_School_-LRB-Arkansas-RRB-"
+      ]
+    },
+    {
+      "claim_id": 80205,
+      "claim": "Reign Over Me was released in 2017.",
+      "normalized_claim": "Reign Over Me was released in 2017.",
+      "gold_pages": [
+        "Reign_Over_Me"
+      ],
+      "baseline_top10": [
+        "Reign_Over_Me",
+        "All_Over_Me",
+        "Cry_Over_Me",
+        "Get_Over_Me",
+        "Rain_Over_Me",
+        "Taking_Over_Me",
+        "Watch_Over_Me",
+        "2017_Seattle_Reign_FC_season",
+        "Take_Me_Over",
+        "Love_All_Over_Me"
+      ],
+      "event_top10": [
+        "Reign_Over_Me",
+        "All_Over_Me",
+        "Cry_Over_Me",
+        "Get_Over_Me",
+        "Rain_Over_Me",
+        "Taking_Over_Me",
+        "Watch_Over_Me",
+        "2017_Seattle_Reign_FC_season",
+        "Take_Me_Over",
+        "Love_All_Over_Me"
+      ],
+      "combined_top10": [
+        "Reign_Over_Me",
+        "All_Over_Me",
+        "Cry_Over_Me",
+        "Get_Over_Me",
+        "Rain_Over_Me",
+        "Taking_Over_Me",
+        "Watch_Over_Me",
+        "2017_Seattle_Reign_FC_season",
+        "Take_Me_Over",
+        "Love_All_Over_Me"
+      ]
+    },
+    {
+      "claim_id": 43776,
+      "claim": "Colin Kaepernick is a poker player.",
+      "normalized_claim": "Colin Kaepernick is a poker player.",
+      "gold_pages": [
+        "Colin_Kaepernick"
+      ],
+      "baseline_top10": [
+        "Colin_Kaepernick",
+        "Poker_Player",
+        "Computer_poker_player",
+        "The_Poker_Player's_Championship",
+        "Anders_Henriksson_-LRB-poker_player-RRB-",
+        "Andre_Boyer_-LRB-poker_player-RRB-",
+        "Andrew_Cohen_-LRB-poker_player-RRB-",
+        "Andrew_Feldman_-LRB-poker_player-RRB-",
+        "Andy_Black_-LRB-poker_player-RRB-",
+        "Ben_Roberts_-LRB-poker_player-RRB-"
+      ],
+      "event_top10": [
+        "Colin_Kaepernick",
+        "Poker_Player",
+        "Computer_poker_player",
+        "The_Poker_Player's_Championship",
+        "Anders_Henriksson_-LRB-poker_player-RRB-",
+        "Andre_Boyer_-LRB-poker_player-RRB-",
+        "Andrew_Cohen_-LRB-poker_player-RRB-",
+        "Andrew_Feldman_-LRB-poker_player-RRB-",
+        "Andy_Black_-LRB-poker_player-RRB-",
+        "Ben_Roberts_-LRB-poker_player-RRB-"
+      ],
+      "combined_top10": [
+        "Colin_Kaepernick",
+        "Poker_Player",
+        "Computer_poker_player",
+        "The_Poker_Player's_Championship",
+        "Anders_Henriksson_-LRB-poker_player-RRB-",
+        "Andre_Boyer_-LRB-poker_player-RRB-",
+        "Andrew_Cohen_-LRB-poker_player-RRB-",
+        "Andrew_Feldman_-LRB-poker_player-RRB-",
+        "Andy_Black_-LRB-poker_player-RRB-",
+        "Ben_Roberts_-LRB-poker_player-RRB-"
+      ]
+    },
+    {
+      "claim_id": 79538,
+      "claim": "Sheryl Lee has yet to appear in a film as of 2016.",
+      "normalized_claim": "Sheryl Lee has not appeared in a film as of 2016.",
+      "gold_pages": [
+        "Backbeat_-LRB-film-RRB-",
+        "Café_Society_-LRB-film-RRB-",
+        "Mother_Night_-LRB-film-RRB-",
+        "Sheryl_Lee"
+      ],
+      "baseline_top10": [
+        "Sheryl_Lee",
+        "Sheryl_Lee_Ralph",
+        "Appear",
+        "&_Yet_&_Yet",
+        "Sheryl",
+        "Appear_Here",
+        "Radios_Appear",
+        "Yet",
+        "Sheryl_Albers",
+        "Sheryl_Allen"
+      ],
+      "event_top10": [
+        "Sheryl_Lee",
+        "Sheryl_Lee_Ralph",
+        "Sheryl",
+        "The_Appeared",
+        "Sheryl_Albers",
+        "Sheryl_Allen",
+        "Sheryl_Bailey",
+        "Sheryl_Bayley",
+        "Not_One_Word_Has_Been_Omitted",
+        "Sheryl_Boyle"
+      ],
+      "combined_top10": [
+        "Sheryl_Lee",
+        "Sheryl_Lee_Ralph",
+        "Sheryl",
+        "Sheryl_Albers",
+        "Sheryl_Allen",
+        "Appear",
+        "&_Yet_&_Yet",
+        "The_Appeared",
+        "Appear_Here",
+        "Radios_Appear"
+      ]
+    },
+    {
+      "claim_id": 172478,
+      "claim": "Matteo Renzi is German.",
+      "normalized_claim": "Matteo Renzi is German.",
+      "gold_pages": [
+        "Matteo_Renzi"
+      ],
+      "baseline_top10": [
+        "Matteo_Renzi",
+        "Andrea_Renzi",
+        "Anna_Renzi",
+        "Carli_Renzi",
+        "List_of_official_trips_made_by_Matteo_Renzi",
+        "Clement_Renzi",
+        "Eva_Renzi",
+        "Grace_Renzi",
+        "Lorenzo_Renzi",
+        "Maggie_Renzi"
+      ],
+      "event_top10": [
+        "Matteo_Renzi",
+        "Andrea_Renzi",
+        "Anna_Renzi",
+        "Carli_Renzi",
+        "List_of_official_trips_made_by_Matteo_Renzi",
+        "Clement_Renzi",
+        "Eva_Renzi",
+        "Grace_Renzi",
+        "Lorenzo_Renzi",
+        "Maggie_Renzi"
+      ],
+      "combined_top10": [
+        "Matteo_Renzi",
+        "Andrea_Renzi",
+        "Anna_Renzi",
+        "Carli_Renzi",
+        "List_of_official_trips_made_by_Matteo_Renzi",
+        "Clement_Renzi",
+        "Eva_Renzi",
+        "Grace_Renzi",
+        "Lorenzo_Renzi",
+        "Maggie_Renzi"
+      ]
+    },
+    {
+      "claim_id": 60977,
+      "claim": "The highest point of the Hindu Kush is Everest.",
+      "normalized_claim": "The highest point of the Hindu Kush is Everest.",
+      "gold_pages": [
+        "Hindu_Kush"
+      ],
+      "baseline_top10": [
+        "Hindu_Kush",
+        "2002_Hindu_Kush_earthquakes",
+        "2005_Hindu_Kush_earthquake",
+        "December_2015_Hindu_Kush_earthquake",
+        "October_2015_Hindu_Kush_earthquake",
+        "List_of_islands_by_highest_point",
+        "A_Short_Walk_in_the_Hindu_Kush",
+        "KUSH",
+        "Kush",
+        "Emil_Kush"
+      ],
+      "event_top10": [
+        "Hindu_Kush",
+        "2002_Hindu_Kush_earthquakes",
+        "2005_Hindu_Kush_earthquake",
+        "December_2015_Hindu_Kush_earthquake",
+        "October_2015_Hindu_Kush_earthquake",
+        "List_of_islands_by_highest_point",
+        "A_Short_Walk_in_the_Hindu_Kush",
+        "KUSH",
+        "Kush",
+        "Emil_Kush"
+      ],
+      "combined_top10": [
+        "Hindu_Kush",
+        "2002_Hindu_Kush_earthquakes",
+        "2005_Hindu_Kush_earthquake",
+        "December_2015_Hindu_Kush_earthquake",
+        "October_2015_Hindu_Kush_earthquake",
+        "List_of_islands_by_highest_point",
+        "A_Short_Walk_in_the_Hindu_Kush",
+        "KUSH",
+        "Kush",
+        "Emil_Kush"
+      ]
+    },
+    {
+      "claim_id": 100584,
+      "claim": "Same Old Love is disassociated from Selena Gomez.",
+      "normalized_claim": "Same Old Love is disassociated from Selena Gomez.",
+      "gold_pages": [
+        "Same_Old_Love"
+      ],
+      "baseline_top10": [
+        "Selena_Gomez",
+        "Same_Old_Love",
+        "Selena_Gomez_discography",
+        "Same_Love",
+        "Selena_Gomez_&_the_Scene",
+        "Disassociated_Press",
+        "Same_Old_Man",
+        "Same_Old_Scene",
+        "Same_Love,_Same_Rain",
+        "Same_Old_Song"
+      ],
+      "event_top10": [
+        "Selena_Gomez",
+        "Same_Old_Love",
+        "Selena_Gomez_discography",
+        "Same_Love",
+        "Selena_Gomez_&_the_Scene",
+        "Disassociated_Press",
+        "Same_Old_Man",
+        "Same_Old_Scene",
+        "Same_Love,_Same_Rain",
+        "Same_Old_Song"
+      ],
+      "combined_top10": [
+        "Selena_Gomez",
+        "Same_Old_Love",
+        "Selena_Gomez_discography",
+        "Same_Love",
+        "Selena_Gomez_&_the_Scene",
+        "Disassociated_Press",
+        "Same_Old_Man",
+        "Same_Old_Scene",
+        "Same_Love,_Same_Rain",
+        "Same_Old_Song"
+      ]
+    },
+    {
+      "claim_id": 32820,
+      "claim": "The heart beats at a resting rate close to 22 beats per minute.",
+      "normalized_claim": "Heart beats at a resting rate close to 22 beats per minute.",
+      "gold_pages": [
+        "Heart"
+      ],
+      "baseline_top10": [
+        "120_Beats_per_Minute",
+        "Resting_metabolic_rate",
+        "Beats_Per_Minute_-LRB-website-RRB-",
+        "Heart_rate",
+        "Actions_per_minute",
+        "Counts_per_minute",
+        "Cristy_Per_Minute",
+        "Flashes_per_minute",
+        "Revolution_per_Minute",
+        "Revolutions_per_minute"
+      ],
+      "event_top10": [
+        "120_Beats_per_Minute",
+        "Resting_metabolic_rate",
+        "Beats_Per_Minute_-LRB-website-RRB-",
+        "Heart_rate",
+        "Actions_per_minute",
+        "Counts_per_minute",
+        "Cristy_Per_Minute",
+        "Flashes_per_minute",
+        "Revolution_per_Minute",
+        "Revolutions_per_minute"
+      ],
+      "combined_top10": [
+        "120_Beats_per_Minute",
+        "Resting_metabolic_rate",
+        "Beats_Per_Minute_-LRB-website-RRB-",
+        "Heart_rate",
+        "Actions_per_minute",
+        "Counts_per_minute",
+        "Cristy_Per_Minute",
+        "Flashes_per_minute",
+        "Revolution_per_Minute",
+        "Revolutions_per_minute"
+      ]
+    },
+    {
+      "claim_id": 215500,
+      "claim": "Weekly Idol is hosted by Yoo Jae Suk.",
+      "normalized_claim": "Yoo Jae Suk hosts Weekly Idol.",
+      "gold_pages": [
+        "Weekly_Idol"
+      ],
+      "baseline_top10": [
+        "Yoo_Jae-suk",
+        "Jae-suk",
+        "Weekly_Idol",
+        "Jae_Yoo",
+        "Chung_Yoo-suk",
+        "Han_Jae-suk",
+        "Kim_Yoo-suk",
+        "Lee_Jae-suk",
+        "Yoo_Jae-ha",
+        "Oh_Jae-suk"
+      ],
+      "event_top10": [
+        "Yoo_Jae-suk",
+        "Jae-suk",
+        "Weekly_Idol",
+        "Jae_Yoo",
+        "Chung_Yoo-suk",
+        "Han_Jae-suk",
+        "Kim_Yoo-suk",
+        "Lee_Jae-suk",
+        "Oh_Jae-suk",
+        "Yoo_Jae-ha"
+      ],
+      "combined_top10": [
+        "Yoo_Jae-suk",
+        "Jae-suk",
+        "Weekly_Idol",
+        "Jae_Yoo",
+        "Chung_Yoo-suk",
+        "Han_Jae-suk",
+        "Kim_Yoo-suk",
+        "Lee_Jae-suk",
+        "Yoo_Jae-ha",
+        "Oh_Jae-suk"
+      ]
+    },
+    {
+      "claim_id": 26300,
+      "claim": "Heavy Metal music was developed in the early 1970's.",
+      "normalized_claim": "Heavy Metal music was developed in the early 1970s.",
+      "gold_pages": [
+        "Heavy_metal_music"
+      ],
+      "baseline_top10": [
+        "1970_in_heavy_metal_music",
+        "Heavy_metal_music_before_1970",
+        "Heavy_metal_music",
+        "Early_1970",
+        "Heavy_metal",
+        "1971_in_heavy_metal_music",
+        "1972_in_heavy_metal_music",
+        "1973_in_heavy_metal_music",
+        "1974_in_heavy_metal_music",
+        "1975_in_heavy_metal_music"
+      ],
+      "event_top10": [
+        "Heavy_metal_music",
+        "Heavy_metal",
+        "1970_in_heavy_metal_music",
+        "1971_in_heavy_metal_music",
+        "1972_in_heavy_metal_music",
+        "1973_in_heavy_metal_music",
+        "1974_in_heavy_metal_music",
+        "1975_in_heavy_metal_music",
+        "1976_in_heavy_metal_music",
+        "1977_in_heavy_metal_music"
+      ],
+      "combined_top10": [
+        "1970_in_heavy_metal_music",
+        "Heavy_metal_music",
+        "Heavy_metal",
+        "1971_in_heavy_metal_music",
+        "1972_in_heavy_metal_music",
+        "1973_in_heavy_metal_music",
+        "1974_in_heavy_metal_music",
+        "1975_in_heavy_metal_music",
+        "Heavy_metal_music_before_1970",
+        "Early_1970"
+      ]
+    },
+    {
+      "claim_id": 186996,
+      "claim": "Bermuda Triangle is also known by another name.",
+      "normalized_claim": "Bermuda Triangle is also known by another name.",
+      "gold_pages": [
+        "Bermuda_Triangle"
+      ],
+      "baseline_top10": [
+        "Bermuda_Triangle",
+        "Bermuda_Triangle_Band",
+        "Bermuda_Triangle_-LRB-disambiguation-RRB-",
+        "Also",
+        "Bermuda_Triangle_-LRB-song-RRB-",
+        "List_of_Bermuda_Triangle_incidents",
+        "Slavery_by_Another_Name",
+        "No_Name_Island,_Bermuda",
+        "Bermuda_Triangle_-LRB-Buckethead_album-RRB-",
+        "Bermuda_Triangle_-LRB-Sea_World-RRB-"
+      ],
+      "event_top10": [
+        "Bermuda_Triangle",
+        "Bermuda_Triangle_Band",
+        "Bermuda_Triangle_-LRB-disambiguation-RRB-",
+        "Also",
+        "Bermuda_Triangle_-LRB-song-RRB-",
+        "List_of_Bermuda_Triangle_incidents",
+        "Slavery_by_Another_Name",
+        "No_Name_Island,_Bermuda",
+        "Bermuda_Triangle_-LRB-Buckethead_album-RRB-",
+        "Bermuda_Triangle_-LRB-Sea_World-RRB-"
+      ],
+      "combined_top10": [
+        "Bermuda_Triangle",
+        "Bermuda_Triangle_Band",
+        "Bermuda_Triangle_-LRB-disambiguation-RRB-",
+        "Also",
+        "Bermuda_Triangle_-LRB-song-RRB-",
+        "List_of_Bermuda_Triangle_incidents",
+        "Slavery_by_Another_Name",
+        "No_Name_Island,_Bermuda",
+        "Bermuda_Triangle_-LRB-Buckethead_album-RRB-",
+        "Bermuda_Triangle_-LRB-Sea_World-RRB-"
+      ]
+    },
+    {
+      "claim_id": 145446,
+      "claim": "Topman has clothing outlets in six Irish cities and towns.",
+      "normalized_claim": "Topman has clothing outlets in six Irish cities and towns.",
+      "gold_pages": [
+        "Topman"
+      ],
+      "baseline_top10": [
+        "Topman",
+        "Irish_clothing",
+        "Six_Frontier_Towns",
+        "Six_Cities_Design_Festival",
+        "Lists_of_cities_and_towns",
+        "Twin_towns_and_sister_cities",
+        "Irish_and_Breton_twin_towns",
+        "Cities_and_towns_in_West_Bengal",
+        "League_of_Arizona_Cities_and_Towns",
+        "Asheville_Outlets"
+      ],
+      "event_top10": [
+        "Topman",
+        "Irish_clothing",
+        "Six_Frontier_Towns",
+        "Six_Cities_Design_Festival",
+        "Lists_of_cities_and_towns",
+        "Twin_towns_and_sister_cities",
+        "Irish_and_Breton_twin_towns",
+        "Cities_and_towns_in_West_Bengal",
+        "League_of_Arizona_Cities_and_Towns",
+        "Asheville_Outlets"
+      ],
+      "combined_top10": [
+        "Topman",
+        "Irish_clothing",
+        "Six_Frontier_Towns",
+        "Six_Cities_Design_Festival",
+        "Lists_of_cities_and_towns",
+        "Twin_towns_and_sister_cities",
+        "Irish_and_Breton_twin_towns",
+        "Cities_and_towns_in_West_Bengal",
+        "League_of_Arizona_Cities_and_Towns",
+        "Asheville_Outlets"
+      ]
+    },
+    {
+      "claim_id": 68084,
+      "claim": "Wales' population changed.",
+      "normalized_claim": "The population of Wales changed.",
+      "gold_pages": [
+        "Wales"
+      ],
+      "baseline_top10": [
+        "Hindu_population_in_England_&_Wales",
+        "Chains_Changed",
+        "Changed_It",
+        "List_of_localities_in_Wales_by_population",
+        "Changed_Man",
+        "Changed_tone",
+        "Forever_Changed",
+        "Short_Changed",
+        "Something_Changed",
+        "Everything's_Changed"
+      ],
+      "event_top10": [
+        "Hindu_population_in_England_&_Wales",
+        "Chains_Changed",
+        "Changed_It",
+        "Changed_Man",
+        "List_of_localities_in_Wales_by_population",
+        "Changed_tone",
+        "Forever_Changed",
+        "Short_Changed",
+        "Something_Changed",
+        "Everything's_Changed"
+      ],
+      "combined_top10": [
+        "Hindu_population_in_England_&_Wales",
+        "Chains_Changed",
+        "Changed_It",
+        "List_of_localities_in_Wales_by_population",
+        "Changed_Man",
+        "Changed_tone",
+        "Forever_Changed",
+        "Short_Changed",
+        "Something_Changed",
+        "Everything's_Changed"
+      ]
+    },
+    {
+      "claim_id": 4713,
+      "claim": "Tool has won three Oscars.",
+      "normalized_claim": "Tool won three Oscars",
+      "gold_pages": [
+        "Tool_-LRB-band-RRB-"
+      ],
+      "baseline_top10": [
+        "Three_Loves_Has_Nancy",
+        "Prins_Oscars_Land",
+        "Tool",
+        "HAS",
+        "Three_into_Two_Won't_Go",
+        "Kong_Oscars_gate,_Bergen",
+        "Won_James_Won",
+        "Won",
+        "Antique_tool",
+        "Bone_tool"
+      ],
+      "event_top10": [
+        "Prins_Oscars_Land",
+        "Tool",
+        "Kong_Oscars_gate,_Bergen",
+        "Three_into_Two_Won't_Go",
+        "Won_James_Won",
+        "Won",
+        "Antique_tool",
+        "Bone_tool",
+        "CAST_tool",
+        "CIP-Tool"
+      ],
+      "combined_top10": [
+        "Prins_Oscars_Land",
+        "Tool",
+        "Kong_Oscars_gate,_Bergen",
+        "Three_into_Two_Won't_Go",
+        "Won_James_Won",
+        "Won",
+        "Antique_tool",
+        "Bone_tool",
+        "Three_Loves_Has_Nancy",
+        "HAS"
+      ]
+    },
+    {
+      "claim_id": 105419,
+      "claim": "Youtube is not a website.",
+      "normalized_claim": "Youtube is not a website.",
+      "gold_pages": [
+        "YouTube"
+      ],
+      "baseline_top10": [
+        "YouTube",
+        "Website",
+        "YouTube_API",
+        "YouTube_Awards",
+        "YouTube_Instant",
+        "YouTube_Kids",
+        "YouTube_Live",
+        "YouTube_Music",
+        "YouTube_Poop",
+        "YouTube_Red"
+      ],
+      "event_top10": [
+        "YouTube",
+        "Website",
+        "YouTube_API",
+        "YouTube_Awards",
+        "YouTube_Instant",
+        "YouTube_Kids",
+        "YouTube_Live",
+        "YouTube_Music",
+        "YouTube_Poop",
+        "YouTube_Red"
+      ],
+      "combined_top10": [
+        "YouTube",
+        "Website",
+        "YouTube_API",
+        "YouTube_Awards",
+        "YouTube_Instant",
+        "YouTube_Kids",
+        "YouTube_Live",
+        "YouTube_Music",
+        "YouTube_Poop",
+        "YouTube_Red"
+      ]
+    },
+    {
+      "claim_id": 10328,
+      "claim": "Sidse Babett Knudsen graduated on November 22nd, 1968.",
+      "normalized_claim": "Sidse Babett Knudsen graduated on November 22, 1968.",
+      "gold_pages": [
+        "Sidse_Babett_Knudsen"
+      ],
+      "baseline_top10": [
+        "Sidse_Babett_Knudsen",
+        "Babett_Peter",
+        "Graduated_Fool",
+        "Graduated_Repayment",
+        "Graduated_cylinder",
+        "Graduated_optimization",
+        "Graduated_payments",
+        "Graduated_pipette",
+        "Graduated_response",
+        "November"
+      ],
+      "event_top10": [
+        "Sidse_Babett_Knudsen",
+        "November_22",
+        "Babett_Peter",
+        "Graduated_Fool",
+        "Graduated_Repayment",
+        "Solar_eclipse_of_November_22,_1919",
+        "Solar_eclipse_of_November_22,_1984",
+        "Graduated_cylinder",
+        "Graduated_optimization",
+        "Graduated_payments"
+      ],
+      "combined_top10": [
+        "Sidse_Babett_Knudsen",
+        "Babett_Peter",
+        "Graduated_Fool",
+        "Graduated_Repayment",
+        "Graduated_cylinder",
+        "Graduated_optimization",
+        "Graduated_payments",
+        "November_22",
+        "Solar_eclipse_of_November_22,_1919",
+        "Solar_eclipse_of_November_22,_1984"
+      ]
+    },
+    {
+      "claim_id": 194904,
+      "claim": "Stripes had Conrad Dunn featured in it.",
+      "normalized_claim": "Conrad Dunn was featured in Stripes.",
+      "gold_pages": [
+        "Conrad_Dunn",
+        "Stripes_-LRB-film-RRB-"
+      ],
+      "baseline_top10": [
+        "Conrad_Dunn",
+        "James_while_John_had_had_had_had_had_had_had_had_had_had_had_a_better_effect_on_the_teacher",
+        "Dunn_Dunn",
+        "Had",
+        "39_Stripes",
+        "Candy_Stripes",
+        "Invasion_stripes",
+        "Invisible_Stripes",
+        "Featured_Artists'_Coalition",
+        "Pin_stripes"
+      ],
+      "event_top10": [
+        "Conrad_Dunn",
+        "Dunn_Dunn",
+        "39_Stripes",
+        "Candy_Stripes",
+        "Invasion_stripes",
+        "Invisible_Stripes",
+        "Featured_Artists'_Coalition",
+        "Pin_stripes",
+        "Racing_Stripes",
+        "Conrad"
+      ],
+      "combined_top10": [
+        "Conrad_Dunn",
+        "Dunn_Dunn",
+        "39_Stripes",
+        "Candy_Stripes",
+        "Invasion_stripes",
+        "Invisible_Stripes",
+        "Featured_Artists'_Coalition",
+        "Pin_stripes",
+        "James_while_John_had_had_had_had_had_had_had_had_had_had_had_a_better_effect_on_the_teacher",
+        "Had"
+      ]
+    },
+    {
+      "claim_id": 223343,
+      "claim": "2015 was the year when the principal photography of The Disaster Aritst (film) started.",
+      "normalized_claim": "The principal photography of the film The Disaster Aritst began in 2015.",
+      "gold_pages": [
+        "The_Disaster_Artist_-LRB-film-RRB-"
+      ],
+      "baseline_top10": [
+        "Principal_photography",
+        "When_It_Started",
+        "When_Disaster_Strikes...",
+        "Year_Long_Disaster",
+        "Disaster_film",
+        "Principal_photography_of_The_Lord_of_the_Rings_film_series",
+        "2015_Lahore_factory_disaster",
+        "2015_Zasyadko_mine_disaster",
+        "The_Year_When_Stardust_Fell",
+        "Principal"
+      ],
+      "event_top10": [
+        "Principal_photography",
+        "Disaster_film",
+        "Began_Jarwar",
+        "Principal_photography_of_The_Lord_of_the_Rings_film_series",
+        "2015_Lahore_factory_disaster",
+        "Principal",
+        "Photography",
+        "2015_Zasyadko_mine_disaster",
+        "Digital_versus_film_photography",
+        "Photography_-LRB-film-RRB-"
+      ],
+      "combined_top10": [
+        "Principal_photography",
+        "Disaster_film",
+        "Principal_photography_of_The_Lord_of_the_Rings_film_series",
+        "2015_Lahore_factory_disaster",
+        "Principal",
+        "2015_Zasyadko_mine_disaster",
+        "When_It_Started",
+        "When_Disaster_Strikes...",
+        "Began_Jarwar",
+        "Year_Long_Disaster"
+      ]
+    },
+    {
+      "claim_id": 186590,
+      "claim": "In 1971 Asylum Records the American record label was founded by David Geffen and his partner Elliot Roberts.",
+      "normalized_claim": "Asylum Records was founded in 1971 by David Geffen and Elliot Roberts.",
+      "gold_pages": [
+        "Asylum_Records"
+      ],
+      "baseline_top10": [
+        "Geffen_Records",
+        "David_Geffen",
+        "Record_label",
+        "Elliot_Roberts",
+        "Asylum_Records",
+        "Upsetter_Records_-LRB-American_record_label-RRB-",
+        "Big_Beat_Records_-LRB-American_record_label-RRB-",
+        "David_Partner",
+        "Geffen_Records_discography",
+        "David_Geffen_Hall"
+      ],
+      "event_top10": [
+        "Geffen_Records",
+        "David_Geffen",
+        "Elliot_Roberts",
+        "Asylum_Records",
+        "Geffen_Records_discography",
+        "David_Geffen_Hall",
+        "David_Elliot",
+        "David_Roberts",
+        "Interscope_Geffen_A&M_Records",
+        "List_of_Geffen_Records_artists"
+      ],
+      "combined_top10": [
+        "Geffen_Records",
+        "David_Geffen",
+        "Elliot_Roberts",
+        "Asylum_Records",
+        "Geffen_Records_discography",
+        "David_Geffen_Hall",
+        "Record_label",
+        "Upsetter_Records_-LRB-American_record_label-RRB-",
+        "Big_Beat_Records_-LRB-American_record_label-RRB-",
+        "David_Elliot"
+      ]
+    },
+    {
+      "claim_id": 60685,
+      "claim": "Trollhunters was produced by an animation company.",
+      "normalized_claim": "Trollhunters was produced by an animation company.",
+      "gold_pages": [
+        "Trollhunters"
+      ],
+      "baseline_top10": [
+        "Trollhunters",
+        "The_Animation_Picture_Company",
+        "Bridge_-LRB-animation_studio_company-RRB-",
+        "Animation",
+        "Abstract_animation",
+        "Adult_animation",
+        "Amazing_Animation",
+        "Animation_Academy",
+        "Animation_Collective",
+        "Animation_Domination"
+      ],
+      "event_top10": [
+        "Trollhunters",
+        "The_Animation_Picture_Company",
+        "Bridge_-LRB-animation_studio_company-RRB-",
+        "Animation",
+        "Abstract_animation",
+        "Adult_animation",
+        "Amazing_Animation",
+        "Animation_Academy",
+        "Animation_Collective",
+        "Animation_Domination"
+      ],
+      "combined_top10": [
+        "Trollhunters",
+        "The_Animation_Picture_Company",
+        "Bridge_-LRB-animation_studio_company-RRB-",
+        "Animation",
+        "Abstract_animation",
+        "Adult_animation",
+        "Amazing_Animation",
+        "Animation_Academy",
+        "Animation_Collective",
+        "Animation_Domination"
+      ]
+    },
+    {
+      "claim_id": 38125,
+      "claim": "The Armenian Genocide was the killing of Armenians who were mostly Ottoman natives.",
+      "normalized_claim": "The Armenian Genocide was the killing of Armenians who were mostly Ottoman natives.",
+      "gold_pages": [
+        "Armenian_Genocide"
+      ],
+      "baseline_top10": [
+        "Armenian_Genocide",
+        "Armenian_Genocide_denial",
+        "Armenian_Genocide_recognition",
+        "Armenian_Genocide_reparations",
+        "Armenian_Genocide_survivors",
+        "The_Armenian_Genocide",
+        "List_of_Ottoman_Armenians",
+        "Ottoman_Armenian_casualties",
+        "Ottoman_Armenian_population",
+        "Armenian_resistance_during_the_Armenian_Genocide"
+      ],
+      "event_top10": [
+        "Armenian_Genocide",
+        "Armenian_Genocide_denial",
+        "Armenian_Genocide_recognition",
+        "Armenian_Genocide_reparations",
+        "Armenian_Genocide_survivors",
+        "The_Armenian_Genocide",
+        "List_of_Ottoman_Armenians",
+        "Ottoman_Armenian_casualties",
+        "Ottoman_Armenian_population",
+        "Armenian_resistance_during_the_Armenian_Genocide"
+      ],
+      "combined_top10": [
+        "Armenian_Genocide",
+        "Armenian_Genocide_denial",
+        "Armenian_Genocide_recognition",
+        "Armenian_Genocide_reparations",
+        "Armenian_Genocide_survivors",
+        "The_Armenian_Genocide",
+        "List_of_Ottoman_Armenians",
+        "Ottoman_Armenian_casualties",
+        "Ottoman_Armenian_population",
+        "Armenian_resistance_during_the_Armenian_Genocide"
+      ]
+    },
+    {
+      "claim_id": 201095,
+      "claim": "There is a British actor name Marcus Bentley.",
+      "normalized_claim": "There is a British actor named Marcus Bentley.",
+      "gold_pages": [
+        "Marcus_Bentley"
+      ],
+      "baseline_top10": [
+        "Marcus_Bentley",
+        "Marcus_-LRB-name-RRB-",
+        "British_Approved_Name",
+        "James_Bentley_-LRB-actor-RRB-",
+        "John_Bentley_-LRB-actor-RRB-",
+        "Walter_Bentley_-LRB-actor-RRB-",
+        "James_Marcus_-LRB-actor-RRB-",
+        "Marcus_Gilbert_-LRB-actor-RRB-",
+        "There,_there",
+        "Marcus_Nash_-LRB-actor-RRB-"
+      ],
+      "event_top10": [
+        "Marcus_Bentley",
+        "James_Bentley_-LRB-actor-RRB-",
+        "John_Bentley_-LRB-actor-RRB-",
+        "Walter_Bentley_-LRB-actor-RRB-",
+        "There,_there",
+        "Bentley",
+        "James_Marcus_-LRB-actor-RRB-",
+        "There_There",
+        "Named",
+        "Marcus_Gilbert_-LRB-actor-RRB-"
+      ],
+      "combined_top10": [
+        "Marcus_Bentley",
+        "James_Bentley_-LRB-actor-RRB-",
+        "John_Bentley_-LRB-actor-RRB-",
+        "Walter_Bentley_-LRB-actor-RRB-",
+        "There,_there",
+        "James_Marcus_-LRB-actor-RRB-",
+        "Marcus_Gilbert_-LRB-actor-RRB-",
+        "Marcus_-LRB-name-RRB-",
+        "British_Approved_Name",
+        "Bentley"
+      ]
+    },
+    {
+      "claim_id": 11432,
+      "claim": "The first inauguration of Bill Clinton made him the 50th President of the United States.",
+      "normalized_claim": "Bill Clinton became the 50th President of the United States.",
+      "gold_pages": [
+        "First_inauguration_of_Bill_Clinton"
+      ],
+      "baseline_top10": [
+        "First_inauguration_of_Bill_Clinton",
+        "Inauguration_of_Bill_Clinton",
+        "Second_inauguration_of_Bill_Clinton",
+        "United_States_presidential_inauguration",
+        "50th_United_States_Congress",
+        "Bill_Clinton",
+        "United_States_farm_bill",
+        "First_United_States_Army",
+        "President's_Inauguration_Medal",
+        "President_of_the_United_States"
+      ],
+      "event_top10": [
+        "50th_United_States_Congress",
+        "Bill_Clinton",
+        "The_Monkey_That_Became_President",
+        "United_States_farm_bill",
+        "50th_United_States_Colored_Infantry_Regiment",
+        "President_of_the_United_States",
+        "Bill_Clinton_Boulevard",
+        "Little_Bill_Clinton",
+        "United_States_Bill_of_Rights",
+        "50th_Armored_Division_-LRB-United_States-RRB-"
+      ],
+      "combined_top10": [
+        "50th_United_States_Congress",
+        "Bill_Clinton",
+        "United_States_farm_bill",
+        "President_of_the_United_States",
+        "First_inauguration_of_Bill_Clinton",
+        "Inauguration_of_Bill_Clinton",
+        "Second_inauguration_of_Bill_Clinton",
+        "The_Monkey_That_Became_President",
+        "United_States_presidential_inauguration",
+        "50th_United_States_Colored_Infantry_Regiment"
+      ]
+    },
+    {
+      "claim_id": 172771,
+      "claim": "The Beach's director was Danny Boyle.",
+      "normalized_claim": "Danny Boyle was the director of The Beach.",
+      "gold_pages": [
+        "The_Beach_-LRB-film-RRB-"
+      ],
+      "baseline_top10": [
+        "Danny_Boyle",
+        "Boyle",
+        "Danny_Roane-COLON-_First_Time_Director",
+        "Danny_White_-LRB-athletic_director-RRB-",
+        "David_Boyle,_Lord_Boyle",
+        "Danny",
+        "Danny!",
+        "Adam_Boyle",
+        "Alan_Boyle",
+        "Alasdair_Boyle"
+      ],
+      "event_top10": [
+        "Danny_Boyle",
+        "Boyle",
+        "Danny_Roane-COLON-_First_Time_Director",
+        "Danny_White_-LRB-athletic_director-RRB-",
+        "David_Boyle,_Lord_Boyle",
+        "Danny",
+        "Danny!",
+        "Adam_Boyle",
+        "Alan_Boyle",
+        "Alasdair_Boyle"
+      ],
+      "combined_top10": [
+        "Danny_Boyle",
+        "Boyle",
+        "Danny_Roane-COLON-_First_Time_Director",
+        "Danny_White_-LRB-athletic_director-RRB-",
+        "David_Boyle,_Lord_Boyle",
+        "Danny",
+        "Danny!",
+        "Adam_Boyle",
+        "Alan_Boyle",
+        "Alasdair_Boyle"
+      ]
+    },
+    {
+      "claim_id": 125513,
+      "claim": "The dress did not inspire hashtags.",
+      "normalized_claim": "The dress did not inspire hashtags.",
+      "gold_pages": [
+        "The_dress"
+      ],
+      "baseline_top10": [
+        "Did_Not_Finish",
+        "Honda_Inspire",
+        "INSPIRE-HEP",
+        "Sokol_Did_Not_Love_Him",
+        "Inspire_Church",
+        "The_Gulf_War_Did_Not_Take_Place",
+        "Inspire_Films",
+        "Microsoft_Inspire",
+        "NASA_INSPIRE",
+        "DID"
+      ],
+      "event_top10": [
+        "Did_Not_Finish",
+        "Honda_Inspire",
+        "INSPIRE-HEP",
+        "Sokol_Did_Not_Love_Him",
+        "Inspire_Church",
+        "The_Gulf_War_Did_Not_Take_Place",
+        "Inspire_Films",
+        "Microsoft_Inspire",
+        "NASA_INSPIRE",
+        "DID"
+      ],
+      "combined_top10": [
+        "Did_Not_Finish",
+        "Honda_Inspire",
+        "INSPIRE-HEP",
+        "Sokol_Did_Not_Love_Him",
+        "Inspire_Church",
+        "The_Gulf_War_Did_Not_Take_Place",
+        "Inspire_Films",
+        "Microsoft_Inspire",
+        "NASA_INSPIRE",
+        "DID"
+      ]
+    },
+    {
+      "claim_id": 130920,
+      "claim": "Bruce Shand was born on September 22nd, 1917.",
+      "normalized_claim": "Bruce Shand was born on September 22, 1917",
+      "gold_pages": [
+        "Bruce_Shand"
+      ],
+      "baseline_top10": [
+        "Bruce_Shand",
+        "Shand",
+        "Action_of_25_September_1917",
+        "Alexander_Shand,_1st_Baron_Shand",
+        "Adam_Shand",
+        "Alexander_Shand",
+        "Bob_Shand",
+        "List_of_shipwrecks_in_September_1917",
+        "Actions_of_30_September_–_4_October_1917",
+        "David_Shand"
+      ],
+      "event_top10": [
+        "Bruce_Shand",
+        "September_22",
+        "Action_of_25_September_1917",
+        "Shand",
+        "Action_of_22_September_1914",
+        "Action_of_22_October_1917",
+        "Solar_eclipse_of_September_22,_1968",
+        "Solar_eclipse_of_September_22,_2006",
+        "Solar_eclipse_of_September_22,_2052",
+        "September_22_-LRB-Eastern_Orthodox_liturgics-RRB-"
+      ],
+      "combined_top10": [
+        "Bruce_Shand",
+        "Shand",
+        "Action_of_25_September_1917",
+        "September_22",
+        "Alexander_Shand,_1st_Baron_Shand",
+        "Adam_Shand",
+        "Action_of_22_September_1914",
+        "Alexander_Shand",
+        "Action_of_22_October_1917",
+        "Bob_Shand"
+      ]
+    },
+    {
+      "claim_id": 128229,
+      "claim": "Advertising is an sound-based manner of marketing communication.",
+      "normalized_claim": "Advertising is a sound-based manner of marketing communication.",
+      "gold_pages": [
+        "Advertising"
+      ],
+      "baseline_top10": [
+        "Impressions_Advertising_&_Marketing",
+        "Location-based_advertising",
+        "Performance-based_advertising",
+        "Account-based_marketing",
+        "Faith-based_marketing",
+        "Trust-based_marketing",
+        "Surround_sound_marketing",
+        "International_Sound_Communication",
+        "Marketing_Communication_Consultant_Association",
+        "Voice-based_marketing_automation"
+      ],
+      "event_top10": [
+        "Impressions_Advertising_&_Marketing",
+        "Location-based_advertising",
+        "Performance-based_advertising",
+        "Account-based_marketing",
+        "Faith-based_marketing",
+        "Trust-based_marketing",
+        "Surround_sound_marketing",
+        "International_Sound_Communication",
+        "Marketing_Communication_Consultant_Association",
+        "Voice-based_marketing_automation"
+      ],
+      "combined_top10": [
+        "Impressions_Advertising_&_Marketing",
+        "Location-based_advertising",
+        "Performance-based_advertising",
+        "Account-based_marketing",
+        "Faith-based_marketing",
+        "Trust-based_marketing",
+        "Surround_sound_marketing",
+        "International_Sound_Communication",
+        "Marketing_Communication_Consultant_Association",
+        "Voice-based_marketing_automation"
+      ]
+    },
+    {
+      "claim_id": 108950,
+      "claim": "Alexandra Daddario is Canadian.",
+      "normalized_claim": "Alexandra Daddario is Canadian.",
+      "gold_pages": [
+        "Alexandra_Daddario"
+      ],
+      "baseline_top10": [
+        "Alexandra_Daddario",
+        "Matthew_Daddario",
+        "Emilio_Q._Daddario",
+        "Alexandra",
+        "54_Alexandra",
+        "Acrobasis_alexandra",
+        "Addio_Alexandra",
+        "Alexandra,_Arizona",
+        "Alexandra,_Gauteng",
+        "Alexandra,_Queensland"
+      ],
+      "event_top10": [
+        "Alexandra_Daddario",
+        "Matthew_Daddario",
+        "Emilio_Q._Daddario",
+        "Alexandra",
+        "54_Alexandra",
+        "Acrobasis_alexandra",
+        "Addio_Alexandra",
+        "Alexandra,_Arizona",
+        "Alexandra,_Gauteng",
+        "Alexandra,_Queensland"
+      ],
+      "combined_top10": [
+        "Alexandra_Daddario",
+        "Matthew_Daddario",
+        "Emilio_Q._Daddario",
+        "Alexandra",
+        "54_Alexandra",
+        "Acrobasis_alexandra",
+        "Addio_Alexandra",
+        "Alexandra,_Arizona",
+        "Alexandra,_Gauteng",
+        "Alexandra,_Queensland"
+      ]
+    },
+    {
+      "claim_id": 121189,
+      "claim": "The Others (2001 film) lost Best Film.",
+      "normalized_claim": "The film \"The Others\" lost the Best Film award.",
+      "gold_pages": [
+        "The_Others_-LRB-2001_film-RRB-"
+      ],
+      "baseline_top10": [
+        "The_Others_-LRB-2001_film-RRB-",
+        "Lost_film",
+        "The_Lost_Battalion_-LRB-2001_film-RRB-",
+        "The_Lost_World_-LRB-2001_film-RRB-",
+        "My_Best_Friend_-LRB-2001_film-RRB-",
+        "Others",
+        "Dancemania_Speed_Best_2001",
+        "Others!_Others!_Volume_1",
+        "2001_in_film",
+        "Best_Film_First"
+      ],
+      "event_top10": [
+        "Santosham_Best_Film_Award",
+        "Sarasaviya_Best_Film_Award",
+        "ARY_Film_Award_for_Best_Film",
+        "Asian_Film_Award_for_Best_Film",
+        "European_Film_Award_for_Best_Film",
+        "Mainichi_Film_Award_for_Best_Film",
+        "Lost_film",
+        "AACTA_Award_for_Best_Film",
+        "APCA_Award_for_Best_Film",
+        "BAFTA_Award_for_Best_Film"
+      ],
+      "combined_top10": [
+        "Lost_film",
+        "The_Others_-LRB-2001_film-RRB-",
+        "Santosham_Best_Film_Award",
+        "Sarasaviya_Best_Film_Award",
+        "The_Lost_Battalion_-LRB-2001_film-RRB-",
+        "ARY_Film_Award_for_Best_Film",
+        "The_Lost_World_-LRB-2001_film-RRB-",
+        "Asian_Film_Award_for_Best_Film",
+        "My_Best_Friend_-LRB-2001_film-RRB-",
+        "European_Film_Award_for_Best_Film"
+      ]
+    },
+    {
+      "claim_id": 166848,
+      "claim": "Drake Bell put out an extended play in 2011.",
+      "normalized_claim": "Drake Bell released an extended play in 2011.",
+      "gold_pages": [
+        "A_Reminder",
+        "Drake_Bell"
+      ],
+      "baseline_top10": [
+        "Extended_play",
+        "Drake_Bell",
+        "Extended_Play_'07",
+        "Extended_Play_Live",
+        "Extended_Play_Remixes",
+        "Drake_Bell_discography",
+        "Extended_Play_Two",
+        "Drake_Bell_In_Concert",
+        "The_Extended_Play",
+        "Put_Out_More_Flags"
+      ],
+      "event_top10": [
+        "Extended_play",
+        "Drake_Bell",
+        "Extended_Play_'07",
+        "Extended_Play_Live",
+        "Drake_Bell_discography",
+        "Extended_Play_Remixes",
+        "Drake_Bell_In_Concert",
+        "Extended_Play_Two",
+        "The_Extended_Play",
+        "2011_Challenge_Bell"
+      ],
+      "combined_top10": [
+        "Extended_play",
+        "Drake_Bell",
+        "Extended_Play_'07",
+        "Extended_Play_Live",
+        "Extended_Play_Remixes",
+        "Drake_Bell_discography",
+        "Extended_Play_Two",
+        "Drake_Bell_In_Concert",
+        "The_Extended_Play",
+        "Put_Out_More_Flags"
+      ]
+    },
+    {
+      "claim_id": 121119,
+      "claim": "The 14th Dalai Lama lives in Japan exclusively.",
+      "normalized_claim": "The 14th Dalai Lama lives in Japan exclusively.",
+      "gold_pages": [
+        "14th_Dalai_Lama"
+      ],
+      "baseline_top10": [
+        "14th_Dalai_Lama",
+        "Dalai_Lama",
+        "10th_Dalai_Lama",
+        "11th_Dalai_Lama",
+        "12th_Dalai_Lama",
+        "13th_Dalai_Lama",
+        "15th_Dalai_Lama",
+        "Awards_and_honors_presented_to_the_14th_Dalai_Lama",
+        "1st_Dalai_Lama",
+        "List_of_overseas_visits_by_Tenzin_Gyatso_the_14th_Dalai_Lama_outside_India"
+      ],
+      "event_top10": [
+        "14th_Dalai_Lama",
+        "Dalai_Lama",
+        "10th_Dalai_Lama",
+        "11th_Dalai_Lama",
+        "12th_Dalai_Lama",
+        "13th_Dalai_Lama",
+        "15th_Dalai_Lama",
+        "Awards_and_honors_presented_to_the_14th_Dalai_Lama",
+        "1st_Dalai_Lama",
+        "List_of_overseas_visits_by_Tenzin_Gyatso_the_14th_Dalai_Lama_outside_India"
+      ],
+      "combined_top10": [
+        "14th_Dalai_Lama",
+        "Dalai_Lama",
+        "10th_Dalai_Lama",
+        "11th_Dalai_Lama",
+        "12th_Dalai_Lama",
+        "13th_Dalai_Lama",
+        "15th_Dalai_Lama",
+        "Awards_and_honors_presented_to_the_14th_Dalai_Lama",
+        "1st_Dalai_Lama",
+        "List_of_overseas_visits_by_Tenzin_Gyatso_the_14th_Dalai_Lama_outside_India"
+      ]
+    },
+    {
+      "claim_id": 141072,
+      "claim": "Telemundo is owned by ESPN.",
+      "normalized_claim": "Telemundo is owned by ESPN.",
+      "gold_pages": [
+        "Telemundo"
+      ],
+      "baseline_top10": [
+        "Telemundo",
+        "Noticias_Telemundo",
+        "Noticiero_Telemundo",
+        "Telemundo_51",
+        "Telemundo_Deportes",
+        "Telemundo_Internacional",
+        "Telemundo_Studios",
+        "Owned",
+        "Telemundo_Puerto_Rico",
+        "Publicly_owned"
+      ],
+      "event_top10": [
+        "Telemundo",
+        "Noticias_Telemundo",
+        "Noticiero_Telemundo",
+        "Telemundo_51",
+        "Telemundo_Deportes",
+        "Telemundo_Internacional",
+        "Telemundo_Studios",
+        "Owned",
+        "Telemundo_Puerto_Rico",
+        "Publicly_owned"
+      ],
+      "combined_top10": [
+        "Telemundo",
+        "Noticias_Telemundo",
+        "Noticiero_Telemundo",
+        "Telemundo_51",
+        "Telemundo_Deportes",
+        "Telemundo_Internacional",
+        "Telemundo_Studios",
+        "Owned",
+        "Telemundo_Puerto_Rico",
+        "Publicly_owned"
+      ]
+    },
+    {
+      "claim_id": 212194,
+      "claim": "Miracle at St. Anna only tells the story of four cats.",
+      "normalized_claim": "Miracle at St. Anna tells the story of four cats.",
+      "gold_pages": [
+        "Miracle_at_St._Anna"
+      ],
+      "baseline_top10": [
+        "Miracle_at_St._Anna",
+        "Tells",
+        "Only_Four_You",
+        "Every_Body_Tells_a_Story",
+        "Every_Face_Tells_a_Story",
+        "Every_Picture_Tells_a_Story",
+        "Four_Nights_with_Anna",
+        "St._Anna,_Minnesota",
+        "St._Anna,_Wisconsin",
+        "St._Anna_Street"
+      ],
+      "event_top10": [
+        "Miracle_at_St._Anna",
+        "Tells",
+        "Every_Body_Tells_a_Story",
+        "Every_Face_Tells_a_Story",
+        "Every_Picture_Tells_a_Story",
+        "Four_Nights_with_Anna",
+        "St._Anna,_Minnesota",
+        "The_Four-Story_Mistake",
+        "St._Anna,_Wisconsin",
+        "St._Anna_Street"
+      ],
+      "combined_top10": [
+        "Miracle_at_St._Anna",
+        "Tells",
+        "Every_Body_Tells_a_Story",
+        "Every_Face_Tells_a_Story",
+        "Every_Picture_Tells_a_Story",
+        "Four_Nights_with_Anna",
+        "St._Anna,_Minnesota",
+        "St._Anna,_Wisconsin",
+        "St._Anna_Street",
+        "Only_Four_You"
+      ]
+    },
+    {
+      "claim_id": 63038,
+      "claim": "Caroline Kennedy is American.",
+      "normalized_claim": "Caroline Kennedy is American.",
+      "gold_pages": [
+        "Caroline_Kennedy"
+      ],
+      "baseline_top10": [
+        "Caroline_Kennedy",
+        "Caroline_Kennedy-McCracken",
+        "Caroline",
+        "Caroline_Bird_-LRB-American_author-RRB-",
+        "Kennedy",
+        "Neil_Kennedy,_Lord_Kennedy",
+        "Caroline?",
+        "975025_Caroline",
+        "Caroline,_Alberta",
+        "Caroline,_No"
+      ],
+      "event_top10": [
+        "Caroline_Kennedy",
+        "Caroline_Kennedy-McCracken",
+        "Caroline",
+        "Caroline_Bird_-LRB-American_author-RRB-",
+        "Kennedy",
+        "Neil_Kennedy,_Lord_Kennedy",
+        "Caroline?",
+        "975025_Caroline",
+        "Caroline,_Alberta",
+        "Caroline,_No"
+      ],
+      "combined_top10": [
+        "Caroline_Kennedy",
+        "Caroline_Kennedy-McCracken",
+        "Caroline",
+        "Caroline_Bird_-LRB-American_author-RRB-",
+        "Kennedy",
+        "Neil_Kennedy,_Lord_Kennedy",
+        "Caroline?",
+        "975025_Caroline",
+        "Caroline,_Alberta",
+        "Caroline,_No"
+      ]
+    },
+    {
+      "claim_id": 185206,
+      "claim": "Home for the Holidays stars the fourth stepchild of Charlie Chaplin",
+      "normalized_claim": "Home for the Holidays stars the fourth stepchild of Charlie Chaplin.",
+      "gold_pages": [
+        "Home_for_the_Holidays_-LRB-1995_film-RRB-"
+      ],
+      "baseline_top10": [
+        "Charlie_Chaplin",
+        "Stepchild",
+        "Charlie_Chaplin_bibliography",
+        "Charlie_Chaplin_filmography",
+        "Home_for_the_Holidays",
+        "Holidays_at_Home",
+        "Charlie_Chaplin's_Comedy_Capers",
+        "Charlie_Chaplin_-LRB-film-RRB-",
+        "Charlie_Chaplin_-LRB-singer-RRB-",
+        "Follow_the_Stars_Home"
+      ],
+      "event_top10": [
+        "Charlie_Chaplin",
+        "Stepchild",
+        "Charlie_Chaplin_bibliography",
+        "Charlie_Chaplin_filmography",
+        "Home_for_the_Holidays",
+        "Holidays_at_Home",
+        "Charlie_Chaplin's_Comedy_Capers",
+        "Charlie_Chaplin_-LRB-film-RRB-",
+        "Charlie_Chaplin_-LRB-singer-RRB-",
+        "Follow_the_Stars_Home"
+      ],
+      "combined_top10": [
+        "Charlie_Chaplin",
+        "Stepchild",
+        "Charlie_Chaplin_bibliography",
+        "Charlie_Chaplin_filmography",
+        "Home_for_the_Holidays",
+        "Holidays_at_Home",
+        "Charlie_Chaplin's_Comedy_Capers",
+        "Charlie_Chaplin_-LRB-film-RRB-",
+        "Charlie_Chaplin_-LRB-singer-RRB-",
+        "Follow_the_Stars_Home"
+      ]
+    },
+    {
+      "claim_id": 166647,
+      "claim": "Anne Rice was born in Fort Lauderdale.",
+      "normalized_claim": "Anne Rice was born in Fort Lauderdale.",
+      "gold_pages": [
+        "Anne_Rice"
+      ],
+      "baseline_top10": [
+        "Anne_Rice",
+        "Fort_Rice",
+        "Conrad_Fort_Lauderdale",
+        "Fort_Lauderdale,_Florida",
+        "Fort_Lauderdale_Agreement",
+        "Fort_Lauderdale_Braves",
+        "Anne_Born",
+        "Fort_Lauderdale_Stadium",
+        "Anne_Estelle_Rice",
+        "Fort_Lauderdale_Stakes"
+      ],
+      "event_top10": [
+        "Anne_Rice",
+        "Fort_Rice",
+        "Conrad_Fort_Lauderdale",
+        "Fort_Lauderdale,_Florida",
+        "Fort_Lauderdale_Agreement",
+        "Fort_Lauderdale_Braves",
+        "Anne_Born",
+        "Fort_Lauderdale_Stadium",
+        "Anne_Estelle_Rice",
+        "Fort_Lauderdale_Stakes"
+      ],
+      "combined_top10": [
+        "Anne_Rice",
+        "Fort_Rice",
+        "Conrad_Fort_Lauderdale",
+        "Fort_Lauderdale,_Florida",
+        "Fort_Lauderdale_Agreement",
+        "Fort_Lauderdale_Braves",
+        "Anne_Born",
+        "Fort_Lauderdale_Stadium",
+        "Anne_Estelle_Rice",
+        "Fort_Lauderdale_Stakes"
+      ]
+    },
+    {
+      "claim_id": 51098,
+      "claim": "Stephen Hillenburg was fascinated with politics as a student.",
+      "normalized_claim": "Stephen Hillenburg had an interest in politics during his student years.",
+      "gold_pages": [
+        "Stephen_Hillenburg"
+      ],
+      "baseline_top10": [
+        "Stephen_Hillenburg",
+        "Fascinated",
+        "Hillenburg",
+        "Andy_Hillenburg",
+        "Student_Politics_of_Bangladesh",
+        "Politics",
+        "Fascinated_-LRB-Ivy_song-RRB-",
+        "Stephen,_Stephen",
+        "Student",
+        "Backbench_Student"
+      ],
+      "event_top10": [
+        "Stephen_Hillenburg",
+        "Hillenburg",
+        "His_Best_Student",
+        "Student_Politics_of_Bangladesh",
+        "Andy_Hillenburg",
+        "List_of_years_in_politics",
+        "His_Fleetwood_Mac_Years_&_Beyond",
+        "James_while_John_had_had_had_had_had_had_had_had_had_had_had_a_better_effect_on_the_teacher",
+        "Had",
+        "In_the_Summer_of_His_Years"
+      ],
+      "combined_top10": [
+        "Stephen_Hillenburg",
+        "Hillenburg",
+        "Andy_Hillenburg",
+        "Student_Politics_of_Bangladesh",
+        "Fascinated",
+        "His_Best_Student",
+        "Politics",
+        "List_of_years_in_politics",
+        "Fascinated_-LRB-Ivy_song-RRB-",
+        "His_Fleetwood_Mac_Years_&_Beyond"
+      ]
+    },
+    {
+      "claim_id": 217212,
+      "claim": "A monk only avoids practicing religious asceticism.",
+      "normalized_claim": "A monk avoids practicing religious asceticism.",
+      "gold_pages": [
+        "Monk"
+      ],
+      "baseline_top10": [
+        "Only_Monk",
+        "Asceticism",
+        "Asceticism_in_Judaism",
+        "Inner-worldly_asceticism",
+        "Practicing_without_a_license",
+        "Monk",
+        "Only",
+        "Guitar_for_the_Practicing_Musician",
+        "Adrian_Monk",
+        "Alasdair_Monk"
+      ],
+      "event_top10": [
+        "Asceticism",
+        "Asceticism_in_Judaism",
+        "Inner-worldly_asceticism",
+        "Practicing_without_a_license",
+        "Monk",
+        "Guitar_for_the_Practicing_Musician",
+        "Adrian_Monk",
+        "Alasdair_Monk",
+        "Alec_Monk",
+        "Allan_Monk"
+      ],
+      "combined_top10": [
+        "Asceticism",
+        "Asceticism_in_Judaism",
+        "Inner-worldly_asceticism",
+        "Practicing_without_a_license",
+        "Monk",
+        "Guitar_for_the_Practicing_Musician",
+        "Adrian_Monk",
+        "Alasdair_Monk",
+        "Only_Monk",
+        "Only"
+      ]
+    },
+    {
+      "claim_id": 47911,
+      "claim": "The Mod Squad is a series that fits into the genre of crime drama.",
+      "normalized_claim": "The Mod Squad is a series that fits into the genre of crime drama.",
+      "gold_pages": [
+        "The_Mod_Squad"
+      ],
+      "baseline_top10": [
+        "The_MOD_Squad",
+        "The_Mod_Squad",
+        "National_Crime_Squad",
+        "FITS",
+        "Fits",
+        "List_of_The_Mod_Squad_episodes",
+        "The_Mod_Squad_-LRB-film-RRB-",
+        "Drama_Special_Series",
+        "Outstanding_Drama_Series",
+        "Genre"
+      ],
+      "event_top10": [
+        "The_MOD_Squad",
+        "The_Mod_Squad",
+        "National_Crime_Squad",
+        "FITS",
+        "Fits",
+        "List_of_The_Mod_Squad_episodes",
+        "The_Mod_Squad_-LRB-film-RRB-",
+        "Drama_Special_Series",
+        "Outstanding_Drama_Series",
+        "Genre"
+      ],
+      "combined_top10": [
+        "The_MOD_Squad",
+        "The_Mod_Squad",
+        "National_Crime_Squad",
+        "FITS",
+        "Fits",
+        "List_of_The_Mod_Squad_episodes",
+        "The_Mod_Squad_-LRB-film-RRB-",
+        "Drama_Special_Series",
+        "Outstanding_Drama_Series",
+        "Genre"
+      ]
+    },
+    {
+      "claim_id": 130717,
+      "claim": "The Dark Tower is a fantasy film.",
+      "normalized_claim": "The Dark Tower is a fantasy film.",
+      "gold_pages": [
+        "The_Dark_Tower_-LRB-2017_film-RRB-"
+      ],
+      "baseline_top10": [
+        "Dark_fantasy",
+        "Fantasy_film",
+        "Dark_Tower_-LRB-1987_film-RRB-",
+        "The_Dark_Tower",
+        "The_Dark_Tower_VII-COLON-_The_Dark_Tower",
+        "The_Dark_Tower_-LRB-1943_film-RRB-",
+        "The_Dark_Tower_-LRB-2017_film-RRB-",
+        "Dark_Tower_-LRB-game-RRB-",
+        "Dark_Tower_-LRB-module-RRB-",
+        "The_Dark_Tower-COLON-_Treachery"
+      ],
+      "event_top10": [
+        "Dark_fantasy",
+        "Fantasy_film",
+        "Dark_Tower_-LRB-1987_film-RRB-",
+        "The_Dark_Tower",
+        "The_Dark_Tower_VII-COLON-_The_Dark_Tower",
+        "The_Dark_Tower_-LRB-1943_film-RRB-",
+        "The_Dark_Tower_-LRB-2017_film-RRB-",
+        "Dark_Tower_-LRB-game-RRB-",
+        "Dark_Tower_-LRB-module-RRB-",
+        "The_Dark_Tower-COLON-_Treachery"
+      ],
+      "combined_top10": [
+        "Dark_fantasy",
+        "Fantasy_film",
+        "Dark_Tower_-LRB-1987_film-RRB-",
+        "The_Dark_Tower",
+        "The_Dark_Tower_VII-COLON-_The_Dark_Tower",
+        "The_Dark_Tower_-LRB-1943_film-RRB-",
+        "The_Dark_Tower_-LRB-2017_film-RRB-",
+        "Dark_Tower_-LRB-game-RRB-",
+        "Dark_Tower_-LRB-module-RRB-",
+        "The_Dark_Tower-COLON-_Treachery"
+      ]
+    }
+  ]
+}

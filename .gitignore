@@ -1,0 +1,43 @@
+# Secrets
+.env*
+!.env.example
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Data and large corpora
+data/raw/
+data/processed/
+*.sqlite
+*.sqlite3
+*.db
+
+# OS and editor files
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Local environments and secrets
+.venv/
+venv/
+.env
+.env.*
+
+# Local datasets and indexes
+data/raw/
+data/processed/
+*.sqlite
+*.db
+
+# Accidental nested repository
+fakenewd/
+
+# Large generated feature arrays
+models/classical/*_test_tfidf_features.npy

@@ -1,0 +1,8 @@
+{
+  "dataset": "liar",
+  "seed": 42,
+  "llm_limit_per_split": 10,
+  "llm_model": "openai/gpt-oss-20b",
+  "roberta_included": false,
+  "note": "RoBERTa training is a separate step; this run fuses TF-IDF classical model probabilities with LLM features."
+}

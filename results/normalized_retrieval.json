@@ -1,0 +1,640 @@
+{
+  "dataset": "data/raw/fever/paper_dev.jsonl",
+  "requested_claims": 10,
+  "evaluated_claims": 10,
+  "skipped": 0,
+  "summary": {
+    "baseline": {
+      "claims": 10,
+      "recall": {
+        "1": 70.0,
+        "5": 90.0,
+        "10": 100.0
+      }
+    },
+    "normalized": {
+      "claims": 10,
+      "recall": {
+        "1": 70.0,
+        "5": 90.0,
+        "10": 100.0
+      }
+    },
+    "combined": {
+      "claims": 10,
+      "recall": {
+        "1": 70.0,
+        "5": 90.0,
+        "10": 100.0
+      }
+    }
+  },
+  "details": [
+    {
+      "claim_id": 137334,
+      "claim": "Fox 2000 Pictures released the film Soul Food.",
+      "strategies": {
+        "baseline": {
+          "query": "Fox 2000 Pictures released the film Soul Food.",
+          "retrieved_pages": [
+            "Soul_Food",
+            "Soul_food",
+            "Soul_Food_-LRB-film-RRB-",
+            "Fox_Searchlight_Pictures",
+            "Soul_Food_Café",
+            "Soul_Food_Junkies",
+            "Soul_Food_Taqueria",
+            "Fox_Film",
+            "Rejoice!_Musical_Soul_Food",
+            "List_of_Soul_Food_episodes"
+          ],
+          "gold_pages": [
+            "Soul_Food_-LRB-film-RRB-"
+          ]
+        },
+        "normalized": {
+          "query": "Fox 2000 Pictures released the film Soul Food.",
+          "retrieved_pages": [
+            "Soul_Food",
+            "Soul_food",
+            "Soul_Food_-LRB-film-RRB-",
+            "Fox_Searchlight_Pictures",
+            "Soul_Food_Café",
+            "Soul_Food_Junkies",
+            "Soul_Food_Taqueria",
+            "Fox_Film",
+            "Rejoice!_Musical_Soul_Food",
+            "List_of_Soul_Food_episodes"
+          ],
+          "gold_pages": [
+            "Soul_Food_-LRB-film-RRB-"
+          ]
+        },
+        "combined": {
+          "query": "Fox 2000 Pictures released the film Soul Food. Fox 2000 Pictures released the film Soul Food. Fox 2000 Pictures Soul Food",
+          "retrieved_pages": [
+            "Soul_Food",
+            "Soul_food",
+            "Fox_Searchlight_Pictures",
+            "Soul_Food_-LRB-film-RRB-",
+            "Soul_Food_Café",
+            "Soul_Food_Junkies",
+            "Fox_Film",
+            "Soul_Food_Taqueria",
+            "Rejoice!_Musical_Soul_Food",
+            "List_of_Soul_Food_episodes"
+          ],
+          "gold_pages": [
+            "Soul_Food_-LRB-film-RRB-"
+          ]
+        }
+      }
+    },
+    {
+      "claim_id": 111897,
+      "claim": "Telemundo is a English-language television network.",
+      "strategies": {
+        "baseline": {
+          "query": "Telemundo is a English-language television network.",
+          "retrieved_pages": [
+            "Telemundo",
+            "English_language",
+            "Television_network",
+            "Noticias_Telemundo",
+            "Noticiero_Telemundo",
+            "Telemundo_51",
+            "Access_Television_Network",
+            "Telemundo_Deportes",
+            "Aotearoa_Television_Network",
+            "Arabian_Television_Network"
+          ],
+          "gold_pages": [
+            "Hispanic_and_Latino_Americans",
+            "Telemundo"
+          ]
+        },
+        "normalized": {
+          "query": "Telemundo is an English-language television network.",
+          "retrieved_pages": [
+            "Telemundo",
+            "English_language",
+            "Television_network",
+            "Noticias_Telemundo",
+            "Noticiero_Telemundo",
+            "Telemundo_51",
+            "Access_Television_Network",
+            "Telemundo_Deportes",
+            "Aotearoa_Television_Network",
+            "Arabian_Television_Network"
+          ],
+          "gold_pages": [
+            "Hispanic_and_Latino_Americans",
+            "Telemundo"
+          ]
+        },
+        "combined": {
+          "query": "Telemundo is a English-language television network. Telemundo is an English-language television network. Telemundo",
+          "retrieved_pages": [
+            "Telemundo",
+            "English_language",
+            "Television_network",
+            "Noticias_Telemundo",
+            "Noticiero_Telemundo",
+            "Telemundo_51",
+            "Telemundo_Deportes",
+            "Telemundo_Internacional",
+            "Access_Television_Network",
+            "Telemundo_Studios"
+          ],
+          "gold_pages": [
+            "Hispanic_and_Latino_Americans",
+            "Telemundo"
+          ]
+        }
+      }
+    },
+    {
+      "claim_id": 89891,
+      "claim": "Damon Albarn's debut album was released in 2011.",
+      "strategies": {
+        "baseline": {
+          "query": "Damon Albarn's debut album was released in 2011.",
+          "retrieved_pages": [
+            "Damon_Albarn",
+            "Damon_Albarn_discography",
+            "Keith_Albarn",
+            "You_and_Me_-LRB-Damon_Albarn_song-RRB-",
+            "Debut",
+            "The_Multi-Platinum_Debut_Album",
+            "Debut_Album_-LRB-Sayuri_Ishikawa_album-RRB-",
+            "Damon",
+            "'F'_Debut",
+            "Debut_-LRB-Björk_album-RRB-"
+          ],
+          "gold_pages": [
+            "Damon_Albarn"
+          ]
+        },
+        "normalized": {
+          "query": "Damon Albarn released his debut album in 2011.",
+          "retrieved_pages": [
+            "Damon_Albarn",
+            "Damon_Albarn_discography",
+            "Keith_Albarn",
+            "You_and_Me_-LRB-Damon_Albarn_song-RRB-",
+            "Debut",
+            "The_Multi-Platinum_Debut_Album",
+            "Damon",
+            "Debut_Album_-LRB-Sayuri_Ishikawa_album-RRB-",
+            "'F'_Debut",
+            "2nd_Debut"
+          ],
+          "gold_pages": [
+            "Damon_Albarn"
+          ]
+        },
+        "combined": {
+          "query": "Damon Albarn's debut album was released in 2011. Release of Damon Albarn's debut album Damon Albarn debut album",
+          "retrieved_pages": [
+            "Damon_Albarn",
+            "Damon_Albarn_discography",
+            "Release_-LRB-Damon_Johnson_album-RRB-",
+            "You_and_Me_-LRB-Damon_Albarn_song-RRB-",
+            "Keith_Albarn",
+            "Debut",
+            "Damon",
+            "Release",
+            "The_Multi-Platinum_Debut_Album",
+            "Debut_Album_-LRB-Sayuri_Ishikawa_album-RRB-"
+          ],
+          "gold_pages": [
+            "Damon_Albarn"
+          ]
+        }
+      }
+    },
+    {
+      "claim_id": 181634,
+      "claim": "There is a capital called Mogadishu.",
+      "strategies": {
+        "baseline": {
+          "query": "There is a capital called Mogadishu.",
+          "retrieved_pages": [
+            "Mogadishu",
+            "Africa/Mogadishu",
+            "Mogadishu_Avenue",
+            "Mogadishu_Cathedral",
+            "Mogadishu_Line",
+            "Mogadishu_Mile",
+            "There,_there",
+            "Mogadishu_Municipality",
+            "There_There",
+            "Capital"
+          ],
+          "gold_pages": [
+            "Mogadishu"
+          ]
+        },
+        "normalized": {
+          "query": "Mogadishu is a capital.",
+          "retrieved_pages": [
+            "Mogadishu",
+            "Africa/Mogadishu",
+            "Mogadishu_Avenue",
+            "Mogadishu_Cathedral",
+            "Mogadishu_Line",
+            "Mogadishu_Mile",
+            "Mogadishu_Municipality",
+            "Mogadishu_Stadium",
+            "Mogadishu_University",
+            "Capital"
+          ],
+          "gold_pages": [
+            "Mogadishu"
+          ]
+        },
+        "combined": {
+          "query": "There is a capital called Mogadishu. Mogadishu is a capital. Mogadishu",
+          "retrieved_pages": [
+            "Mogadishu",
+            "Africa/Mogadishu",
+            "Mogadishu_Avenue",
+            "Mogadishu_Cathedral",
+            "Mogadishu_Line",
+            "Mogadishu_Mile",
+            "There,_there",
+            "Mogadishu_Municipality",
+            "There_There",
+            "Capital"
+          ],
+          "gold_pages": [
+            "Mogadishu"
+          ]
+        }
+      }
+    },
+    {
+      "claim_id": 219028,
+      "claim": "Savages was exclusively a German film.",
+      "strategies": {
+        "baseline": {
+          "query": "Savages was exclusively a German film.",
+          "retrieved_pages": [
+            "Savages",
+            "Complete_Savages",
+            "Hopeless_Savages",
+            "Savages_-LRB-1972_film-RRB-",
+            "Savages_-LRB-1974_film-RRB-",
+            "Voyeurs_&_Savages",
+            "German_Film_Awards_2015",
+            "Savages_-LRB-2012_film-RRB-",
+            "German_Film_Award_for_Best_Documentary_Film",
+            "German_Film_Award_for_Best_Feature_Film"
+          ],
+          "gold_pages": [
+            "Savages_-LRB-2012_film-RRB-"
+          ]
+        },
+        "normalized": {
+          "query": "Savages was exclusively a German film.",
+          "retrieved_pages": [
+            "Savages",
+            "Complete_Savages",
+            "Hopeless_Savages",
+            "Savages_-LRB-1972_film-RRB-",
+            "Savages_-LRB-1974_film-RRB-",
+            "Voyeurs_&_Savages",
+            "German_Film_Awards_2015",
+            "Savages_-LRB-2012_film-RRB-",
+            "German_Film_Award_for_Best_Documentary_Film",
+            "German_Film_Award_for_Best_Feature_Film"
+          ],
+          "gold_pages": [
+            "Savages_-LRB-2012_film-RRB-"
+          ]
+        },
+        "combined": {
+          "query": "Savages was exclusively a German film. Savages was exclusively a German film. Savages Germany",
+          "retrieved_pages": [
+            "Savages",
+            "Complete_Savages",
+            "Hopeless_Savages",
+            "Savages_-LRB-1972_film-RRB-",
+            "Voyeurs_&_Savages",
+            "Savages_-LRB-1974_film-RRB-",
+            "Savages_-LRB-2012_film-RRB-",
+            "The_Savages_-LRB-film-RRB-",
+            "Exclusively_for_My_Friends",
+            "German_Film_Awards_2015"
+          ],
+          "gold_pages": [
+            "Savages_-LRB-2012_film-RRB-"
+          ]
+        }
+      }
+    },
+    {
+      "claim_id": 108281,
+      "claim": "Andrew Kevin Walker is only Chinese.",
+      "strategies": {
+        "baseline": {
+          "query": "Andrew Kevin Walker is only Chinese.",
+          "retrieved_pages": [
+            "Andrew_Kevin_Walker",
+            "Kevin_Walker",
+            "Andrew_Walker",
+            "Andrew_Barclay_Walker",
+            "Kevin_Andrew_Collins",
+            "Kevin_Walker_-LRB-baseball-RRB-",
+            "Kevin_Walker_-LRB-cornerback-RRB-",
+            "Kevin_Andrew_Murphy",
+            "Kevin_Walker_-LRB-linebacker-RRB-",
+            "Kevin_Walker_-LRB-Brothers_&_Sisters-RRB-"
+          ],
+          "gold_pages": [
+            "Andrew_Kevin_Walker"
+          ]
+        },
+        "normalized": {
+          "query": "Andrew Kevin Walker is only Chinese.",
+          "retrieved_pages": [
+            "Andrew_Kevin_Walker",
+            "Kevin_Walker",
+            "Andrew_Walker",
+            "Andrew_Barclay_Walker",
+            "Kevin_Andrew_Collins",
+            "Kevin_Walker_-LRB-baseball-RRB-",
+            "Kevin_Walker_-LRB-cornerback-RRB-",
+            "Kevin_Andrew_Murphy",
+            "Kevin_Walker_-LRB-linebacker-RRB-",
+            "Kevin_Walker_-LRB-Brothers_&_Sisters-RRB-"
+          ],
+          "gold_pages": [
+            "Andrew_Kevin_Walker"
+          ]
+        },
+        "combined": {
+          "query": "Andrew Kevin Walker is only Chinese. Statement that Andrew Kevin Walker is only Chinese. Andrew Kevin Walker Chinese",
+          "retrieved_pages": [
+            "Andrew_Kevin_Walker",
+            "Kevin_Walker",
+            "Andrew_Walker",
+            "Andrew_Barclay_Walker",
+            "Kevin_Andrew_Collins",
+            "Kevin_Andrew_Murphy",
+            "Statement",
+            "Agreed_statement",
+            "Bank_statement",
+            "Career_statement"
+          ],
+          "gold_pages": [
+            "Andrew_Kevin_Walker"
+          ]
+        }
+      }
+    },
+    {
+      "claim_id": 204361,
+      "claim": "The Cretaceous ended.",
+      "strategies": {
+        "baseline": {
+          "query": "The Cretaceous ended.",
+          "retrieved_pages": [
+            "Cretaceous",
+            "Cretaceous_Dawn",
+            "Cretaceous_Mongolia",
+            "Cretaceous_Research",
+            "Early_Cretaceous",
+            "Late_Cretaceous",
+            "Cretaceous_Terrestrial_Revolution",
+            "Cretaceous_Thermal_Maximum",
+            "Cretaceous–Paleogene_boundary",
+            "Closed-ended"
+          ],
+          "gold_pages": [
+            "Cretaceous"
+          ]
+        },
+        "normalized": {
+          "query": "The Cretaceous period ended.",
+          "retrieved_pages": [
+            "Cretaceous",
+            "Cretaceous_Dawn",
+            "Cretaceous_Mongolia",
+            "Cretaceous_Research",
+            "Early_Cretaceous",
+            "Late_Cretaceous",
+            "Closed-ended",
+            "Open-ended",
+            "Single-ended",
+            "Cretaceous_Terrestrial_Revolution"
+          ],
+          "gold_pages": [
+            "Cretaceous"
+          ]
+        },
+        "combined": {
+          "query": "The Cretaceous ended. The Cretaceous ended. Cretaceous",
+          "retrieved_pages": [
+            "Cretaceous",
+            "Cretaceous_Dawn",
+            "Cretaceous_Mongolia",
+            "Cretaceous_Research",
+            "Early_Cretaceous",
+            "Late_Cretaceous",
+            "Cretaceous_Terrestrial_Revolution",
+            "Cretaceous_Thermal_Maximum",
+            "Cretaceous–Paleogene_boundary",
+            "Closed-ended"
+          ],
+          "gold_pages": [
+            "Cretaceous"
+          ]
+        }
+      }
+    },
+    {
+      "claim_id": 54168,
+      "claim": "Murda Beatz's real name is Marshall Mathers.",
+      "strategies": {
+        "baseline": {
+          "query": "Murda Beatz's real name is Marshall Mathers.",
+          "retrieved_pages": [
+            "Murda_Beatz",
+            "The_Marshall_Mathers_LP",
+            "Marshall_Mathers_-LRB-disambiguation-RRB-",
+            "Mathers",
+            "The_Marshall_Mathers_LP_2",
+            "Real-name_system",
+            "Khooni_Murda",
+            "Facebook_real-name_policy_controversy",
+            "Murda_Muzik",
+            "Uncle_Murda"
+          ],
+          "gold_pages": [
+            "Murda_Beatz"
+          ]
+        },
+        "normalized": {
+          "query": "Murda Beatz's real name is Marshall Mathers.",
+          "retrieved_pages": [
+            "Murda_Beatz",
+            "The_Marshall_Mathers_LP",
+            "Marshall_Mathers_-LRB-disambiguation-RRB-",
+            "Mathers",
+            "The_Marshall_Mathers_LP_2",
+            "Real-name_system",
+            "Khooni_Murda",
+            "Facebook_real-name_policy_controversy",
+            "Murda_Muzik",
+            "Uncle_Murda"
+          ],
+          "gold_pages": [
+            "Murda_Beatz"
+          ]
+        },
+        "combined": {
+          "query": "Murda Beatz's real name is Marshall Mathers. Murda Beatz's real name is Marshall Mathers. Murda Beatz Marshall Mathers",
+          "retrieved_pages": [
+            "Murda_Beatz",
+            "The_Marshall_Mathers_LP",
+            "Marshall_Mathers_-LRB-disambiguation-RRB-",
+            "Mathers",
+            "The_Marshall_Mathers_LP_2",
+            "Real-name_system",
+            "Khooni_Murda",
+            "Murda_Muzik",
+            "Facebook_real-name_policy_controversy",
+            "Uncle_Murda"
+          ],
+          "gold_pages": [
+            "Murda_Beatz"
+          ]
+        }
+      }
+    },
+    {
+      "claim_id": 105095,
+      "claim": "Nicholas Brody is a character on Homeland.",
+      "strategies": {
+        "baseline": {
+          "query": "Nicholas Brody is a character on Homeland.",
+          "retrieved_pages": [
+            "Nicholas_Brody",
+            "Brody",
+            "Homeland",
+            "Character",
+            "Abraham_Brody",
+            "Adam_Brody",
+            "Adrien_Brody",
+            "Alan_Brody",
+            "Alexander_Brody",
+            "Andrew_Brody"
+          ],
+          "gold_pages": [
+            "Carrie_Mathison",
+            "Nicholas_Brody"
+          ]
+        },
+        "normalized": {
+          "query": "Nicholas Brody is a character on Homeland.",
+          "retrieved_pages": [
+            "Nicholas_Brody",
+            "Brody",
+            "Homeland",
+            "Character",
+            "Abraham_Brody",
+            "Adam_Brody",
+            "Adrien_Brody",
+            "Alan_Brody",
+            "Alexander_Brody",
+            "Andrew_Brody"
+          ],
+          "gold_pages": [
+            "Carrie_Mathison",
+            "Nicholas_Brody"
+          ]
+        },
+        "combined": {
+          "query": "Nicholas Brody is a character on Homeland. Nicholas Brody Homeland",
+          "retrieved_pages": [
+            "Nicholas_Brody",
+            "Brody",
+            "Homeland",
+            "Character",
+            "Abraham_Brody",
+            "Adam_Brody",
+            "Adrien_Brody",
+            "Alan_Brody",
+            "Alexander_Brody",
+            "Andrew_Brody"
+          ],
+          "gold_pages": [
+            "Carrie_Mathison",
+            "Nicholas_Brody"
+          ]
+        }
+      }
+    },
+    {
+      "claim_id": 18708,
+      "claim": "Charles Manson has been proven innocent of all crimes.",
+      "strategies": {
+        "baseline": {
+          "query": "Charles Manson has been proven innocent of all crimes.",
+          "retrieved_pages": [
+            "Guilty_'til_Proven_Innocent",
+            "Guilty_Until_Proven_Innocent",
+            "Charles_Manson",
+            "Charles_Manson_Superstar",
+            "Proven",
+            "Charles_Manson_discography",
+            "Charles_L._Manson_House",
+            "All_That_Falls_Has_Wings",
+            "All_That_Was_Has_Gone",
+            "Not_proven"
+          ],
+          "gold_pages": [
+            "Charles_Manson"
+          ]
+        },
+        "normalized": {
+          "query": "Charles Manson was proven innocent of all crimes.",
+          "retrieved_pages": [
+            "Guilty_'til_Proven_Innocent",
+            "Guilty_Until_Proven_Innocent",
+            "Charles_Manson",
+            "Charles_Manson_Superstar",
+            "Proven",
+            "Charles_Manson_discography",
+            "Charles_L._Manson_House",
+            "Not_proven",
+            "Proven_reserves",
+            "Manson"
+          ],
+          "gold_pages": [
+            "Charles_Manson"
+          ]
+        },
+        "combined": {
+          "query": "Charles Manson has been proven innocent of all crimes. Charles Manson was proven innocent of all crimes. Charles Manson",
+          "retrieved_pages": [
+            "Guilty_'til_Proven_Innocent",
+            "Guilty_Until_Proven_Innocent",
+            "Charles_Manson",
+            "Proven",
+            "Charles_Manson_Superstar",
+            "Charles_Manson_discography",
+            "Charles_L._Manson_House",
+            "All_That_Falls_Has_Wings",
+            "All_That_Was_Has_Gone",
+            "Not_proven"
+          ],
+          "gold_pages": [
+            "Charles_Manson"
+          ]
+        }
+      }
+    }
+  ]
+}
