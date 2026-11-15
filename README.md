@@ -1,66 +1,168 @@
-# Evidence-Aware Fake News Detection (EAFND)
+# 🔎 EvidenceAware — Evidence-Aware Fake News Detection
 
-A lightweight, local-first research prototype. The first milestone implements input validation,
-text normalization, and a stable article/claim record. It does **not** yet make a fake/real
-prediction or claim to verify evidence.
+**EvidenceAware (EAFND)** is an AI-assisted fake news detection and evidence analysis research prototype. It combines machine-learning classification, event and entity extraction, Wikipedia evidence retrieval, and LLM-assisted evidence assessment.
 
-## Dataset decision
+The goal is to move beyond simple fake/real classification by providing supporting context and traceable evidence for human review.
 
-Start with **FEVER** as the first evidence-verification benchmark. FEVER provides claims
-labelled `SUPPORTS`, `REFUTES`, or `NOT ENOUGH INFO`, with annotated evidence for many
-examples. It is suitable for testing the evidence-verification part of this project.
+## Features
 
-Important limitation: FEVER is a fact-verification dataset, not a news-article corpus.
-After the evidence pipeline works, add a news dataset such as FakeNewsNet (GossipCop/PolitiFact)
-for a separate news-classification evaluation. Do not merge scores across these datasets as
-if they were one benchmark.
+- **News classification:** Predicts FAKE or REAL using a trained ISOT text classifier.
+- **Confidence scores:** Displays fake and real probabilities.
+- **Event extraction:** Extracts events, entities, dates, locations, and attribution using an LLM.
+- **Evidence retrieval:** Searches an indexed Wikipedia corpus for relevant pages and sentences.
+- **Evidence assessment:** Uses an LLM to classify retrieved sentences as SUPPORTS, REFUTES, or INSUFFICIENT.
+- **Interactive interface:** Presents predictions, extracted entities, retrieved evidence, and technical details in a Streamlit application.
 
-## Requirements
+## Architecture
 
-- Python 3.10+
-- No API key or large model required for Milestone 1
+The current prototype follows this workflow:
 
-## Setup (macOS)
+1. **Input:** Accept a headline or news article.
+2. **Classification:** Generate a preliminary fake/real prediction.
+3. **Normalization:** Extract event information and named entities.
+4. **Retrieval:** Search Wikipedia for potentially relevant evidence.
+5. **Verification:** Assess retrieved sentences against the submitted claim.
+6. **Output:** Display classification probabilities, extracted information, evidence assessments, and limitations.
+
+## Tech Stack
+
+- Python
+- Streamlit
+- Scikit-learn
+- XGBoost
+- SQLite / FTS5
+- Groq API — `openai/gpt-oss-20b`
+- TF-IDF and classical machine-learning models
+- Wikipedia / FEVER evidence corpus
+
+## Installation
+
+### 1. Clone the repository
 
 ```bash
-cd evidence_aware_fnd
+git clone https://github.com/BixbyCodes/fakenewd.git
+cd fakenewd
+```
+
+### 2. Create a virtual environment
+
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install --upgrade pip
+```
+
+### 3. Install dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
-## First module: article/claim ingestion
+### 4. Configure the API
 
-Run the demo:
+Create a `.env` file in the project root:
 
-```bash
-python -m src.main
+```env
+GROQ_API_KEY=your_groq_api_key
+GROQ_MODEL=openai/gpt-oss-20b
 ```
 
-Run tests:
+Obtain an API key from [Groq Console](https://console.groq.com/).
 
-```bash
-python -m unittest discover -s tests -v
+Never commit your API key.
+
+### 5. Prepare the datasets
+
+The datasets and large Wikipedia index are not included in this GitHub repository.
+
+You will need the relevant local datasets and the processed Wikipedia SQLite index to run the complete evidence retrieval workflow.
+
+The expected Wikipedia index location is:
+
+```text
+data/processed/wiki_pages.sqlite
 ```
 
-The module:
-1. accepts a headline, body, optional source URL, language, and metadata;
-2. normalizes whitespace and Unicode text without destroying punctuation;
-3. validates required fields and URL format;
-4. creates a reproducible JSON record with a SHA-256 content identifier.
+### 6. Run the application
 
-## Planned milestones
+```bash
+streamlit run app.py
+```
 
-1. **Input and normalization** — current.
-2. FEVER dataset adapter and label mapping.
-3. Claim/event extraction.
-4. Evidence retrieval and source provenance.
-5. Evidence support/refutation assessment.
-6. A baseline classifier and selective/uncertain output.
-7. Evaluation: macro-F1, per-class precision/recall, evidence coverage, and ablations.
+Open the local URL displayed in your terminal.
 
-## Research integrity
+## Project Structure
 
-The system currently has no trained classifier, retrieval index, or evidence verifier.
-Do not describe Milestone 1 as a fake-news detector. It is the data-ingestion foundation.
+```text
+evidence_aware_fnd/
+│
+├── app.py
+├── src/
+│   ├── classical.py
+│   ├── data.py
+│   ├── event_parser.py
+│   ├── evidence_retriever.py
+│   ├── evidence_verifier.py
+│   ├── indexed_evidence_retriever.py
+│   ├── ingestion.py
+│   ├── llm_features.py
+│   ├── pipeline.py
+│   ├── predict.py
+│   └── title_search.py
+│
+├── models/
+│   ├── classical/
+│   └── fusion/
+│
+├── results/
+├── tests/
+├── requirements.txt
+└── README.md
+```
+
+## Datasets and Evaluation
+
+The project uses different datasets for different research tasks:
+
+| Dataset | Purpose |
+|---|---|
+| ISOT | Fake news classification |
+| LIAR | Short-claim classification |
+| FEVER | Evidence retrieval and fact verification |
+
+These datasets represent different tasks and should not be treated as one unified benchmark.
+
+### Selected experimental results
+
+- ISOT Linear SVM: approximately 99.04% test accuracy.
+- LIAR Linear SVM: approximately 64.54% test accuracy.
+- FEVER Wikipedia title retrieval: Recall@10 of 83.8% on 1,000 evaluated claims.
+- Gold-reference evidence recovery: 99.37% in the evaluated sample.
+
+**Important:** Gold-reference recovery is not end-to-end retrieval accuracy. The classification results are dataset-specific and may reflect dataset artifacts. The hybrid experiments used limited LLM annotations and should not be interpreted as a fully evaluated hybrid system.
+
+## Limitations
+
+- Classification predictions are not definitive fact-checking verdicts.
+- Wikipedia retrieval may miss relevant evidence.
+- LLM-generated explanations and evidence labels can be incorrect.
+- The current evidence corpus is based on Wikipedia and FEVER, not comprehensive live news sources.
+- Performance on ISOT and LIAR does not establish real-world generalization.
+- Human review is recommended for uncertain or high-impact claims.
+
+## Research Objective
+
+EvidenceAware explores how machine-learning classification, event normalization, evidence retrieval, and LLM-assisted reasoning can work together in a unified fake news detection framework.
+
+Further work includes improving retrieval, evaluating evidence assessments, integrating graph-based context, and conducting systematic ablation studies.
+
+## Author
+
+**Utsav Tripathi**
+
+GitHub: [@BixbyCodes](https://github.com/BixbyCodes)
+
+Repository: [BixbyCodes/fakenewd](https://github.com/BixbyCodes/fakenewd)
+
+---
+
+*EvidenceAware is a research prototype. Its predictions and evidence assessments should be treated as decision-support signals, not authoritative truth judgments.*
