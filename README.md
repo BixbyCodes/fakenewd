@@ -532,7 +532,7 @@ calls for identical claims, and the app degrades gracefully if either service is
 python -m unittest discover -s tests -v
 ```
 
-98 tests (verified on Python 3.9, 3.11 and 3.14), none of which use the network or the real Groq API
+99 tests (verified on Python 3.9, 3.11 and 3.14), none of which use the network or the real Groq API
 (urllib and the LLM client are replaced with fakes; caches go to temp directories):
 
 - `tests/test_ingestion.py`, `tests/test_fever_loader.py`, `tests/test_evidence_retriever.py`: original module tests.

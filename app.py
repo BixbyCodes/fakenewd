@@ -178,9 +178,22 @@ def warm_models():
     return True
 
 
+STATUS_KEYS = {"classifier", "llm", "evidence", "evidence_backend", "evidence_label", "evidence_reason"}
+
+
 @st.cache_data(ttl=300, show_spinner=False)
-def cached_status():
+def cached_status(schema_version=2):
+    # schema_version is part of the cache key: Streamlit only hashes this
+    # function's own source, so a changed capability_status() in another module
+    # would otherwise keep serving a stale dict after a redeploy.
     return capability_status()
+
+
+def current_status():
+    status = cached_status()
+    if not STATUS_KEYS.issubset(status):  # stale or incomplete cache entry
+        status = capability_status()
+    return status
 
 
 def render_header(status):
@@ -573,7 +586,7 @@ def render_technical(report):
 
 def main():
     warm_models()
-    status = cached_status()
+    status = current_status()
     render_header(status)
     submitted, headline, body = render_input()
 

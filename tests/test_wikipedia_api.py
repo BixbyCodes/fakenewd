@@ -626,5 +626,24 @@ class AppWithPublicApiTests(VerifierCase):
         self.assertNotIn("Retrieved Wikipedia sentence", rendered)
 
 
+class StaleStatusCacheTests(VerifierCase):
+    def test_app_survives_stale_cached_status_from_older_version(self):
+        """Regression: after a redeploy the cache served a dict with old keys; the header crashed."""
+        from streamlit.testing.v1 import AppTest
+        import src.analysis as analysis_module
+        stale = {"classifier": True, "llm": True, "llm_model": "m",
+                 "evidence_index": False, "evidence_reason": "old"}
+        fresh = dict(stale, evidence=True, evidence_backend="wikipedia_api",
+                     evidence_label="live Wikipedia API", evidence_reason=None)
+        # Every @st.cache_data function in the app (only cached_status) "hits" with the stale dict.
+        with mock.patch("streamlit.cache_data", lambda *a, **k: (lambda f: (lambda *x, **y: stale))), \
+                mock.patch.object(analysis_module, "capability_status", return_value=fresh):
+            app = AppTest.from_file(str(Path(__file__).resolve().parent.parent / "app.py"),
+                                    default_timeout=120)
+            app.run()
+        self.assertEqual(len(app.exception), 0)
+        self.assertIn("live Wikipedia API", " ".join(m.value for m in app.markdown))
+
+
 if __name__ == "__main__":
     unittest.main()
