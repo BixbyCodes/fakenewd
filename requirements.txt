@@ -1,0 +1,12 @@
+# Runtime dependencies for the EvidenceAware web app (also used by Streamlit
+# Community Cloud). Versions are pinned because the saved models were
+# pickled with scikit-learn 1.6.1 / numpy 2.0.x; other versions may fail to
+# load them or change their predictions. Supported Python: 3.9 - 3.12.
+streamlit==1.50.0
+scikit-learn==1.6.1
+numpy==2.0.2
+scipy==1.13.1
+pandas==2.3.3
+joblib==1.5.3
+groq==1.0.0
+python-dotenv==1.2.1

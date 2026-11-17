@@ -13,9 +13,9 @@ def main():
     a=p.parse_args()
     counts=prepare()
     print("DATA PREPARATION",json.dumps(counts,indent=2))
-    print("\\nCLASSICAL MODELS")
+    print("\nCLASSICAL MODELS")
     classical_run(a.dataset)
-    print("\\nHYBRID FUSION")
+    print("\nHYBRID FUSION")
     fusion_run(a.dataset,llm_limit=a.llm_limit)
     metadata={"dataset":a.dataset,"seed":42,"llm_limit_per_split":a.llm_limit,
       "llm_model":os.getenv("GROQ_MODEL","openai/gpt-oss-20b"),
@@ -23,5 +23,5 @@ def main():
       "note":"RoBERTa training is a separate step; this run fuses TF-IDF classical model probabilities with LLM features."}
     Path("results").mkdir(exist_ok=True)
     Path("results/metadata.json").write_text(json.dumps(metadata,indent=2))
-    print("\\nPIPELINE FINISHED. See results/ and models/.")
+    print("\nPIPELINE FINISHED. See results/ and models/.")
 if __name__=="__main__": main()

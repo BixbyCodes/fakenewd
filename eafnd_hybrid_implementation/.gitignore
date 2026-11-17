@@ -1,8 +1,0 @@
-.env
-.venv/
-__pycache__/
-*.pyc
-models/
-results/
-data/processed/hybrid/
-data/processed/llm_features.sqlite

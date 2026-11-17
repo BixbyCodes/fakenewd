@@ -1,120 +1,25 @@
-"""LLM-based event and entity normalization for EAFND."""
+"""LLM-based event and entity extraction for EAFND.
+
+The extracted structure (including `normalized_claim`) is shown to the user
+and used to add entity-name queries for evidence retrieval. It never replaces
+the submitted text: the original claim/article is always what is classified
+and what retrieved evidence is assessed against.
+"""
 
 import hashlib
 import json
-import os
-import sqlite3
-from pathlib import Path
+import logging
 
-from dotenv import load_dotenv
-from groq import Groq
+from src.config import EVENT_PARSE_CACHE, LLM_TEXT_CHAR_LIMIT, llm_model
+from src.llm_client import JsonCache, get_client, parse_json_object
 
-MODEL = "openai/gpt-oss-20b"
-CACHE_PATH = Path("data/processed/event_parse_cache.sqlite")
+logger = logging.getLogger("eafnd.event_parser")
 
+MODEL = llm_model()
+CACHE_PATH = EVENT_PARSE_CACHE
+_cache = JsonCache(CACHE_PATH, "event_parses")
 
-def get_text(record):
-    """Accept a plain string, FEVER record, or ingested article record."""
-    if isinstance(record, str):
-        text = record.strip()
-    elif isinstance(record, dict):
-        if "claim" in record:
-            text = str(record["claim"]).strip()
-        else:
-            headline = record.get("headline", "")
-            body = record.get("body", "")
-            text = "{}\n{}".format(headline, body).strip()
-    else:
-        raise TypeError("Input must be a string or dictionary.")
-
-    if not text:
-        raise ValueError("Input text cannot be empty.")
-
-    return text
-
-
-def validate_result(data):
-    """Validate the model's event-normalization response."""
-    required = {
-        "event_summary",
-        "entities",
-        "time",
-        "location",
-        "attribution",
-        "normalized_claim",
-        "uncertainties",
-    }
-
-    if not isinstance(data, dict) or not required.issubset(data):
-        raise ValueError("Model response is missing required JSON fields.")
-
-    for field in ("event_summary", "normalized_claim"):
-        if data[field] is not None and not isinstance(data[field], str):
-            raise ValueError("{} must be a string or null.".format(field))
-
-    for field in ("time", "location", "attribution"):
-        if data[field] is not None and not isinstance(data[field], str):
-            raise ValueError("{} must be a string or null.".format(field))
-
-    if not isinstance(data["entities"], list):
-        raise ValueError("entities must be a list.")
-
-    for entity in data["entities"]:
-        if not isinstance(entity, dict):
-            raise ValueError("Each entity must be an object.")
-        for field in ("name", "type", "role"):
-            if not isinstance(entity.get(field), str):
-                raise ValueError("Each entity needs string fields: name, type, role.")
-
-    if not isinstance(data["uncertainties"], list):
-        raise ValueError("uncertainties must be a list.")
-
-    if not all(isinstance(item, str) for item in data["uncertainties"]):
-        raise ValueError("Every uncertainty must be a string.")
-
-    return data
-
-
-def initialize_cache():
-    CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
-
-    with sqlite3.connect(str(CACHE_PATH)) as connection:
-        connection.execute("""
-            CREATE TABLE IF NOT EXISTS event_parses (
-                cache_key TEXT PRIMARY KEY,
-                result_json TEXT NOT NULL
-            )
-        """)
-
-
-def parse_event(record, language="en", use_cache=True):
-    """Extract event, entities, time, location and attribution."""
-    load_dotenv()
-
-    text = get_text(record)
-    cache_key = hashlib.sha256(
-        (MODEL + "\n" + language + "\n" + text).encode("utf-8")
-    ).hexdigest()
-
-    initialize_cache()
-
-    if use_cache:
-        with sqlite3.connect(str(CACHE_PATH)) as connection:
-            row = connection.execute(
-                "SELECT result_json FROM event_parses WHERE cache_key = ?",
-                (cache_key,),
-            ).fetchone()
-
-        if row:
-            return json.loads(row[0])
-
-    api_key = os.getenv("GROQ_API_KEY")
-    if not api_key:
-        raise RuntimeError("GROQ_API_KEY was not found in .env.")
-
-    client = Groq(api_key=api_key)
-
-    prompt = """
+PROMPT_TEMPLATE = """
 You are an information extraction component in a fact-checking research system.
 
 Extract the event information from the supplied text.
@@ -141,10 +46,98 @@ Rules:
   "uncertainties": ["string"]
 }
 
-Language: """ + language + """
+Language: """
 
-Text:
-""" + text
+REQUIRED = (
+    "event_summary", "entities", "time", "location",
+    "attribution", "normalized_claim", "uncertainties",
+)
+
+
+def get_text(record):
+    """Accept a plain string, FEVER record, or ingested article record."""
+    if isinstance(record, str):
+        text = record.strip()
+    elif isinstance(record, dict):
+        if "claim" in record:
+            text = str(record["claim"]).strip()
+        else:
+            headline = record.get("headline", "")
+            body = record.get("body", "")
+            text = "{}\n{}".format(headline, body).strip()
+    else:
+        raise TypeError("Input must be a string or dictionary.")
+
+    if not text:
+        raise ValueError("Input text cannot be empty.")
+
+    return text
+
+
+def _optional_string(value, field):
+    if value is None:
+        return None
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        return str(value)
+    if not isinstance(value, str):
+        raise ValueError("{} must be a string or null.".format(field))
+    value = value.strip()
+    return value or None
+
+
+def validate_result(data):
+    """Validate and lightly clean the model's event-extraction response."""
+    if not isinstance(data, dict) or not set(REQUIRED).issubset(data):
+        raise ValueError("Model response is missing required JSON fields.")
+
+    clean = {}
+    for field in ("event_summary", "normalized_claim", "time", "location", "attribution"):
+        clean[field] = _optional_string(data[field], field)
+
+    if not isinstance(data["entities"], list):
+        raise ValueError("entities must be a list.")
+
+    entities = []
+    for entity in data["entities"]:
+        if not isinstance(entity, dict):
+            raise ValueError("Each entity must be an object.")
+        for field in ("name", "type", "role"):
+            if not isinstance(entity.get(field), str):
+                raise ValueError("Each entity needs string fields: name, type, role.")
+        if entity["name"].strip():
+            entities.append({k: entity[k].strip() for k in ("name", "type", "role")})
+    clean["entities"] = entities
+
+    if not isinstance(data["uncertainties"], list):
+        raise ValueError("uncertainties must be a list.")
+    if not all(isinstance(item, str) for item in data["uncertainties"]):
+        raise ValueError("Every uncertainty must be a string.")
+    clean["uncertainties"] = [item.strip() for item in data["uncertainties"] if item.strip()]
+
+    return clean
+
+
+def cache_key(text, language="en"):
+    return hashlib.sha256(
+        (MODEL + "\n" + language + "\n" + text).encode("utf-8")
+    ).hexdigest()
+
+
+def parse_event(record, language="en", use_cache=True):
+    """Extract event, entities, time, location and attribution."""
+    text = get_text(record)
+    truncated = len(text) > LLM_TEXT_CHAR_LIMIT
+    text = text[:LLM_TEXT_CHAR_LIMIT]
+    key = cache_key(text, language)
+
+    if use_cache:
+        hit = _cache.get(key)
+        if hit:
+            hit["cached"] = True
+            return hit
+
+    client = get_client()
+    prompt = PROMPT_TEMPLATE + language + "\n\nText:\n" + text
 
     response = client.chat.completions.create(
         model=MODEL,
@@ -157,25 +150,16 @@ Text:
         ],
         response_format={"type": "json_object"},
         temperature=0,
-        max_completion_tokens=1200,
+        max_completion_tokens=1500,
     )
 
-    content = response.choices[0].message.content
-    if not content:
-        raise ValueError("The model returned an empty response.")
-
-    result = validate_result(json.loads(content))
+    result = validate_result(parse_json_object(response.choices[0].message.content or ""))
     result["model"] = MODEL
-    result["source_text_hash"] = hashlib.sha256(
-        text.encode("utf-8")
-    ).hexdigest()
+    result["input_truncated"] = truncated
+    result["source_text_hash"] = hashlib.sha256(text.encode("utf-8")).hexdigest()
 
-    with sqlite3.connect(str(CACHE_PATH)) as connection:
-        connection.execute(
-            "INSERT OR REPLACE INTO event_parses VALUES (?, ?)",
-            (cache_key, json.dumps(result, ensure_ascii=False)),
-        )
-
+    _cache.set(key, result)
+    result["cached"] = False
     return result
 
 

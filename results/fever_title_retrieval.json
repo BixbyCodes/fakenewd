@@ -1,0 +1,16 @@
+{
+  "dataset": "FEVER paper_dev.jsonl (first 1,000 SUPPORTS/REFUTES claims with gold evidence)",
+  "metric": "Recall@K = share of claims where at least one gold Wikipedia page appears in the top K retrieved titles",
+  "rerun_date": "2026-11-17",
+  "scripts": {
+    "baseline_fts5_bm25": "python -m src.evaluate_title_search",
+    "v3_entity_aware_rerank": "python -m src.evaluate_title_search_v3"
+  },
+  "baseline_fts5_bm25": {"claims": 1000, "recall@1": 0.564, "recall@5": 0.790, "recall@10": 0.824},
+  "v3_entity_aware_rerank": {"claims": 1000, "recall@1": 0.564, "recall@5": 0.798, "recall@10": 0.838},
+  "notes": [
+    "Earlier notes recorded baseline Recall@1 as 56.50%; this rerun gives 56.40% (likely BM25 tie ordering).",
+    "Title retrieval only: finding the right page does not mean the right sentence was found or correctly assessed.",
+    "Top-50 candidate coverage (89.2%) and oracle gold-evidence recovery (99.37%) were recorded earlier from console output and were not rerun."
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "note": "Illustrative end-to-end runs of the demo examples (not an evaluation; examples were not used for tuning). Generated 2026-11-17 with openai/gpt-oss-20b via Groq.",
+  "cases": [
+    {
+      "case": "Claim likely contradicted by Wikipedia",
+      "input": "Telemundo is an English-language television network.",
+      "classifier": "FAKE (72.84%) 3/3 ISOT classifiers predict FAKE",
+      "llm_verdict": "fake",
+      "evidence_status": "completed",
+      "evidence_counts": {
+        "SUPPORTS": 0,
+        "REFUTES": 4,
+        "INSUFFICIENT": 12
+      },
+      "evidence_direction": "REFUTED",
+      "decisive_sentences": [
+        [
+          "REFUTES",
+          "Telemundo",
+          "Telemundo ([teleˈmundo]) is an American Spanish-language terrestrial television network owned by Comcast throu"
+        ],
+        [
+          "REFUTES",
+          "Telemundo",
+          "The channel broadcasts programs and original content aimed at Hispanic and Latino American audiences in the Un"
+        ],
+        [
+          "REFUTES",
+          "Noticias_Telemundo",
+          "Noticias Telemundo ([noˈtisjas teleˈmundo], Telemundo News) is the news division of Telemundo, an American Spa"
+        ],
+        [
+          "REFUTES",
+          "Noticiero_Telemundo",
+          "Noticiero Telemundo ([notiˈsjeɾo teleˈmundo]; English translation: Telemundo News) is the flagship daily eveni"
+        ]
+      ],
+      "interpretation": "Classifier predicts FAKE and retrieved evidence contradicts the claim",
+      "review": "recommended",
+      "timings": {
+        "classifier": 2.16,
+        "llm": 0.0,
+        "event": 0.0,
+        "evidence": 0.97
+      }
+    },
+    {
+      "case": "Claim likely supported by Wikipedia",
+      "input": "Fox 2000 Pictures released the film Soul Food.",
+      "classifier": "FAKE (99.6%) 3/3 ISOT classifiers predict FAKE",
+      "llm_verdict": "fake",
+      "evidence_status": "completed",
+      "evidence_counts": {
+        "SUPPORTS": 1,
+        "REFUTES": 0,
+        "INSUFFICIENT": 15
+      },
+      "evidence_direction": "SUPPORTED",
+      "decisive_sentences": [
+        [
+          "SUPPORTS",
+          "Soul_Food_-LRB-film-RRB-",
+          "Soul Food is a 1997 American comedy-drama film produced by Kenneth \"Babyface\" Edmonds, Tracey Edmonds and Robe"
+        ]
+      ],
+      "interpretation": "Disagreement: classifier predicts FAKE but retrieved evidence supports the claim",
+      "review": "strong",
+      "timings": {
+        "classifier": 0.03,
+        "llm": 0.0,
+        "event": 0.0,
+        "evidence": 0.73
+      }
+    },
+    {
+      "case": "Claim with little encyclopedic evidence",
+      "input": "The Springfield city council approved a new budget for bicycle lanes at its meeting last Tuesday evening.",
+      "classifier": "REAL (65.7%) 2/3 ISOT classifiers predict REAL",
+      "llm_verdict": "uncertain",
+      "evidence_status": "completed",
+      "evidence_counts": {
+        "SUPPORTS": 0,
+        "REFUTES": 0,
+        "INSUFFICIENT": 14
+      },
+      "evidence_direction": "INSUFFICIENT",
+      "decisive_sentences": [],
+      "interpretation": "Classifier predicts REAL; retrieved evidence is insufficient",
+      "review": "recommended",
+      "timings": {
+        "classifier": 0.03,
+        "llm": 12.37,
+        "event": 1.44,
+        "evidence": 2.37
+      }
+    },
+    {
+      "case": "News-style article",
+      "input": "Apollo 11 astronauts return after first crewed Moon landing | Astronauts Neil Armstrong, Buzz Aldrin and Michael Collins returned to Earth on Thursday after a mission that placed the",
+      "classifier": "REAL (70.56%) 3/3 ISOT classifiers predict REAL",
+      "llm_verdict": "real",
+      "evidence_status": "completed",
+      "evidence_counts": {
+        "SUPPORTS": 0,
+        "REFUTES": 0,
+        "INSUFFICIENT": 14
+      },
+      "evidence_direction": "INSUFFICIENT",
+      "decisive_sentences": [],
+      "interpretation": "Classifier predicts REAL; retrieved evidence is insufficient",
+      "review": "recommended",
+      "timings": {
+        "classifier": 0.05,
+        "llm": 0.82,
+        "event": 2.02,
+        "evidence": 2.07
+      }
+    },
+    {
+      "case": "Ambiguous viral claim",
+      "input": "Posts shared widely online say that doctors have discovered a common kitchen spice can completely cure cancer within wee",
+      "classifier": "FAKE (62.8%) 3/3 ISOT classifiers predict FAKE",
+      "llm_verdict": "fake",
+      "evidence_status": "completed",
+      "evidence_counts": {
+        "SUPPORTS": 0,
+        "REFUTES": 0,
+        "INSUFFICIENT": 13
+      },
+      "evidence_direction": "INSUFFICIENT",
+      "decisive_sentences": [],
+      "interpretation": "Classifier predicts FAKE; retrieved evidence is insufficient",
+      "review": "recommended",
+      "timings": {
+        "classifier": 0.05,
+        "llm": 1.05,
+        "event": 1.94,
+        "evidence": 1.56
+      }
+    }
+  ]
+}

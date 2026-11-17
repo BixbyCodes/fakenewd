@@ -1,6 +1,9 @@
-# Secrets
-.env*
+# Secrets (never commit API keys)
+.env
+.env.*
+.env *
 !.env.example
+.streamlit/secrets.toml
 
 # Python
 .venv/
@@ -9,12 +12,15 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 
-# Data and large corpora
-data/raw/
-data/processed/
+# Datasets, Wikipedia corpus, indexes and LLM caches (large or local-only)
+data/
 *.sqlite
 *.sqlite3
 *.db
+
+# Large generated feature arrays
+models/classical/*_test_tfidf_features.npy
+models/roberta/
 
 # OS and editor files
 .DS_Store
@@ -24,20 +30,5 @@ data/processed/
 # Logs
 *.log
 
-# Local environments and secrets
-.venv/
-venv/
-.env
-.env.*
-
-# Local datasets and indexes
-data/raw/
-data/processed/
-*.sqlite
-*.db
-
 # Accidental nested repository
 fakenewd/
-
-# Large generated feature arrays
-models/classical/*_test_tfidf_features.npy

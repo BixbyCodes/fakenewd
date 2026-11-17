@@ -1,0 +1,10 @@
+# Extra dependencies for re-running the training / fusion experiments.
+# Not needed by the web app.
+-r requirements.txt
+xgboost==2.1.4
+
+# Optional: RoBERTa baseline (src/train_roberta.py). Large download; not used
+# by any reported result.
+# torch>=2.2
+# transformers>=4.40
+# datasets>=2.18

@@ -1,36 +1,34 @@
 """Fast evidence retrieval using the SQLite Wikipedia page index."""
 
 import json
-import sqlite3
-from pathlib import Path
+from contextlib import closing
 
 from src.evidence_retriever import extract_sentence
+from src.title_search import open_index, resolve_shard_path
 
-INDEX_PATH = Path("data/processed/wiki_pages.sqlite")
 
-
-def retrieve_indexed_evidence(page_id, sentence_id):
-    if not INDEX_PATH.exists():
-        raise FileNotFoundError("Wikipedia SQLite index not found.")
-
-    connection = sqlite3.connect(str(INDEX_PATH))
-
-    try:
+def load_page(page_id):
+    """Return the raw FEVER page record for page_id, or None if not indexed."""
+    with closing(open_index()) as connection:
         row = connection.execute(
             "SELECT shard_path, byte_offset FROM pages WHERE page_id = ?",
             (page_id,)
         ).fetchone()
-    finally:
-        connection.close()
 
     if row is None:
-        return {"found": False, "error": "Page not found in index."}
+        return None
 
     shard_path, byte_offset = row
-
-    with open(shard_path, "rb") as handle:
+    with open(resolve_shard_path(shard_path), "rb") as handle:
         handle.seek(byte_offset)
-        page = json.loads(handle.readline())
+        return json.loads(handle.readline())
+
+
+def retrieve_indexed_evidence(page_id, sentence_id):
+    page = load_page(page_id)
+
+    if page is None:
+        return {"found": False, "error": "Page not found in index."}
 
     sentence = extract_sentence(page, sentence_id)
 
@@ -39,6 +37,5 @@ def retrieve_indexed_evidence(page_id, sentence_id):
         "page_id": page_id,
         "sentence_id": sentence_id,
         "sentence": sentence,
-        "shard": Path(shard_path).name,
         "error": None if sentence else "Sentence not found."
     }

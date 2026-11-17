@@ -1,0 +1,345 @@
+{
+  "note": "Saved models evaluated on their own held-out test splits. ISOT and LIAR are separate tasks; do not average them.",
+  "isot": {
+    "test_rows": 1455,
+    "label_counts": {
+      "REAL": 748,
+      "FAKE": 707
+    },
+    "majority_baseline": {
+      "predicts": "REAL",
+      "accuracy": 0.5140893470790378
+    },
+    "models": {
+      "logistic_regression": {
+        "accuracy": 0.9786941580756013,
+        "precision_fake": 0.9801136363636364,
+        "recall_fake": 0.9759547383309759,
+        "f1_fake": 0.9780297661233168,
+        "macro_f1": 0.9786746562437798,
+        "per_class": {
+          "REAL": {
+            "precision": 0.9773635153129161,
+            "recall": 0.9812834224598931,
+            "f1-score": 0.9793195463642428,
+            "support": 748.0
+          },
+          "FAKE": {
+            "precision": 0.9801136363636364,
+            "recall": 0.9759547383309759,
+            "f1-score": 0.9780297661233168,
+            "support": 707.0
+          }
+        },
+        "confusion_matrix": {
+          "rows_true_cols_pred": [
+            "REAL",
+            "FAKE"
+          ],
+          "matrix": [
+            [
+              734,
+              14
+            ],
+            [
+              17,
+              690
+            ]
+          ]
+        },
+        "predicted_fake_share": 0.4838487972508591
+      },
+      "linear_svm": {
+        "accuracy": 0.9903780068728523,
+        "precision_fake": 0.9900990099009901,
+        "recall_fake": 0.9900990099009901,
+        "f1_fake": 0.9900990099009901,
+        "macro_f1": 0.9903703605654683,
+        "per_class": {
+          "REAL": {
+            "precision": 0.9906417112299465,
+            "recall": 0.9906417112299465,
+            "f1-score": 0.9906417112299465,
+            "support": 748.0
+          },
+          "FAKE": {
+            "precision": 0.9900990099009901,
+            "recall": 0.9900990099009901,
+            "f1-score": 0.9900990099009901,
+            "support": 707.0
+          }
+        },
+        "confusion_matrix": {
+          "rows_true_cols_pred": [
+            "REAL",
+            "FAKE"
+          ],
+          "matrix": [
+            [
+              741,
+              7
+            ],
+            [
+              7,
+              700
+            ]
+          ]
+        },
+        "predicted_fake_share": 0.4859106529209622
+      },
+      "random_forest": {
+        "accuracy": 0.9766323024054983,
+        "precision_fake": 0.9827833572453372,
+        "recall_fake": 0.9688826025459689,
+        "f1_fake": 0.9757834757834758,
+        "macro_f1": 0.9766035572808481,
+        "per_class": {
+          "REAL": {
+            "precision": 0.9709762532981531,
+            "recall": 0.983957219251337,
+            "f1-score": 0.9774236387782205,
+            "support": 748.0
+          },
+          "FAKE": {
+            "precision": 0.9827833572453372,
+            "recall": 0.9688826025459689,
+            "f1-score": 0.9757834757834758,
+            "support": 707.0
+          }
+        },
+        "confusion_matrix": {
+          "rows_true_cols_pred": [
+            "REAL",
+            "FAKE"
+          ],
+          "matrix": [
+            [
+              736,
+              12
+            ],
+            [
+              22,
+              685
+            ]
+          ]
+        },
+        "predicted_fake_share": 0.47903780068728524
+      }
+    },
+    "shortcut_probes": {
+      "top_real_indicative_terms_lr": [
+        "reuters",
+        "said",
+        "washington reuters",
+        "washington",
+        "wednesday",
+        "thursday",
+        "president donald",
+        "tuesday",
+        "minister",
+        "reuters president",
+        "said statement",
+        "republican",
+        "spokesman",
+        "monday",
+        "friday",
+        "government",
+        "nov",
+        "percent",
+        "told reuters",
+        "month"
+      ],
+      "top_fake_indicative_terms_lr": [
+        "video",
+        "just",
+        "image",
+        "obama",
+        "featured image",
+        "featured",
+        "hillary",
+        "watch",
+        "read",
+        "america",
+        "gop",
+        "president trump",
+        "like",
+        "com",
+        "getty",
+        "getty images",
+        "images",
+        "twitter com",
+        "president obama",
+        "https"
+      ],
+      "share_containing_reuters": {
+        "REAL": 0.9986631016042781,
+        "FAKE": 0.019801980198019802
+      },
+      "title_match_rate": 1.0,
+      "accuracy_under_input_variants": {
+        "reuters_removed": {
+          "logistic_regression": 0.9718213058419244,
+          "linear_svm": 0.9800687285223367,
+          "random_forest": 0.954639175257732
+        },
+        "title_only": {
+          "logistic_regression": 0.7924398625429553,
+          "linear_svm": 0.6914089347079038,
+          "random_forest": 0.4962199312714777
+        },
+        "first_10_words": {
+          "logistic_regression": 0.8323024054982818,
+          "linear_svm": 0.756701030927835,
+          "random_forest": 0.5388316151202749
+        },
+        "first_25_words": {
+          "logistic_regression": 0.9903780068728523,
+          "linear_svm": 0.9951890034364261,
+          "random_forest": 0.9298969072164949
+        },
+        "first_50_words": {
+          "logistic_regression": 0.9883161512027492,
+          "linear_svm": 0.9917525773195877,
+          "random_forest": 0.977319587628866
+        },
+        "first_100_words": {
+          "logistic_regression": 0.9828178694158075,
+          "linear_svm": 0.9896907216494846,
+          "random_forest": 0.9725085910652921
+        },
+        "first_200_words": {
+          "logistic_regression": 0.977319587628866,
+          "linear_svm": 0.99106529209622,
+          "random_forest": 0.9711340206185567
+        }
+      }
+    }
+  },
+  "liar": {
+    "test_rows": 1283,
+    "label_counts": {
+      "REAL": 460,
+      "FAKE": 823
+    },
+    "majority_baseline": {
+      "predicts": "FAKE",
+      "accuracy": 0.6414653156664069
+    },
+    "models": {
+      "logistic_regression": {
+        "accuracy": 0.6102883865939205,
+        "precision_fake": 0.7185385656292287,
+        "recall_fake": 0.6452004860267315,
+        "f1_fake": 0.6798975672215108,
+        "macro_f1": 0.5909447995470104,
+        "per_class": {
+          "REAL": {
+            "precision": 0.4632352941176471,
+            "recall": 0.5478260869565217,
+            "f1-score": 0.50199203187251,
+            "support": 460.0
+          },
+          "FAKE": {
+            "precision": 0.7185385656292287,
+            "recall": 0.6452004860267315,
+            "f1-score": 0.6798975672215108,
+            "support": 823.0
+          }
+        },
+        "confusion_matrix": {
+          "rows_true_cols_pred": [
+            "REAL",
+            "FAKE"
+          ],
+          "matrix": [
+            [
+              252,
+              208
+            ],
+            [
+              292,
+              531
+            ]
+          ]
+        },
+        "predicted_fake_share": 0.5759937646141855
+      },
+      "linear_svm": {
+        "accuracy": 0.6453624318004677,
+        "precision_fake": 0.6476725521669342,
+        "recall_fake": 0.9805589307411907,
+        "f1_fake": 0.7800869985500242,
+        "macro_f1": 0.43229702040177265,
+        "per_class": {
+          "REAL": {
+            "precision": 0.5675675675675675,
+            "recall": 0.04565217391304348,
+            "f1-score": 0.08450704225352113,
+            "support": 460.0
+          },
+          "FAKE": {
+            "precision": 0.6476725521669342,
+            "recall": 0.9805589307411907,
+            "f1-score": 0.7800869985500242,
+            "support": 823.0
+          }
+        },
+        "confusion_matrix": {
+          "rows_true_cols_pred": [
+            "REAL",
+            "FAKE"
+          ],
+          "matrix": [
+            [
+              21,
+              439
+            ],
+            [
+              16,
+              807
+            ]
+          ]
+        },
+        "predicted_fake_share": 0.9711613406079501
+      },
+      "random_forest": {
+        "accuracy": 0.6110678098207326,
+        "precision_fake": 0.6966019417475728,
+        "recall_fake": 0.6974483596597812,
+        "f1_fake": 0.6970248937462052,
+        "macro_f1": 0.5770216960569982,
+        "per_class": {
+          "REAL": {
+            "precision": 0.45751633986928103,
+            "recall": 0.45652173913043476,
+            "f1-score": 0.45701849836779107,
+            "support": 460.0
+          },
+          "FAKE": {
+            "precision": 0.6966019417475728,
+            "recall": 0.6974483596597812,
+            "f1-score": 0.6970248937462052,
+            "support": 823.0
+          }
+        },
+        "confusion_matrix": {
+          "rows_true_cols_pred": [
+            "REAL",
+            "FAKE"
+          ],
+          "matrix": [
+            [
+              210,
+              250
+            ],
+            [
+              249,
+              574
+            ]
+          ]
+        },
+        "predicted_fake_share": 0.642244738893219
+      }
+    }
+  }
+}
