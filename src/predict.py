@@ -14,6 +14,7 @@ import argparse
 import json
 import re
 import threading
+import warnings
 from functools import lru_cache
 
 import joblib
@@ -44,7 +45,16 @@ def _load_vectorizer():
     path = CLASSICAL_MODELS_DIR / "{}_tfidf.joblib".format(DATASET)
     if not path.exists():
         raise ModelUnavailable("Saved TF-IDF vectorizer not found: {}".format(path.name))
-    return joblib.load(path)
+    return _joblib_load(path)
+
+
+def _joblib_load(path):
+    # On Python >= 3.13 scikit-learn 1.7.2 loads these 1.6.1 pickles. Its
+    # version warning is silenced because the outputs were verified to be
+    # identical on the full ISOT and LIAR test sets.
+    with warnings.catch_warnings():
+        warnings.filterwarnings("ignore", message="Trying to unpickle estimator")
+        return joblib.load(path)
 
 
 @lru_cache(maxsize=4)
@@ -52,7 +62,7 @@ def _load_model(name):
     path = CLASSICAL_MODELS_DIR / "{}_{}.joblib".format(DATASET, name)
     if not path.exists():
         raise ModelUnavailable("Saved model not found: {}".format(path.name))
-    model = joblib.load(path)
+    model = _joblib_load(path)
     if list(getattr(model, "classes_", [])) != [0, 1]:
         raise ModelUnavailable("Unexpected class labels in {}".format(path.name))
     return model

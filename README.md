@@ -363,7 +363,7 @@ The Soul Food case shows why the classifier must not be presented as a truth det
 
 ## 14. Installation and running locally
 
-Requirements: Python 3.9–3.12 (pinned `numpy 2.0.2` / `scipy 1.13.1` have no 3.13 wheels).
+Requirements: Python 3.9 or newer. On 3.9–3.12 the exact training versions are installed (scikit-learn 1.6.1, numpy 2.0.2); on 3.13+ `requirements.txt` selects scikit-learn 1.7.2 / numpy 2.5.5, which were verified to reproduce the saved test-set probabilities exactly.
 
 ```bash
 git clone https://github.com/BixbyCodes/fakenewd.git evidence_aware_fnd
@@ -424,7 +424,7 @@ Steps:
 1. Push this repository to GitHub (models in `models/` are tracked; `data/`, `.env` and caches are ignored).
 2. Sign in at https://share.streamlit.io with GitHub → **Create app** → choose the repository,
    branch `main`, main file `app.py`.
-3. **Advanced settings** → Python version **3.11**.
+3. **Advanced settings** → Python version: 3.11 recommended (newer versions also work, see §14).
 4. **Secrets** → paste:
    ```toml
    GROQ_API_KEY = "your-key-here"
