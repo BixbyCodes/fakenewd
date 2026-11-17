@@ -73,6 +73,8 @@ class IsolatedCaches(unittest.TestCase):
         self.tmp = tempfile.TemporaryDirectory()
         tmp = Path(self.tmp.name)
         self.stack = ExitStack()
+        # Local-only evidence backend: these tests must never reach Wikipedia.
+        self.stack.enter_context(mock.patch.dict(os.environ, {"EAFND_EVIDENCE_BACKEND": "local"}))
         self.stack.enter_context(mock.patch.object(llm_features, "DB", tmp / "llm.sqlite"))
         self.stack.enter_context(mock.patch.object(
             event_parser, "_cache", JsonCache(tmp / "event.sqlite", "event_parses")))
@@ -253,9 +255,12 @@ class EvidenceTests(IsolatedCaches):
 
     def verifier_response(self, label="REFUTES"):
         return json.dumps({"results": [
-            {"page_id": "Telemundo", "sentence_id": 0, "label": label, "explanation": "Spanish-language."},
-            {"page_id": "Telemundo", "sentence_id": 1, "label": "INSUFFICIENT", "explanation": "Ownership."},
-            {"page_id": "Invented_Page", "sentence_id": 0, "label": "SUPPORTS", "explanation": "made up"},
+            {"page_id": "Telemundo", "sentence_id": 0, "label": label, "evidence_span": "Spanish-language",
+             "explanation": "Spanish-language."},
+            {"page_id": "Telemundo", "sentence_id": 1, "label": "INSUFFICIENT", "evidence_span": "",
+             "explanation": "Ownership."},
+            {"page_id": "Invented_Page", "sentence_id": 0, "label": "SUPPORTS", "evidence_span": "x",
+             "explanation": "made up"},
         ]})
 
     def test_index_status_and_search(self):

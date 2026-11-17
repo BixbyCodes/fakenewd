@@ -1,0 +1,86 @@
+{
+  "note": "Real runs on 2026-11-17 of the public-Wikipedia-API evidence backend (live MediaWiki requests + Groq gpt-oss-20b). Illustrative checks, not an evaluation; the retrieval code contains no example-specific logic.",
+  "claim": "The first inauguration of Bill Clinton made him the 50th President of the United States.",
+  "expected_behaviour": "Bill Clinton page retrieved; sentences stating he was the 42nd president labelled REFUTES; unrelated sentences (e.g. about Hillary Clinton) not labelled REFUTES.",
+  "cloud_simulation_no_local_index": {
+    "capabilities": {
+      "classifier": true,
+      "llm": true,
+      "llm_model": "openai/gpt-oss-20b",
+      "evidence": true,
+      "evidence_backend": "wikipedia_api",
+      "evidence_label": "live Wikipedia API",
+      "evidence_reason": "The FEVER Wikipedia index was not found at wiki_pages.sqlite."
+    },
+    "seconds": 10.9,
+    "status": "completed",
+    "backend": "wikipedia_api",
+    "corpus": "English Wikipedia, current text (public MediaWiki API)",
+    "queries": [
+      "The first inauguration of Bill Clinton made him the 50th President of the United States.",
+      "Bill Clinton",
+      "United States",
+      "Bill Clinton became the 50th President of the United States."
+    ],
+    "pages": [
+      "Bill Clinton",
+      "United States",
+      "Relationship of Bill Clinton and Jeffrey Epstein",
+      "Hillary Clinton",
+      "United States presidential inauguration",
+      "Second inauguration of Donald Trump"
+    ],
+    "counts": {
+      "SUPPORTS": 0,
+      "REFUTES": 2,
+      "INSUFFICIENT": 10
+    },
+    "direction": "REFUTED",
+    "retrieved": 12,
+    "labelled": 12,
+    "decisive": [
+      {
+        "label": "REFUTES",
+        "page": "Relationship of Bill Clinton and Jeffrey Epstein",
+        "sentence": "Bill Clinton, the 42nd president of the United States, developed a social and professional relationship with financier and child sex offende",
+        "quote": "Bill Clinton, the 42nd president of the United States",
+        "url": "https://en.wikipedia.org/wiki/Relationship_of_Bill_Clinton_and_Jeffrey_Epstein"
+      },
+      {
+        "label": "REFUTES",
+        "page": "Bill Clinton",
+        "sentence": "William Jefferson Clinton (né Blythe III; born August 19, 1946) is an American retired politician and lawyer who served as the 42nd presiden",
+        "quote": "served as the 42nd president of the United States",
+        "url": "https://en.wikipedia.org/wiki/Bill_Clinton"
+      }
+    ],
+    "interpretation": "Classifier predicts FAKE and retrieved evidence contradicts the claim"
+  },
+  "other_sanity_claims": [
+    {
+      "claim": "Albert Einstein was born in Ulm in the German Empire.",
+      "counts": {
+        "SUPPORTS": 3,
+        "REFUTES": 0,
+        "INSUFFICIENT": 9
+      }
+    },
+    {
+      "claim": "The Springfield city council approved a new budget for bicycle lanes at its meeting last Tuesday evening.",
+      "counts": {
+        "SUPPORTS": 0,
+        "REFUTES": 0,
+        "INSUFFICIENT": 1
+      }
+    },
+    {
+      "claim": "Marie Curie won a Nobel Prize in Literature.",
+      "counts": {
+        "SUPPORTS": 0,
+        "REFUTES": 0,
+        "INSUFFICIENT": 12
+      },
+      "note": "No retrieved sentence states she did not win it, so nothing was forced to REFUTES."
+    }
+  ]
+}

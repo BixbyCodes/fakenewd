@@ -13,7 +13,8 @@ import streamlit as st
 # Streamlit Community Cloud stores secrets in st.secrets. Bridge them into the
 # environment before any project module reads configuration. Values are never
 # printed or rendered.
-for _name in ("GROQ_API_KEY", "GROQ_MODEL", "EAFND_WIKI_INDEX"):
+for _name in ("GROQ_API_KEY", "GROQ_MODEL", "EAFND_WIKI_INDEX", "EAFND_EVIDENCE_BACKEND",
+              "WIKIPEDIA_USER_AGENT"):
     if not os.getenv(_name):
         try:
             if _name in st.secrets:
@@ -197,15 +198,16 @@ def render_header(status):
         unsafe_allow_html=True,
     )
     chips = [
-        ("Classifier", status["classifier"]),
-        ("LLM analysis", status["llm"]),
-        ("Wikipedia evidence index", status["evidence_index"]),
+        ("Classifier", status["classifier"], "available"),
+        ("LLM analysis", status["llm"], "available"),
+        ("Wikipedia evidence", status["evidence"],
+         status["evidence_label"] if status["evidence"] else "unavailable"),
     ]
     st.markdown(
         '<div class="ea-status" aria-label="Component availability">{}</div>'.format("".join(
             '<span class="ea-chip {}">{}: {}</span>'.format(
-                "on" if ok else "off", esc(name), "available" if ok else "unavailable")
-            for name, ok in chips
+                "on" if ok else "off", esc(name), esc(text if ok else "unavailable"))
+            for name, ok, text in chips
         )),
         unsafe_allow_html=True,
     )
@@ -220,9 +222,10 @@ For each submission it reports four separate signals:
 2. **LLM assessment** — `openai/gpt-oss-20b` via the Groq API (inference only; not trained
    by this project) rates plausibility, verifiability and source attribution.
 3. **Event & entity extraction** — the LLM extracts the who/what/when/where of the text.
-4. **Evidence assessment** — candidate pages are retrieved from a local index of the
-   2017 FEVER Wikipedia snapshot and the LLM labels each retrieved sentence as
-   SUPPORTS, REFUTES or INSUFFICIENT for the claim.
+4. **Evidence assessment** — sentences are retrieved from Wikipedia (the live public
+   MediaWiki API, or a local index of the 2017 FEVER snapshot when installed) and the
+   LLM labels each retrieved sentence as SUPPORTS, REFUTES or INSUFFICIENT for the
+   claim. The retrieved text and the LLM's label are shown separately.
 
 The final interpretation reports where these signals agree or disagree. It is not a
 fact-checking verdict and does not compute a combined truth score.
@@ -230,11 +233,9 @@ fact-checking verdict and does not compute a combined truth score.
         )
         if not status["llm"]:
             st.caption("LLM analysis is disabled because no Groq API key is configured on this server.")
-        if not status["evidence_index"]:
-            st.caption(
-                "Evidence retrieval is disabled on this deployment: the FEVER Wikipedia index "
-                "(about 8 GB with its source shards) is only available on a local installation."
-            )
+        if not status["evidence"]:
+            st.caption("Evidence retrieval is unavailable: {}".format(
+                status["evidence_reason"] or "no evidence backend is configured."))
 
 
 def load_example(name):
@@ -413,6 +414,7 @@ def render_llm(llm, component):
 
 EVIDENCE_STATUS_TEXT = {
     "index_unavailable": "Evidence retrieval is not available in this environment",
+    "retrieval_unavailable": "Wikipedia evidence could not be retrieved",
     "no_candidates": "No relevant Wikipedia pages were found",
     "no_sentences": "No usable evidence sentences were found",
     "retrieved_not_assessed": "Evidence retrieved but not assessed",
@@ -420,26 +422,41 @@ EVIDENCE_STATUS_TEXT = {
 }
 
 
-def evidence_html(item, show_title=False):
+def source_line(item, backend):
+    link = '<a href="{}" target="_blank" rel="noopener">Open on Wikipedia</a>'.format(esc(item["url"]))
+    if backend == "wikipedia_api":
+        return ('Live Wikipedia · <strong>{}</strong> · sentence {} of the retrieved text · {}'
+                .format(esc(item["title"]), item["sentence_id"], link))
+    return ('FEVER Wikipedia (2017) · page <code>{}</code> · sentence ID {} · {}'
+            .format(esc(item["page_id"]), item["sentence_id"], link))
+
+
+def evidence_html(item, backend, show_title=False):
     title = '<strong>{}</strong> '.format(esc(item["title"])) if show_title else ""
+    span = ""
+    if item.get("evidence_span"):
+        span = ('<div class="ea-sub" style="margin-top:6px">Deciding phrase quoted by the LLM: '
+                '<em>“{}”</em></div>'.format(esc(item["evidence_span"])))
     return (
-        '{}{}<div class="ea-serif" style="font-size:1.02rem;margin:10px 0">“{}”</div>'
-        '<div class="ea-kicker">LLM explanation</div><div style="font-size:.92rem">{}</div>'
-        '<div class="ea-sub">FEVER Wikipedia (2017) · page <code>{}</code> · sentence ID {} · '
-        '<a href="{}" target="_blank" rel="noopener">current Wikipedia page</a></div>'.format(
-            title, pill(item["label"]), esc(item["sentence"]), esc(item["explanation"] or "—"),
-            esc(item["page_id"]), item["sentence_id"], esc(item["url"]))
+        '{title}<div class="ea-kicker">Retrieved Wikipedia sentence</div>'
+        '<div class="ea-serif" style="font-size:1.02rem;margin:4px 0 6px">“{sentence}”</div>'
+        '<div class="ea-sub">{source}</div>'
+        '<div class="ea-kicker" style="margin-top:12px">LLM assessment of this sentence</div>'
+        '<div>{pill}</div><div style="font-size:.92rem;margin-top:6px">{explanation}</div>{span}'.format(
+            title=title, sentence=esc(item["sentence"]), source=source_line(item, backend),
+            pill=pill(item["label"]), explanation=esc(item["explanation"] or "—"), span=span)
     )
 
 
 def render_evidence(evidence, component):
     section(6, "Evidence verification")
     status = evidence.get("status")
-    if status == "index_unavailable":
+    backend = evidence.get("backend")
+    if status in ("index_unavailable", "retrieval_unavailable"):
         note(
-            "Evidence retrieval did not run: the local FEVER Wikipedia index is not installed here "
-            "({}). No evidence check was performed. See the README to enable it locally.".format(
-                evidence.get("message") or "index missing"), "info")
+            "Evidence retrieval did not run: {} No evidence check was performed, so nothing "
+            "below should be read as verification.".format(
+                evidence.get("message") or "no evidence backend is available."), "info")
         return
 
     st.markdown(
@@ -461,10 +478,18 @@ def render_evidence(evidence, component):
             )),
             unsafe_allow_html=True,
         )
-        st.caption("{} sentences retrieved from {} candidate pages · {} labelled by the LLM.".format(
+        st.caption("Retrieval: {} sentences from {} Wikipedia pages · LLM assessment: {} labelled.".format(
             evidence["evidence_count"], len(evidence["candidate_pages"]), evidence["verified_count"]))
         if evidence.get("message"):
             st.caption(evidence["message"])
+    if evidence.get("corpus"):
+        st.caption("Source: {}.".format(evidence["corpus"]))
+    if evidence.get("queries"):
+        with st.expander("Search queries used"):
+            for query in evidence["queries"]:
+                st.markdown("- " + esc(query))
+            st.caption("The original claim is always the first query and is the only text "
+                       "evidence is assessed against.")
 
     if evidence.get("candidate_pages"):
         with st.expander("Candidate Wikipedia pages ({})".format(len(evidence["candidate_pages"]))):
@@ -487,25 +512,30 @@ def render_evidence(evidence, component):
         for item in decisive:
             with st.expander("{} · {} · sentence {}".format(item["label"], item["title"], item["sentence_id"]),
                              expanded=len(decisive) <= 4):
-                st.markdown(evidence_html(item), unsafe_allow_html=True)
+                st.markdown(evidence_html(item, backend), unsafe_allow_html=True)
         insufficient = [r for r in items if r["label"] == "INSUFFICIENT"]
         if insufficient:
             with st.expander("{} sentence(s) assessed as INSUFFICIENT".format(len(insufficient))):
                 st.markdown(
                     '<hr style="margin:12px 0;border:none;border-top:1px solid var(--line)">'.join(
-                        evidence_html(item, show_title=True) for item in insufficient),
+                        evidence_html(item, backend, show_title=True) for item in insufficient),
                     unsafe_allow_html=True,
                 )
     elif evidence.get("evidence"):
         for item in evidence["evidence"]:
             with st.expander("NOT ASSESSED · {} · sentence {}".format(item["title"], item["sentence_id"])):
-                st.markdown('<div class="ea-serif">“{}”</div>'.format(esc(item["text"])),
-                            unsafe_allow_html=True)
+                st.markdown(
+                    '<div class="ea-kicker">Retrieved Wikipedia sentence (not assessed)</div>'
+                    '<div class="ea-serif">“{}”</div><div class="ea-sub">{}</div>'.format(
+                        esc(item["text"]), source_line(dict(item, sentence=item["text"]), backend)),
+                    unsafe_allow_html=True)
 
+    freshness = ("The text is Wikipedia's current content and may change or be wrong."
+                 if backend == "wikipedia_api" else
+                 "The local corpus is a 2017 Wikipedia snapshot, so recent events are usually not covered.")
     st.caption(
         "Labels are LLM assessments of retrieved sentences, not independently verified ground truth. "
-        "Retrieved pages may be off-topic; the corpus is a 2017 Wikipedia snapshot, so recent "
-        "events are usually not covered."
+        "Retrieved pages may be off-topic. " + freshness
     )
 
 

@@ -129,13 +129,14 @@ def run_event_extraction(text):
         return None, component("unavailable", describe_error(exc))
 
 
-def run_evidence(claim, entities, llm_available):
+def run_evidence(claim, entities, llm_available, normalized_claim=None):
     from src.evidence_verifier import analyze_evidence
     report, seconds = _timed(analyze_evidence, claim, entities=entities,
-                             llm_available=llm_available)
+                             llm_available=llm_available, normalized_claim=normalized_claim)
     status_map = {
         "completed": "ok",
         "index_unavailable": "unavailable",
+        "retrieval_unavailable": "unavailable",
         "retrieved_not_assessed": "partial",
         "no_candidates": "ok",
         "no_sentences": "ok",
@@ -146,15 +147,17 @@ def run_evidence(claim, entities, llm_available):
 
 def capability_status():
     """Which components can run in this environment."""
+    from src.evidence_verifier import backend_status
     from src.predict import models_available
-    from src.title_search import index_status
 
-    evidence = index_status()
+    evidence = backend_status()
     return {
         "classifier": models_available(),
         "llm": api_key_available(),
         "llm_model": llm_model(),
-        "evidence_index": evidence["available"],
+        "evidence": evidence["available"],
+        "evidence_backend": evidence["backend"],
+        "evidence_label": evidence["label"],
         "evidence_reason": evidence["reason"],
     }
 
@@ -202,8 +205,11 @@ def run_analysis(body, headline="", progress=None):
         report["components"]["llm"]["status"] == "ok"
         or report["components"]["event"]["status"] == "ok"
     )
+    # The normalized claim only enriches search queries; evidence is always
+    # assessed against the original claim.
+    normalized = (report["event"] or {}).get("normalized_claim")
     report["evidence"], report["components"]["evidence"] = run_evidence(
-        claim, entities, llm_working
+        claim, entities, llm_working, normalized
     )
 
     report["interpretation"] = interpret(report["classifier"], report["llm"], report["evidence"])

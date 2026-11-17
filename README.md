@@ -7,8 +7,9 @@ EvidenceAware is a research prototype that analyses a news claim or article with
 2. an **LLM assessment** of the text (plausibility, verifiability, source attribution) from
    `openai/gpt-oss-20b` via the Groq API;
 3. **event and entity extraction** (who / what / when / where / attribution) by the same LLM;
-4. **evidence retrieval and assessment**: sentences retrieved from a local index of the FEVER
-   2017 Wikipedia snapshot, each labelled SUPPORTS / REFUTES / INSUFFICIENT by the LLM.
+4. **evidence retrieval and assessment**: sentences retrieved from Wikipedia (the live public
+   MediaWiki API, or a local index of the FEVER 2017 snapshot when it is installed), each
+   labelled SUPPORTS / REFUTES / INSUFFICIENT by the LLM.
 
 A rule-based interpretation then reports whether these signals agree, disagree, or are
 insufficient, and when human review is recommended. **It is not a fact-checking verdict.**
@@ -72,12 +73,15 @@ flowchart TD
     V --> L[LLM assessment<br/>gpt-oss-20b via Groq<br/>src/llm_features.py]
     V --> E[Event and entity extraction<br/>gpt-oss-20b via Groq<br/>src/event_parser.py]
     V --> Q[Claim used for evidence<br/>original text or headline]
-    E -- entity names --> R
-    Q --> R[Candidate pages<br/>FTS5 BM25 + V3 rerank + entity title match<br/>src/title_search*.py]
-    R --> S[Sentence selection<br/>lead + highest claim-term overlap<br/>src/evidence_verifier.py]
-    S --> A[LLM evidence assessment<br/>SUPPORTS / REFUTES / INSUFFICIENT]
-    W[(FEVER 2017 Wikipedia<br/>SQLite index + JSONL shards<br/>local only)] -.-> R
-    W -.-> S
+    E -- entity names and normalized claim enrich the search --> R
+    Q --> R{Evidence backend<br/>src/evidence_verifier.py}
+    R -- local index installed --> BL[Local: FTS5 BM25 + V3 rerank<br/>+ entity title match<br/>src/title_search*.py]
+    R -- otherwise --> BA[Public API: MediaWiki search<br/>+ page text<br/>src/wikipedia_api.py]
+    BL --> S[Sentence selection and relevance ranking]
+    BA --> S
+    S --> A[LLM evidence assessment<br/>SUPPORTS / REFUTES / INSUFFICIENT<br/>with a quoted deciding phrase]
+    W[(FEVER 2017 Wikipedia<br/>SQLite index + JSONL shards<br/>local only)] -.-> BL
+    WP[(en.wikipedia.org<br/>MediaWiki API)] -.-> BA
     C --> I[Rule-based interpretation<br/>agreement, disagreement, human review]
     L --> I
     A --> I
@@ -92,7 +96,8 @@ flowchart TD
 ```
 
 The LLM assessment and event extraction run in parallel. Evidence retrieval runs after them
-because it uses the extracted entity names.
+because it uses the extracted entity names. The backend is chosen automatically: the local FEVER
+index if it exists, otherwise the public Wikipedia API (see §11).
 
 ## 4. Workflow of one analysis
 
@@ -102,13 +107,14 @@ because it uses the extracted entity names.
 | 2. Classification | The full text goes through the saved ISOT TF-IDF vectorizer and all three saved ISOT classifiers. The Linear SVM is the primary model; the others are shown as an agreement check. The app flags short inputs and Reuters datelines. | `src/predict.py` |
 | 3. LLM assessment | First 3,500 characters sent to `gpt-oss-20b`; returns verdict (real/fake/uncertain), plausibility, verifiability, source credibility and a rationale. Validated and cached. | `src/llm_features.py` |
 | 4. Event extraction | First 6,000 characters sent to `gpt-oss-20b`; returns event summary, entities (name/type/role), time, location, attribution, normalized claim and uncertainties. Validated and cached. | `src/event_parser.py` |
-| 5. Evidence retrieval | The *claim used for evidence* is the original text if it has 60 words or fewer, otherwise the headline (or the opening sentences). Candidate pages come from exact title matches for extracted entities plus V3 title reranking on the claim text. | `src/evidence_verifier.py`, `src/title_search_v3.py` |
-| 6. Evidence assessment | Up to 3 sentences per page (lead sentence plus highest term overlap), at most 6 pages. The LLM labels each sentence against the claim. Labels for sentences that were not retrieved are discarded. | `src/evidence_verifier.py` |
+| 5. Evidence retrieval | The *claim used for evidence* is the original text if it has 60 words or fewer, otherwise the headline (or the opening sentences). Backend: local FEVER index if installed, otherwise the public MediaWiki API. Extracted entity names and the normalized claim only add search queries; the original claim is always the first query. | `src/evidence_verifier.py`, `src/wikipedia_api.py`, `src/title_search_v3.py` |
+| 6. Evidence assessment | A handful of relevant sentences (at most 12 from the API, up to 3 per page from the local index; at most 6 pages) go to the LLM, which labels each against the **original** claim and must quote the deciding phrase for SUPPORTS/REFUTES. Labels for sentences that were not retrieved are discarded; decisive labels whose quote is not in the sentence are downgraded to INSUFFICIENT. | `src/evidence_verifier.py` |
 | 7. Interpretation | Rules combine the classifier class and the evidence direction (see §12). | `src/analysis.py` |
 | 8. Display | Eight sections: classification, probabilities, submitted text, events, LLM assessment, evidence, interpretation, technical details. | `app.py` |
 
-The original text is never replaced. The LLM's `normalized_claim` is displayed but is **not**
-used as the retrieval query, because normalization can drop details that matter for retrieval.
+The original text is never replaced. The LLM's `normalized_claim` is displayed and may add one
+extra search query, but it is **not** the claim that evidence is assessed against, because
+normalization can drop details that matter.
 
 ## 5. Datasets
 
@@ -225,6 +231,52 @@ the normalized claim.
 
 ## 11. Wikipedia evidence retrieval
 
+Two interchangeable backends feed the same assessment step (`src/evidence_verifier.py`). The
+choice is automatic and can be forced with `EAFND_EVIDENCE_BACKEND` (`auto` | `local` |
+`wikipedia_api` | `off`):
+
+| Mode | When | Corpus | Where it runs |
+|---|---|---|---|
+| `local_index` | `data/processed/wiki_pages.sqlite` and its shards exist | FEVER 2017 Wikipedia snapshot (5.4M pages) | Your machine |
+| `wikipedia_api` | The local index is missing (e.g. Streamlit Cloud), or forced | Current English Wikipedia via the public MediaWiki API | Anywhere with internet |
+
+If the local index fails at runtime, `auto` falls back to the API and says so. If neither backend
+works, the evidence section states that retrieval did not run and why; the classifier and LLM
+sections are unaffected, and nothing is presented as verified.
+
+### 11.1 Public Wikipedia API backend (`src/wikipedia_api.py`)
+
+Standard library only (`urllib`); free, no account or key. For one claim:
+
+1. **Queries** (at most 4): the original claim first, then up to two extracted entity names
+   (dates and numbers are skipped; if the LLM is unavailable, runs of capitalized words in the claim are
+   used), then the normalized claim if it differs. These queries enrich the search; they never
+   replace the claim.
+2. **Search + intro text**: one `action=query&generator=search` request per query (5 results for the
+   claim, 3 for entities) returns page titles, intro extracts and URLs together. Disambiguation pages are
+   skipped; the rankings of all queries are fused (reciprocal rank, with a bonus for an exact entity
+   title match). At most 6 pages are kept.
+3. **Article text**: for the top 2 pages the plain-text article is fetched (truncated to 20,000
+   characters locally); other pages contribute their intro only.
+4. **Sentences**: text is split into sentences (abbreviations such as "U.S." and "Dr." are handled),
+   headings and fragments are dropped, and exact or near-duplicate sentences are removed.
+5. **Ranking**: each sentence gets a relevance score, the IDF-weighted share of the claim's content words
+   it contains (page-title words count half, because Wikipedia sentences often say "he" or "it").
+   If the claim has entity names, a sentence that is not about any of them keeps only half its
+   relevance. Sentences below a threshold are discarded, so unrelated text is never sent to the
+   LLM. At most 12 sentences (4 per page) are assessed.
+
+Request hygiene: descriptive `User-Agent` (override with `WIKIPEDIA_USER_AGENT`), 8-second
+timeout, one bounded retry on HTTP 429/503, requests made one at a time, at most about six per
+claim (typically 4 searches and 2 article fetches), and an in-process cache (1 hour, 256
+entries) so repeated claims cost no requests. Rate limits, network errors, bad responses and
+empty search results produce a readable status message, never a crash.
+
+Because it reads Wikipedia's *current* text, results can differ from the FEVER snapshot, can be
+affected by recent edits or vandalism, and are not independently verified.
+
+### 11.2 Local FEVER index backend
+
 **Index building (one-off, local):**
 
 1. `python -m src.build_wiki_index` scans the 109 FEVER Wikipedia JSONL shards
@@ -245,17 +297,27 @@ the normalized claim.
 
 **Sentence selection:** the lead sentence of each page, plus the sentences sharing the most
 content words with the claim (up to 3 per page). FEVER tokenisation artefacts (`-LRB-`, ` 's`)
-are cleaned for display.
+are cleaned for display. The Recall@K figures in §13.4 were measured for this backend only.
 
 ## 12. Evidence assessment and interpretation
 
-The LLM receives the claim and the selected sentences and must label each one:
+The LLM receives the **original claim** and the selected sentences (each with its Wikipedia page
+title, so that pronouns can be resolved) and must label each one:
 
-- **SUPPORTS**: the sentence directly supports the claim;
-- **REFUTES**: the sentence directly contradicts the claim;
-- **INSUFFICIENT**: it does neither (topic similarity alone is not support).
+- **SUPPORTS**: the sentence itself states or directly entails the claim's key facts;
+- **REFUTES**: the sentence itself states something that cannot be true if the claim is true, about
+  the same entity and attribute (a different number, ordinal, date, place or person, or an explicit
+  negation);
+- **INSUFFICIENT**: everything else, including related background, a different entity or attribute,
+  and sentences that only share names or topic with the claim.
 
-It is told not to use outside knowledge. Labels are **LLM assessments of retrieved text, not
+The prompt (`VERIFIER_PROMPT`, version `v2`) forbids outside knowledge, says related or irrelevant
+is *not* contradiction, and asks for a short explanation grounded in the sentence. For SUPPORTS and
+REFUTES the model must also return `evidence_span`, an exact quotation from the sentence. The
+response is JSON and is validated: labels for sentences that were not sent are discarded, and a
+decisive label whose quotation is missing or is not actually in the sentence is downgraded to
+INSUFFICIENT and flagged. The interface shows the retrieved sentence and the LLM's assessment as
+separate parts of each evidence card. Labels are **LLM assessments of retrieved text, not
 ground truth**. The evidence direction is: *conflicting* if there is at least one SUPPORTS and
 at least one REFUTES; otherwise *refuted* or *supported* if either is present; otherwise
 *insufficient*.
@@ -269,7 +331,7 @@ The interpretation combines that direction with the classifier class:
 | REAL | refuted / FAKE + supported | **Disagreement**, human review strongly recommended |
 | any | conflicting | Conflicting evidence, human review strongly recommended |
 | any | insufficient / none found | "Classifier predicts X; retrieved evidence is insufficient" |
-| any | index unavailable | "Classifier predicts X; evidence was not checked" |
+| any | no backend available / retrieval failed | "Classifier predicts X; evidence was not checked" |
 
 Human review is also recommended when the classifier probability is below 65%, when the three
 classifiers disagree, when the input is short (< 50 words), when the text has a Reuters dateline,
@@ -349,17 +411,31 @@ SUPPORTS/REFUTES accuracy of the LLM evidence assessment on FEVER has **not** be
 
 ### 13.5 Illustrative end-to-end runs (not an evaluation)
 
-`results/end_to_end_examples.json` holds one run of each built-in example in the app:
+`results/end_to_end_examples.json` holds one run of each built-in example in the app, using the
+local FEVER backend and the current (v2) evidence prompt:
 
 | Example | Classifier | Evidence (S/R/I) | Interpretation |
 |---|---|---|---|
-| "Telemundo is an English-language television network." | FAKE 72.8% | 0 / 4 / 12 | FAKE, evidence contradicts |
+| "Telemundo is an English-language television network." | FAKE 72.8% | 0 / 1 / 15 | FAKE, evidence contradicts |
 | "Fox 2000 Pictures released the film Soul Food." | FAKE 99.6% | 1 / 0 / 15 | **Disagreement** (true claim, classifier wrong) |
 | Local council bike-lane budget | REAL 65.7% | 0 / 0 / 14 | Evidence insufficient |
 | Apollo 11 news-style article | REAL 70.6% | 0 / 0 / 14 | Evidence insufficient |
 | "Kitchen spice cures cancer" viral claim | FAKE 62.8% | 0 / 0 / 13 | Evidence insufficient |
 
 The Soul Food case shows why the classifier must not be presented as a truth detector.
+
+### 13.6 Public Wikipedia API backend: spot checks (not an evaluation)
+
+`results/wikipedia_api_check.json` records real runs (live MediaWiki requests plus Groq) with the
+local index absent, as on Streamlit Cloud. For the claim *"The first inauguration of Bill Clinton made
+him the 50th President of the United States."* the backend retrieved the Bill Clinton page and 11
+other sentences; the LLM labelled two sentences REFUTES, quoting "served as the 42nd president of the
+United States", and the other 10 INSUFFICIENT, including sentences about Hillary Clinton and Clinton's
+family. Three more claims behaved as expected: an Einstein birthplace claim was SUPPORTED, a claim
+about a local council budget returned no relevant evidence, and a claim that Marie Curie won the
+Literature prize stayed INSUFFICIENT because no retrieved sentence states that she did not. These are
+spot checks of the mechanism on four claims, not a measurement of accuracy. A systematic evaluation
+against FEVER labels has not been run (see §20).
 
 ## 14. Installation and running locally
 
@@ -381,12 +457,17 @@ streamlit run app.py
 Open http://localhost:8501. Without a key, the classifier still works and the LLM sections show
 as unavailable.
 
-**Enabling evidence retrieval locally** (optional, ~8.2 GB disk):
+**Evidence retrieval needs no setup**: with no local index the app uses the public Wikipedia API
+(internet access required, no key). The header chip reads "Wikipedia evidence: live Wikipedia API".
+
+**Optional: the local FEVER index** (~8.2 GB disk; reproducible research mode, offline retrieval of
+the 2017 snapshot):
 
 1. Download the FEVER Wikipedia dump (`wiki-pages.zip`) from https://fever.ai/dataset/fever.html
    and extract it so that the files are at `data/raw/fever/wiki-pages/wiki-001.jsonl … wiki-109.jsonl`.
 2. `python -m src.build_wiki_index` (page offsets), then `python -m src.build_title_index` (FTS5 titles).
-3. Restart the app. The header chip "Wikipedia evidence index" should read *available*.
+3. Restart the app. The chip should now read "local FEVER index". The local index takes priority
+   in `auto` mode; set `EAFND_EVIDENCE_BACKEND=wikipedia_api` to use live Wikipedia instead.
 
 To keep the data elsewhere, set `EAFND_WIKI_INDEX` (path to `wiki_pages.sqlite`) and
 `EAFND_WIKI_PAGES_DIR` (folder with the shards).
@@ -409,15 +490,20 @@ python -m src.pipeline --dataset isot --llm-limit 10   # FULL RETRAIN + fusion (
 | `GROQ_TIMEOUT_SECONDS` | No | Per-request timeout (default 45). |
 | `EAFND_WIKI_INDEX` | No | Path to `wiki_pages.sqlite` (default `data/processed/wiki_pages.sqlite`). |
 | `EAFND_WIKI_PAGES_DIR` | No | Folder with the FEVER `wiki-*.jsonl` shards, if moved. |
+| `EAFND_EVIDENCE_BACKEND` | No | `auto` (default: local index if present, else public API), `local`, `wikipedia_api` or `off`. |
+| `WIKIPEDIA_USER_AGENT` | No | `User-Agent` for Wikipedia API requests. Defaults to `EvidenceAware/1.0 (research prototype; https://github.com/BixbyCodes/fakenewd)`; set your own contact if you fork the project. |
+| `WIKIPEDIA_API_URL` | No | MediaWiki endpoint (default `https://en.wikipedia.org/w/api.php`). |
 
 ## 16. Deployment (Streamlit Community Cloud)
 
 The app is a single Streamlit script, so Streamlit Community Cloud is the simplest host. The
-deployed bundle is the Git repository (~69 MB including the trained models). It does **not**
-include the FEVER Wikipedia index: an ~8 GB local corpus is not suitable for Git or a free app
-host. The public app therefore runs the **classifier + LLM assessment + event extraction**. The
-evidence section clearly states that evidence retrieval did not run, and the header shows
-"Wikipedia evidence index: unavailable".
+deployed bundle is the Git repository (~69 MB including the trained models). The multi-GB FEVER
+Wikipedia index is **not** uploaded (not suitable for Git or a free host). Instead, the public app
+automatically uses the **public Wikipedia API** for evidence, so a deployment provides the classifier,
+LLM assessment, event extraction **and** Wikipedia evidence with sentence-level labels and source
+links, using only free services (Streamlit Community Cloud, Groq, Wikipedia). The header chip shows
+"Wikipedia evidence: live Wikipedia API". If Wikipedia cannot be reached, the evidence section says so and
+the rest of the analysis still works.
 
 Steps:
 
@@ -430,13 +516,15 @@ Steps:
    GROQ_API_KEY = "your-key-here"
    ```
    Secrets are stored by Streamlit, not in Git. `app.py` copies them into the environment at startup.
-5. Deploy and test the URL with the built-in examples.
+   Optional secrets: `GROQ_MODEL`, `EAFND_EVIDENCE_BACKEND`, `WIKIPEDIA_USER_AGENT`. No Wikipedia key is needed.
+5. Deploy and test the URL with the built-in examples. Streamlit redeploys on every push to `main`.
 
-Configuration files: `requirements.txt` (pinned runtime dependencies), `.streamlit/config.toml`
-(light theme, error details hidden from users, usage stats off).
+Configuration files: `requirements.txt` (pinned runtime dependencies, no extra packages for the
+Wikipedia backend), `.streamlit/config.toml` (light theme, error details hidden from users, usage stats off).
 
-Note that anyone with the public URL can use your Groq quota. The SQLite cache prevents repeat
-calls for identical inputs, and the app degrades to classifier-only if the rate limit is hit.
+Notes: anyone with the public URL shares your Groq quota and generates Wikipedia API traffic from
+the app server. Evidence labels, LLM responses and Wikipedia responses are cached, which prevents repeat
+calls for identical claims, and the app degrades gracefully if either service is rate-limited.
 
 ## 17. Testing
 
@@ -444,7 +532,8 @@ calls for identical inputs, and the app degrades to classifier-only if the rate 
 python -m unittest discover -s tests -v
 ```
 
-51 tests, none of which call the real API (LLM clients are faked; caches go to temp directories):
+98 tests (verified on Python 3.9, 3.11 and 3.14), none of which use the network or the real Groq API
+(urllib and the LLM client are replaced with fakes; caches go to temp directories):
 
 - `tests/test_ingestion.py`, `tests/test_fever_loader.py`, `tests/test_evidence_retriever.py`: original module tests.
 - `tests/test_pipeline.py`: input validation (empty, too short, non-text, too long, headline
@@ -454,6 +543,15 @@ python -m unittest discover -s tests -v
   LLM timeout during evidence assessment; the interpretation rules; full pipeline runs with no
   key/no index and with a rate-limited LLM; and a Streamlit `AppTest` that renders the app and
   submits valid and empty input.
+- `tests/test_wikipedia_api.py`: Wikipedia search-response parsing (ranking, disambiguation and
+  missing pages), page-text retrieval, sentence extraction, duplicate removal, evidence ranking,
+  query building (original claim first), HTTP handling (User-Agent, timeout, 429 retry, 5xx,
+  network errors, bad JSON, oversized responses, no leaked details), caching, empty search results,
+  LLM evidence classification (quote grounding, downgrades, invalid items, cache keys), local-index
+  and public-API backend selection and fallback, and two Streamlit `AppTest` runs that render the
+  evidence cards (success) and the failure message (Wikipedia unreachable).
+
+The public API and the Clinton example were exercised separately with real requests (§13.6).
 
 ## 18. Folder structure
 
@@ -470,7 +568,8 @@ src/
   predict.py                 Classifier inference (ISOT Linear SVM + agreement models)
   llm_features.py            LLM text assessment; LLM features for fusion
   event_parser.py            LLM event/entity extraction
-  evidence_verifier.py       Candidate pages, sentence selection, LLM evidence assessment
+  evidence_verifier.py       Backend selection, sentence selection, LLM evidence assessment
+  wikipedia_api.py           Public MediaWiki API retrieval: search, page text, sentence ranking
   title_search.py            FTS5/BM25 title search, index status, read-only connections
   title_search_v2.py, title_search_v3.py   Reranking variants (V3 used in the app)
   indexed_evidence_retriever.py, evidence_retriever.py   Page/sentence lookup
@@ -498,17 +597,23 @@ data/                        Raw datasets, processed splits, Wikipedia index, ca
 - **LLM assessments** can be wrong, can use the model's own background knowledge, and are not
   deterministic across model updates. The LLM was not trained or evaluated by this project for
   this task.
-- **Evidence coverage.** The corpus is a 2017 Wikipedia snapshot. Recent events, local news and
-  non-encyclopedic claims usually return INSUFFICIENT. Title-only retrieval misses pages whose
-  titles do not contain the claim's terms (Recall@10 ≈ 84% even on FEVER claims). Sentence
-  selection is lexical.
+- **Evidence coverage.** Wikipedia is an encyclopedia: local news, rumours and most claims in news
+  articles have no page, and then the result is INSUFFICIENT. The local backend uses a 2017
+  snapshot and title-only retrieval (Recall@10 ≈ 84% on FEVER claims). The API backend relies on
+  Wikipedia's search engine, which can miss the most specific page (for example, for the Clinton
+  claim it did not surface the dedicated inauguration article, only the main biography page),
+  and its sentence ranking is lexical, so some retrieved sentences are off-topic.
+- **Live Wikipedia.** The API backend reads current article text, which can change, contain errors
+  or be vandalised, and its retrieval quality has not been measured systematically. Public APIs can
+  rate-limit or be unreachable; the app then reports that evidence was not checked.
 - **No end-to-end evidence accuracy.** The verifier's SUPPORTS/REFUTES labels have not been
   evaluated against FEVER gold labels.
 - **Hybrid model** was trained with LLM features for only 10 rows per split and cannot be run at
   inference time (base learners not saved).
 - **Long articles** are verified against their headline or opening sentences, not every claim
   in the article.
-- **Deployment** without the Wikipedia index provides no evidence check.
+- **Latency.** The API backend adds about 5–10 seconds per new claim (several Wikipedia requests and
+  one LLM call); repeated claims are served from caches.
 
 ## 20. Future work
 
@@ -518,8 +623,9 @@ data/                        Raw datasets, processed splits, Wikipedia index, ca
 - Reduce ISOT shortcut learning: strip datelines and boilerplate before training, test
   cross-dataset (train ISOT → test on other sources).
 - Dense or hybrid (BM25 + embedding) sentence retrieval over page text, not just titles.
-- A compact hosted evidence store (sentences inside SQLite, or a vector index) to enable evidence
-  retrieval in the public deployment.
+- Evaluate the public-API backend on FEVER claims (page Recall@K and end-to-end label accuracy) and
+  compare it with the local FEVER backend.
+- Dense or hybrid sentence retrieval inside the API backend, and additional free sources (e.g. Wikidata).
 - Claim decomposition for long articles, verifying several check-worthy sentences.
 - Per-session rate limiting for public deployments.
 - Graph-based context (entity/event graphs) to link related claims and evidence.
