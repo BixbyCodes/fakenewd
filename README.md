@@ -374,6 +374,7 @@ pip install -r requirements.txt          # app only
 # pip install -r requirements-research.txt   # + xgboost for the training/fusion scripts
 
 cp .env.example .env    # then put your Groq key in .env (never commit it)
+                        # get a key at https://console.groq.com/
 streamlit run app.py
 ```
 
@@ -521,6 +522,12 @@ data/                        Raw datasets, processed splits, Wikipedia index, ca
   retrieval in the public deployment.
 - Claim decomposition for long articles, verifying several check-worthy sentences.
 - Per-session rate limiting for public deployments.
+- Graph-based context (entity/event graphs) to link related claims and evidence.
+- Systematic ablation studies of each component's contribution.
+
+## Author
+
+**Utsav Tripathi** · GitHub: [@BixbyCodes](https://github.com/BixbyCodes) · Repository: [BixbyCodes/fakenewd](https://github.com/BixbyCodes/fakenewd)
 
 ---
 
